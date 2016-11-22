@@ -1,15 +1,24 @@
 const express = require('express');
-const router = express.Router();
+const api = express.Router();
 
-const sendJSONresp = (req, res) => res.json(res.example);
+//connecting to 'topics' model
+//do we need  updateTopic as well?
+const { getAllTopics, addTopic, editTopic, deleteTopic } = require('../../models/topics');
+
+//connecting to 'comments' model
+const dbComments = require('../../models/comments');
+
+
+const sendJSONresp = (req, res) => res.json(res.topics && res.comments || []);
 
 // handle all the routes
 api.route('/')
-  .get(sendJSONresp)
-  .post(sendJSONresp);
+  .get(getAllTopics, sendJSONresp)
+  .post(addTopic, sendJSONresp);
 
 api.route('/:id')
-  .put(sendJSONresp)
-  .delete(sendJSONresp);
+  .put(editTopic, sendJSONresp)
+  .delete(deleteTopic, sendJSONresp);
+
 
 module.exports = api;

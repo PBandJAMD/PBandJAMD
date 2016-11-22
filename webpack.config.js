@@ -7,7 +7,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const BUILD_DIR         = path.resolve(__dirname, 'dist');
 const APP_DIR           = path.resolve(__dirname, 'src');
 
-
 module.exports = {
   entry: `${APP_DIR}/index.js`,
   output: {
@@ -23,7 +22,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'ReactJS Hello World',
+      title: 'PBandJAMD',
       xhtml: true,
       inject: false,
       template: require('html-webpack-template'),
@@ -49,7 +48,7 @@ module.exports = {
         test: /\.gif$/,
         loader: 'file-loader?name=/img/[name].[hash:base64:5].[ext]'
       },
-      { 
+      {
         test: /\.jpg$/,
         loader: 'file-loader?name=/img/[name].[hash:base64:5].[ext]'
       },

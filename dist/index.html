@@ -1,124 +1,52 @@
-Html Webpack Plugin:
-<pre>
-  Error: Child compilation failed:
-  Module build failed: ReferenceError: Unknown plugin "transform-object-rest-spr  ead" specified in "/Users/alextong/code/wdi/projects/PBandJAMD/.babelrc" at 0,   attempted to resolve relative to "/Users/alextong/code/wdi/projects/PBandJAMD  "
-  
-  - option-manager.js:176 
-    [PBandJAMD]/[babel-core]/lib/transformation/file/options/option-manager.js:1    76:17
-  
-  - Array.map
-  
-  - option-manager.js:154 Function.normalisePlugins
-    [PBandJAMD]/[babel-core]/lib/transformation/file/options/option-manager.js:1    54:20
-  
-  - option-manager.js:229 OptionManager.mergeOptions
-    [PBandJAMD]/[babel-core]/lib/transformation/file/options/option-manager.js:2    29:36
-  
-  - option-manager.js:374 OptionManager.init
-    [PBandJAMD]/[babel-core]/lib/transformation/file/options/option-manager.js:3    74:12
-  
-  - index.js:216 File.initOptions
-    [PBandJAMD]/[babel-core]/lib/transformation/file/index.js:216:65
-  
-  - index.js:139 new File
-    [PBandJAMD]/[babel-core]/lib/transformation/file/index.js:139:24
-  
-  - pipeline.js:46 Pipeline.transform
-    [PBandJAMD]/[babel-core]/lib/transformation/pipeline.js:46:16
-  
-  - index.js:41 transpile
-    [PBandJAMD]/[babel-loader]/lib/index.js:41:20
-  
-  
-  - ReferenceError: Unknown plugin "transform-object-rest-spread" specified in "    /Users/alextong/code/wdi/projects/PBandJAMD/.babelrc" at 0, attempted to res    olve relative to "/Users/alextong/code/wdi/projects/PBandJAMD"
-  
-  - compiler.js:76 
-    [PBandJAMD]/[html-webpack-plugin]/lib/compiler.js:76:16
-  
-  - Compiler.js:214 Compiler.<anonymous>
-    [PBandJAMD]/[webpack]/lib/Compiler.js:214:10
-  
-  - Compiler.js:403 
-    [PBandJAMD]/[webpack]/lib/Compiler.js:403:12
-  
-  - Tapable.js:67 Compiler.next
-    [PBandJAMD]/[tapable]/lib/Tapable.js:67:11
-  
-  - CachePlugin.js:40 Compiler.<anonymous>
-    [PBandJAMD]/[webpack]/lib/CachePlugin.js:40:4
-  
-  - Tapable.js:71 Compiler.applyPluginsAsync
-    [PBandJAMD]/[tapable]/lib/Tapable.js:71:13
-  
-  - Compiler.js:400 Compiler.<anonymous>
-    [PBandJAMD]/[webpack]/lib/Compiler.js:400:9
-  
-  - Compilation.js:577 Compilation.<anonymous>
-    [PBandJAMD]/[webpack]/lib/Compilation.js:577:13
-  
-  - Tapable.js:60 Compilation.applyPluginsAsync
-    [PBandJAMD]/[tapable]/lib/Tapable.js:60:69
-  
-  - Compilation.js:572 Compilation.<anonymous>
-    [PBandJAMD]/[webpack]/lib/Compilation.js:572:10
-  
-  - Tapable.js:60 Compilation.applyPluginsAsync
-    [PBandJAMD]/[tapable]/lib/Tapable.js:60:69
-  
-  - Compilation.js:567 Compilation.<anonymous>
-    [PBandJAMD]/[webpack]/lib/Compilation.js:567:9
-  
-  - Tapable.js:60 Compilation.applyPluginsAsync
-    [PBandJAMD]/[tapable]/lib/Tapable.js:60:69
-  
-  - Compilation.js:563 Compilation.<anonymous>
-    [PBandJAMD]/[webpack]/lib/Compilation.js:563:8
-  
-  - Tapable.js:60 Compilation.applyPluginsAsync
-    [PBandJAMD]/[tapable]/lib/Tapable.js:60:69
-  
-  - Compilation.js:525 Compilation.seal
-    [PBandJAMD]/[webpack]/lib/Compilation.js:525:7
-  
-  - Compiler.js:397 Compiler.<anonymous>
-    [PBandJAMD]/[webpack]/lib/Compiler.js:397:15
-  
-  - Tapable.js:103 
-    [PBandJAMD]/[tapable]/lib/Tapable.js:103:11
-  
-  - Compilation.js:445 Compilation.<anonymous>
-    [PBandJAMD]/[webpack]/lib/Compilation.js:445:10
-  
-  - Compilation.js:417 
-    [PBandJAMD]/[webpack]/lib/Compilation.js:417:12
-  
-  - Compilation.js:332 
-    [PBandJAMD]/[webpack]/lib/Compilation.js:332:10
-  
-  - async.js:52 
-    [PBandJAMD]/[async]/lib/async.js:52:16
-  
-  - async.js:246 done
-    [PBandJAMD]/[async]/lib/async.js:246:17
-  
-  - async.js:44 
-    [PBandJAMD]/[async]/lib/async.js:44:16
-  
-  - Compilation.js:202 errorAndCallback
-    [PBandJAMD]/[webpack]/lib/Compilation.js:202:5
-  
-  - Compilation.js:225 errorOrWarningAndCallback
-    [PBandJAMD]/[webpack]/lib/Compilation.js:225:13
-  
-  - Compilation.js:311 
-    [PBandJAMD]/[webpack]/lib/Compilation.js:311:13
-  
-  - Compilation.js:123 
-    [PBandJAMD]/[webpack]/lib/Compilation.js:123:4
-  
-  - Array.forEach
-  
-  - Compilation.js:122 callback
-    [PBandJAMD]/[webpack]/lib/Compilation.js:122:12
-  
-</pre>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]>             <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>                <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>                <html class="ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]>                <html class="ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+
+    
+
+    <title>PBandJAMD</title>
+
+    
+
+    
+
+    
+
+    
+
+    
+  </head>
+  <body>
+    
+
+    
+    
+    <div id="root-container"></div>
+    
+
+    
+
+    
+
+    
+    <script src="/js/main.js" type="text/javascript"></script>
+    
+
+    
+
+    
+  </body>
+</html>

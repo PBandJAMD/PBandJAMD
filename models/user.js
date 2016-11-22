@@ -1,3 +1,6 @@
+/* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
+/* eslint no-param-reassign: ["error", { "props": false }] */
+
 const db = require('../db/db');
 const bcrypt = require('bcryptjs');
 
@@ -13,11 +16,14 @@ function createUser(req, res, next) { // makes a new user upon signup page
 
   db.none(`INSERT INTO user (username, password)
            VALUES ($/username/, $/password/);`, userObject)
-  .then((x) => {
-    console.log(x);
-    next();
+  .then((insertErr, dbUser) => {
+    if (insertErr) return next(insertErr);
+    console.log(dbUser);
+    db.close();
+    return next();
   })
   .catch(err => next(err));
+}
 
   // getDB().then((db) => {
   //   db.collection('users')
@@ -29,34 +35,35 @@ function createUser(req, res, next) { // makes a new user upon signup page
   //       return next();
   //     });
   // });
-}
 
 function getUserById(id) {
-  return getDB().then((db) => {
+  return () => {
     const promise = new Promise((resolve, reject) => {
-      db.collection('users')
-        .findOne({ _id: ObjectID(id) }, (findError, user) => {
-          if (findError) reject(findError);
-          db.close();
-          resolve(user);
-        });
+      db.one(`SELECT *
+              WHERE id =` + id)
+      .then((findError, user) => {
+        if (findError) reject(findError);
+        db.close();
+        resolve(user);
+      });
     });
     return promise;
-  });
+  };
 }
 
 function getUserByUsername(username) {
-  return getDB().then((db) => {
+  return () => {
     const promise = new Promise((resolve, reject) => {
-      db.collection('users')
-        .findOne({ username }, (findError, user) => {
-          if (findError) reject(findError);
-          db.close();
-          resolve(user);
-        });
+      db.one(`SELECT *
+              WHERE username =` + username)
+      .then((findError, user) => {
+        if (findError) reject(findError);
+        db.close();
+        resolve(user);
+      });
     });
     return promise;
-  });
+  };
 }
 
 module.exports = {

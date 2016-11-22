@@ -13,6 +13,7 @@ const userModel = require('../models/user');
  * @param {function} next
  *
  */
+
 function logIn(req, res, next) {
   const userPayload = req.body.user;
   console.log(userPayload.password);
@@ -22,7 +23,7 @@ function logIn(req, res, next) {
 
     console.log(dbUser.password, matches);
     if (matches) {
-      req.session.userId = dbUser._id;
+      // req.session.userId = dbUser._id;
       res.user = dbUser;
       next();
     } else {
@@ -40,19 +41,20 @@ function logIn(req, res, next) {
  * @param {function} next invoked to continue the response flow
  *
  */
-// function authenticate(req, res, next) {
-//   if (req.session.userId) {
-//     userModel.getUserById(req.session.userId).then((dbUser) => {
-//       res.user = dbUser;
-//       next();
-//     }).catch(() => {
-//       res.redirect('/login');
-//     });
-//   } else {
-//     res.redirect('/login');
-//   }
-// }
+function authenticate(req, res, next) {
+  if (req.session.userId) {
+    userModel.getUserById(req.session.userId).then((dbUser) => {
+      res.user = dbUser;
+      next();
+    }).catch(() => {
+      res.redirect('/login');
+    });
+  } else {
+    res.redirect('/login');
+  }
+}
 
 module.exports = {
-  logIn
+  logIn,
+  authenticate,
 };

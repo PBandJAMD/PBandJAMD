@@ -1,4 +1,4 @@
-const db = require('./../lib/dbconnect');
+const db = require('../db/db.js');
 
 // displaying all topics
 function getAllTopics(req, res, next) {
@@ -6,8 +6,8 @@ function getAllTopics(req, res, next) {
     .then((topics) => {
       res.topics = topics;
       next();
-    })
-  };
+    });
+}
 
 // adding one topic
 function addTopic(req, res, next) {
@@ -29,7 +29,8 @@ function editTopic(req, res, next) {
 
 // deleting one topic
 function deleteTopic(req, res, next) {
-  db.none(`DELETE FROM topic WHERE id = $1`, [req.params.id])
+  db.none(`DELETE FROM topic
+          WHERE id = $1`, [req.params.id])
     .then(next())
     .catch(err => next(err));
 }
@@ -38,5 +39,5 @@ module.exports = {
   getAllTopics,
   addTopic,
   editTopic,
-  deleteTopic
+  deleteTopic,
 };

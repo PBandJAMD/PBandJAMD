@@ -38,5 +38,5 @@ module.exports = {
   getAllTopics,
   addTopic,
   editTopic,
-  deleteTopic
+  deleteTopic,
 };

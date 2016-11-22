@@ -1,3 +1,6 @@
+/* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
+/* eslint no-param-reassign: ["error", { "props": false }] */
+
 const pg       = require('pg-promise')({});
 
 const pgConfig = {  host:     process.env.PG_HOST,

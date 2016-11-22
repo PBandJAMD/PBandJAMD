@@ -1,5 +1,3 @@
-
-
 INSERT INTO users (id, username, password)  VALUES
   (1, 'Jake', 1234 ),
   (2, 'Saran', 2345),
@@ -25,9 +23,6 @@ INSERT INTO users (id, username, password)  VALUES
     (8, 'Facebook authorizes a $6B stock buyback', 'Facebook in its last earnings call also said that its growth would likely slow as a result of the company reaching its maximum advertising load. While Facebook has historically grown at a very fast clip, the company is now in a position that it needs to find additional ways to create value for investors beyond just trying to expand its user base and gather more eyeballs to put ads', 8),
     (9, 'Intel and Disney paint the sky', 'Disney World’s nightly fireworks show might soon have some competition in the form of hundreds of swirling, whirling LED-lit drones. They flash, fall and flock in unison and are all controlled by one person. I saw them and they were, for lack of a better phrase, absolutely amazing.', 9),
     (10, 'Microsoft joins the Linux Foundation', 'This may come as a surprise to you, but they were not big fans, Linux Foundation executive director Jim Zemlin told me in regards to his foundation’s history with Microsoft. The new Microsoft under CEO Satya Nadella, however, is singing a very different tune.', 10);
-
-
-
 
   INSERT INTO comment (id, body, topic_id, user_id) VALUES
 

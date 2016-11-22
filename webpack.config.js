@@ -1,3 +1,6 @@
+/* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
+/* eslint no-param-reassign: ["error", { "props": false }] */
+
 'use strict'
 const webpack           = require('webpack');
 const path              = require('path');

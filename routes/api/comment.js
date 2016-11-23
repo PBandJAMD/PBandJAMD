@@ -3,7 +3,6 @@ const comment = express.Router();
 const { getAllComment, addComment, editComment, deleteComment } = require('../../models/comments');
 const sendJSONresp = (req, res) => res.json(res.comments || []);
 
-// handle all the routes
 comment.route('/')
   .get(getAllComment, sendJSONresp)
   .post(addComment, sendJSONresp);

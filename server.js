@@ -1,21 +1,25 @@
 'use strict';
 require('dotenv').config({ silent: true });
-const express     = require('express');
-const logger      = require('morgan');
-const path        = require('path');
-const bodyParser  = require('body-parser');
+const express = require('express');
+const logger = require('morgan');
+const path = require('path');
+const bodyParser = require('body-parser');
 
-const app         = express();
-const PORT        = process.argv[2] || process.env.port || 3000;
-const CommentRoute = require('./routes/api/comment.js');
-const TopicRoute = require('./routes/api/topic.js');
+const commentRoute = require('./routes/api/comment.js');
+const topicRoute = require('./routes/api/topic.js');
+const userRoute = require('./routes/api/user.js');
+
+const app = express();
+const PORT = process.argv[2] || process.env.port || 3000;
+
 app.use(logger('dev'));
 
 app.use(express.static(path.join(__dirname, 'dist')));
 
 // This will parse our payload from fetch which is sent as a JSON object
 app.use(bodyParser.json());
-app.use('/api/comments', CommentRoute);
-app.use('/api/topics', TopicRoute);
+app.use('/comment', commentRoute);
+app.use('/topic', topicRoute);
+// app.use('/user', userRoute);
 
 app.listen(PORT, () => console.log('server here! listening on', PORT));

@@ -6,11 +6,42 @@ import style from './Aside.css';
  // function created for 'enter' key
 // function handleKeyPress(e, cb) {
 //   if (e.key === 'Enter') cb();
-// }.
+// }
+
+// class Aside extends Component {
+//   constructor() {
+//     super();
+
+//     this.state = {
+//       username: [],
+//       password: [],
+//       initialState: true,
+//     };
+//   }
+
+
+// toggleAside (e) {
+//   this.setState({
+//     initialState: !this.state.initialState });
+//   }
+// }
+
+
+
+//   render() {
+//     return (
+
+// const btn = document.getElementById('user');
+
+// btn.onclick = function() {
+//   modal.style.display = 'block';
+// }
 
 const Aside = props => (
   <div id="user" className="toggle">
-    <a href="#user" className="sign-button">Log In | Sign Up</a>
+    {/*<div id="myBtn" className="sign-button toggle">Log In | Sign Up</div>*/}
+      <a href="#user" className="sign-button">Log In | Sign Up</a>
+
 
     <div id="log-in" className="both">
       <h3>- Login In -</h3>
@@ -18,6 +49,7 @@ const Aside = props => (
         <label>User ID:</label>
         <input
           type="text"
+
         />
       </div>
 
@@ -42,6 +74,7 @@ const Aside = props => (
           <label>User ID:</label>
           <input
             type="text"
+
           />
         </div>
         <div className="label">
@@ -58,6 +91,6 @@ const Aside = props => (
     </div>
 
   </div>
-);
+    );
 
 export default Aside;

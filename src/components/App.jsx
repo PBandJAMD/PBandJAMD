@@ -5,6 +5,8 @@ import Header from './Header/Header.jsx';
 import TopicContainer from './TopicContainer/TopicContainer.jsx';
 import './normalize.css';
 import './App.css';
+import Main from './Main/Main.jsx';
+import Aside from './Aside/Aside.jsx';
 
 class App extends Component {
   constructor() {
@@ -66,6 +68,10 @@ class App extends Component {
           handleUsernameInput={event => this.handleUsernameInput(event)}
           handlePasswordInput={event => this.handlePasswordInput(event)}
           handleSignup={() => this.handleSignup()}
+        />
+
+        <Aside
+
         />
 
         <footer>

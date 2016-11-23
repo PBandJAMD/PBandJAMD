@@ -1,0 +1,111 @@
+header {
+  height: 10vh;
+  width: 100%;
+  background: #FAEBD7;
+  margin: 0;
+  text-align: center;
+  font-size: 20px;
+}
+
+.box {
+  width: 95vw;
+  height: 15vh;
+  border: 2px solid black;
+  margin: 20px 5px;
+}
+
+h3 {
+  font-size: 20px;
+  margin: 0;
+  text-align: center;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.toggle {
+  background: tomato;
+  width: 32vw;
+  height: 92vh;
+  position: fixed;
+  bottom: -92vh;
+  right: 20px;
+  transition: bottom 0.5s ease-in-out;
+}
+
+.toggle:target {
+  bottom: 0;
+}
+
+.sign-button {
+  text-decoration: none;
+  color: white;
+  background-color: #FF7F50;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  display: block;
+  position: absolute;
+  top: -30px;
+  right: 20px;
+}
+
+#log-in {
+  padding: 7vh 7vw;
+}
+
+.label {
+  margin-bottom: 17px;
+  color: white;
+}
+
+.label > input[type="text"],
+.label > textarea {
+  font-size: 15px;
+  color: black;
+
+  width: 100%;
+  padding: 5px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+input[type="password"] {
+  width: 12vw;
+}
+
+.label > textarea {
+  resize: none;
+}
+
+.bt {
+  font-size: 15px;
+  color: black;
+  background: #e8e8e8;
+  display: inline-block;
+  border: none;
+  outline: none;
+  padding: 8px 12px;
+  text-decoration: none;
+}
+
+.bt.click {
+  color: white;
+  background:   #6495ED;
+}
+
+.button-position {
+  text-align: right;
+}
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 25px;
+  background-color: #FAEBD7;
+  text-align: center;
+  z-index: -1;
+}

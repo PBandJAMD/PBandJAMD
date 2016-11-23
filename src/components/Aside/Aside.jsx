@@ -8,32 +8,40 @@ import style from './Aside.css';
 //   if (e.key === 'Enter') cb();
 // }
 
-class Aside extends Component {
-  constructor() {
-    super();
+// class Aside extends Component {
+//   constructor() {
+//     super();
 
-    this.state = {
-      username: [],
-      password: [],
-      initialState: true,
-    };
-  }
-
-
-toggleAside (e) {
-  this.setState({
-    initialState: !this.state.initialState });
-  }
-}
-
-  render() {
-    return (
-  // <div id="user" className="toggle">
-    <div show={this.state.initialState} id="user" className="toggle">
+//     this.state = {
+//       username: [],
+//       password: [],
+//       initialState: true,
+//     };
+//   }
 
 
-    <button onClick={this.toggleAside} className="sign-button">Log In | Sign Up</button>
-        {/*<a href="#user" className="sign-button">Log In | Sign Up</a>*/}
+// toggleAside (e) {
+//   this.setState({
+//     initialState: !this.state.initialState });
+//   }
+// }
+
+
+
+//   render() {
+//     return (
+
+// const btn = document.getElementById('user');
+
+// btn.onclick = function() {
+//   modal.style.display = 'block';
+// }
+
+const Aside = props => (
+  <div id="user" className="toggle">
+    {/*<div id="myBtn" className="sign-button toggle">Log In | Sign Up</div>*/}
+      <a href="#user" className="sign-button">Log In | Sign Up</a>
+
 
     <div id="log-in" className="both">
       <h3>- Login In -</h3>
@@ -41,6 +49,7 @@ toggleAside (e) {
         <label>User ID:</label>
         <input
           type="text"
+
         />
       </div>
 
@@ -65,6 +74,7 @@ toggleAside (e) {
           <label>User ID:</label>
           <input
             type="text"
+
           />
         </div>
         <div className="label">
@@ -82,6 +92,5 @@ toggleAside (e) {
 
   </div>
     );
-  }
 
 export default Aside;

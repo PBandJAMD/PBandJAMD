@@ -15,8 +15,11 @@ class App extends Component {
     return (
       <div id="app-container">
         <header>
-          <h1>PB and JAMD</h1>
+          <div id="jaemin">
+            <h1>PB and JAMD</h1>
+          </div>
         </header>
+
 
         <footer>
           <h1>Damira Ibragimova, Jaemin Han, Mohamed Gassama, Alexander Tong</h1>

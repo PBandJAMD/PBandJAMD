@@ -7,8 +7,8 @@ function getAllTopics(req, res, next) {
       res.topics = topics;
       console.log(res.topics);
       next();
-    })
-  };
+    });
+}
 
 // // adding one topic
 // function addTopic(req, res, next) {
@@ -28,6 +28,7 @@ function getAllTopics(req, res, next) {
 //     .catch(err => next(err));
 // }
 
+
 // // deleting one topic
 // function deleteTopic(req, res, next) {
 //   db.none(`DELETE FROM topic WHERE id = $1`, [req.params.id])
@@ -35,6 +36,8 @@ function getAllTopics(req, res, next) {
 //     .catch(err => next(err));
 // }
 
+
 module.exports = {
   getAllTopics
+
 };

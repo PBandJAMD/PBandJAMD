@@ -3,6 +3,7 @@ import LoginForm from './LoginForm/LoginForm.jsx';
 import SignupForm from './SignupForm/SignupForm.jsx';
 import Header from './Header/Header.jsx';
 import Main from './Main/Main.jsx';
+import Aside from './Aside/Aside.jsx';
 import './normalize.css';
 import './App.css';
 
@@ -65,6 +66,10 @@ class App extends Component {
           handleUsernameInput={event => this.handleUsernameInput(event)}
           handlePasswordInput={event => this.handlePasswordInput(event)}
           handleSignup={() => this.handleSignup()}
+        />
+
+        <Aside
+
         />
 
         <footer>

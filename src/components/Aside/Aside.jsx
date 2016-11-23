@@ -6,11 +6,34 @@ import style from './Aside.css';
  // function created for 'enter' key
 // function handleKeyPress(e, cb) {
 //   if (e.key === 'Enter') cb();
-// }.
+// }
 
-const Aside = props => (
-  <div id="user" className="toggle">
-    <a href="#user" className="sign-button">Log In | Sign Up</a>
+class Aside extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      username: [],
+      password: [],
+      initialState: true,
+    };
+  }
+
+
+toggleAside (e) {
+  this.setState({
+    initialState: !this.state.initialState });
+  }
+}
+
+  render() {
+    return (
+  // <div id="user" className="toggle">
+    <div show={this.state.initialState} id="user" className="toggle">
+
+
+    <button onClick={this.toggleAside} className="sign-button">Log In | Sign Up</button>
+        {/*<a href="#user" className="sign-button">Log In | Sign Up</a>*/}
 
     <div id="log-in" className="both">
       <h3>- Login In -</h3>
@@ -58,6 +81,7 @@ const Aside = props => (
     </div>
 
   </div>
-);
+    );
+  }
 
 export default Aside;

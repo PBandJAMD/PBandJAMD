@@ -1,3 +1,6 @@
+/* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
+/* eslint no-param-reassign: ["error", { "props": false }] */
+
 'use strict'
 const webpack           = require('webpack');
 const path              = require('path');
@@ -38,7 +41,7 @@ module.exports = {
     loaders: [
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]')
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
       },
       {
         test: /\.svg$/,

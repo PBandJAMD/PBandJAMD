@@ -1,13 +1,24 @@
-import React, { Component } from 'react';
-import style from './SignupForm.css';
+import React from 'react';
+import './SignupForm.css';
 
-export default class SignupForm extends Component {
+const SignupForm = props => (
+  <div>
 
-  render() {
-    return(
-      <div>
+    <input
+      type="text"
+      onChange={props.handleUsernameInput}
+      placeholder="Make a username!"
+    />
+    <br />
+    <input
+      type="text"
+      onChange={props.handlePasswordInput}
+      placeholder="Make a password!"
+    />
+    <br />
+    <button onClick={props.handleSignup}>Sign up!</button>
 
-      </div>
-    )
-  }
-}
+  </div>
+  );
+
+export default SignupForm;

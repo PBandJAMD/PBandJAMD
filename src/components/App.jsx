@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import LoginForm from './LoginForm/LoginForm.jsx';
+import SignupForm from './SignupForm/SignupForm.jsx';
 import './normalize.css';
 import './App.css';
 
@@ -9,38 +10,61 @@ class App extends Component {
 
     this.state = {
       username: [],
+      password: [],
     };
   }
 
-  handleUpdateInput(e) {
+// BEGIN LOGIN FORM/SIGNUP FORM FUNCTIONS
+  handleUsernameInput(e) {
     this.setState({
-      searchTerm: e.target.value,
+      username: e.target.value,
+    });
+  }
+
+  handlePasswordInput(e) {
+    this.setState({
+      password: e.target.value,
     });
   }
 
   handleLogin(e) {
-      fetch(`http://www.omdbapi.com/?s=${this.state.searchTerm}&page=${page}`)
+      fetch(`http://www.omdbapi.com/?s=batman`)
       .then(r => r.json())
       .then((data) => {
-        this.setState({
-        });
+        console.log(data);
+        // this.setState({
+        // });
       })
       .catch(err => console.log('Error: ',err));
   }
+
+   handleSignup(e) {
+      fetch(`http://www.omdbapi.com/?s=batman`)
+      .then(r => r.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch(err => console.log('Error: ',err));
+  }
+// END LOGIN FORM/SIGNUP FORM FUNCTIONS
 
   render() {
     return (
       <div id="app-container">
         <header>
-          <div id="jaemin">
-            <h1>PB and JAMD</h1>
-          </div>
+
         </header>
 
         <LoginForm
-          username={this.state.username}
-          handleUpdateInput={event => this.handleUpdateInput(event)}
+          handleUsernameInput={event => this.handleUsernameInput(event)}
+          handlePasswordInput={event => this.handlePasswordInput(event)}
           handleLogin={() => this.handleLogin()}
+        />
+
+        <SignupForm
+          handleUsernameInput={event => this.handleUsernameInput(event)}
+          handlePasswordInput={event => this.handlePasswordInput(event)}
+          handleSignup={() => this.handleSignup()}
         />
 
         <footer>

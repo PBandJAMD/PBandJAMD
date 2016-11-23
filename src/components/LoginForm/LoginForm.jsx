@@ -6,18 +6,16 @@ const LoginForm = props => (
 
     <input
       type="text"
-      value={props.username}
-      onChange={props.handleUpdateInput}
+      onChange={props.handleUsernameInput}
       placeholder="Enter username."
     />
-    <br/>
+    <br />
     <input
       type="text"
-      value={props.password}
-      onChange={props.handleUpdateInput}
+      onChange={props.handlePasswordInput}
       placeholder="Enter password."
     />
-    <br/>
+    <br />
     <button onClick={props.handleLogin}>Login</button>
 
   </div>

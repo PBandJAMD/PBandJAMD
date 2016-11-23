@@ -1,5 +1,7 @@
-import React from 'react';
-import './Aside.css';
+import React, { Component } from 'react';
+import style from './Aside.css';
+// import LoginForm from '../LoginForm/LoginForm';
+// import SignupForm from '../SignupForm/SignupForm';
 
  // function created for 'enter' key
 // function handleKeyPress(e, cb) {

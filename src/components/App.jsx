@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import LoginForm from './LoginForm/LoginForm.jsx';
 import SignupForm from './SignupForm/SignupForm.jsx';
+import Header from './Header/Header.jsx';
+import Main from './Main/Main.jsx';
 import './normalize.css';
 import './App.css';
 
@@ -51,10 +53,8 @@ class App extends Component {
   render() {
     return (
       <div id="app-container">
-        <header>
-
-        </header>
-
+        <Header/>
+        <Main />
         <LoginForm
           handleUsernameInput={event => this.handleUsernameInput(event)}
           handlePasswordInput={event => this.handlePasswordInput(event)}

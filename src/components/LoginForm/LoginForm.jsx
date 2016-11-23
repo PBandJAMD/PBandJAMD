@@ -1,13 +1,27 @@
-import React, { Component } from 'react';
-import style from './LoginForm.css';
+import React from 'react';
+import './LoginForm.css';
 
-export default class LoginForm extends Component {
+const LoginForm = props => (
+  <div>
 
-  render() {
-    return(
-      <div>
+    <input
+      type="text"
+      value={props.username}
+      onChange={props.handleUpdateInput}
+      placeholder="Enter username."
+    />
+    <br/>
+    <input
+      type="text"
+      value={props.password}
+      onChange={props.handleUpdateInput}
+      placeholder="Enter password."
+    />
+    <br/>
+    <button onClick={props.handleLogin}>Login</button>
 
-      </div>
-    )
-  }
-}
+  </div>
+);
+
+export default LoginForm;
+

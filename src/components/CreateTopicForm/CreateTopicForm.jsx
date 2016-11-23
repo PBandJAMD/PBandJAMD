@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import style from './CreateTopicForm.css';
+import './CreateTopicForm.css';
 
 export default class CreateTopicForm extends Component {
 

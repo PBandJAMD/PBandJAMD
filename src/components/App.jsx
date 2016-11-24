@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import LoginForm from './LoginForm/LoginForm.jsx';
 import SignupForm from './SignupForm/SignupForm.jsx';
 import Header from './Header/Header.jsx';
+import Footer from './Footer/Footer.jsx';
 import TopicContainer from './TopicContainer/TopicContainer.jsx';
+
 import './normalize.css';
 import './App.css';
+
 import Aside from './Aside/Aside.jsx';
 
 class App extends Component {
@@ -16,6 +19,7 @@ class App extends Component {
       password: '',
       currentPage: 0,
       topics: [],
+      currentTopic: 0,
     };
   }
 
@@ -71,26 +75,29 @@ class App extends Component {
     return (
       <div id="app-container">
         <Header />
-        <TopicContainer
-          topics={this.state.topics}
-        />
-        <LoginForm
-          handleUsernameInput={event => this.handleUsernameInput(event)}
-          handlePasswordInput={event => this.handlePasswordInput(event)}
-          handleLogin={() => this.handleLogin()}
-        />
 
-        <SignupForm
-          handleUsernameInput={event => this.handleUsernameInput(event)}
-          handlePasswordInput={event => this.handlePasswordInput(event)}
-          handleSignup={() => this.handleSignup()}
-        />
+        <div id="main-container">
+          <TopicContainer
+            topics={this.state.topics}
+          />
 
-        <Aside />
+           <LoginForm
+            handleUsernameInput={event => this.handleUsernameInput(event)}
+            handlePasswordInput={event => this.handlePasswordInput(event)}
+            handleLogin={() => this.handleLogin()}
+          />
 
-        <footer>
-          <h1>Damira Ibragimova, Jaemin Han, Mohamed Gassama, Alexander Tong</h1>
-        </footer>
+          <SignupForm
+            handleUsernameInput={event => this.handleUsernameInput(event)}
+            handlePasswordInput={event => this.handlePasswordInput(event)}
+            handleSignup={() => this.handleSignup()}
+          />
+
+          <Aside />
+          <Footer />
+
+        </div>
+
       </div>
     );
   }

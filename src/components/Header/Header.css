@@ -1,14 +1,18 @@
 #header-container {
   width: 100vw;
-  height: 200px;
-  background-color: black;
+  height: 20vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: navy;
 }
 
 #banana {
-  width: 10vw;
-  margin: 4vw;
+  width: 15vw;
 }
 
 h1 {
   color: white;
+  font-size: 10vw;
+  font-family: 'Cabin Sketch', cursive;
 }

@@ -6,9 +6,8 @@ const TopicContainer = props => {
   const topics = props.topics.map((topic) => {
     return (
       <TopicTemplate
-        // key={i}
         key={topic.id.toString()}
-        id={topic.id}
+        // id={topic.id}
         title={topic.title}
         content={topic.content}
         date_created={topic.date_created}

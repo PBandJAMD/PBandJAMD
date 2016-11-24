@@ -1,7 +1,11 @@
 const db = require('../lib/dbConnect.js');
 
 function getAllComment(req, res, next) {
-  db.any(`SELECT * FROM comment;`)
+  db.any(`SELECT *
+          FROM comment
+          INNER JOIN topic
+          ON comment.topic_id = topic.id
+          WHERE topic.id =;`)
   .then((comments) => {
     res.comments = comments;
     next();

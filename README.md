@@ -19,3 +19,7 @@ We want to make a forum application that allows users to post topics that they a
 
 ### Group Members
 Jaemin Han, Alexander Tong, Mohamed Gassama and Damira Ibragimova
+
+### Help used:
+1. https://scotch.io/tutorials/build-a-react-flux-app-with-user-authentication
+2. http://stackoverflow.com/questions/34184020/react-native-how-to-switch-page-without-using-navigatorios-component

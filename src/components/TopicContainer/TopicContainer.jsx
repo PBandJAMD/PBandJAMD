@@ -9,6 +9,7 @@ const TopicContainer = props => {
         key={topic.id.toString()}
         // id={topic.id}
         title={topic.title}
+        changeComponent={props.changeComponent}
         content={topic.content}
         date_created={topic.date_created}
         user_id={topic.user_id}

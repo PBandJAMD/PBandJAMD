@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../normalize.css';
 import style from './Comment.css';
 
 export default class Comment extends Component {

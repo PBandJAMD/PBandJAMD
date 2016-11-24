@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
-import style from './Header.css';
-// import Navbar from '../Navbar/Navbar';
+import React from 'react';
+import '../normalize.css';
+import './Header.css';
+import banana from './banana.gif';
 
-export default class Header extends Component {
+const Header = props => (
+  <div id="header-container">
 
-  render() {
-    return(
-      <div id="header-container">
-        <h1>PBandJAMD</h1>
-      </div>
-    )
-  }
-}
+    <img src={banana} alt="banana" id="banana" />
+    <h1>PB & JAMD Forum</h1>
+
+  </div>
+    );
+
+export default Header;

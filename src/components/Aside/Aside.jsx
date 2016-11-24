@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../normalize.css';
 import style from './Aside.css';
 // import LoginForm from '../LoginForm/LoginForm';
 // import SignupForm from '../SignupForm/SignupForm';

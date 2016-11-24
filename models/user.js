@@ -1,4 +1,4 @@
-const db = require('../db/db.js');
+const db = require('../lib/dbConnect.js');
 
 function createUser(req, res, next) {
   db.none(`INSERT INTO user (username, password)

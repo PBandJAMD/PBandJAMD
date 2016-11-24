@@ -1,4 +1,4 @@
-const db = require('../db/db.js');
+const db = require('../lib/dbConnect.js');
 
 // displaying all topics
 function getAllTopics(req, res, next) {

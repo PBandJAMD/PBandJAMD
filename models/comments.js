@@ -1,4 +1,4 @@
-const db = require('../db/db');
+const db = require('../lib/dbConnect.js');
 
 function getAllComment(req, res, next) {
   db.any(`SELECT * FROM comment;`)

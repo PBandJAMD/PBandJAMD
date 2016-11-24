@@ -1,14 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../normalize.css';
-import style from './Footer.css';
+import './Footer.css';
 
-export default class Footer extends Component {
+const Footer = props => (
+  <div id="footer-container">
+    <p>Some copyright here</p>
+  </div>
+);
 
-  render() {
-    return(
-      <div id="footer-container">
-        <p>Some copyright here</p>
-      </div>
-    )
-  }
-}
+export default Footer;

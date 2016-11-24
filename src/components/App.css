@@ -1,5 +1,10 @@
 #app-container {
   width: 100vw;
-  background-color: green;
+  background-color: black;
+}
+
+#main-container {
+  height: 80vh;
+  overflow: scroll;
 }
 

@@ -4,11 +4,11 @@ import SignupForm from './SignupForm/SignupForm.jsx';
 import Header from './Header/Header.jsx';
 import Footer from './Footer/Footer.jsx';
 import TopicContainer from './TopicContainer/TopicContainer.jsx';
+import CommentContainer from './CommentContainer/CommentContainer.jsx';
+import Aside from './Aside/Aside.jsx';
 
 import './normalize.css';
 import './App.css';
-
-import Aside from './Aside/Aside.jsx';
 
 class App extends Component {
   constructor() {
@@ -25,7 +25,7 @@ class App extends Component {
 
 // INITIAL FUNCTIONS
   componentDidMount() {
-    fetch('/topic')
+    fetch('/api/topic')
       .then(r => r.json())
       .then((topics) => {
         this.setState({
@@ -70,6 +70,23 @@ class App extends Component {
   }
 // END LOGIN FORM/SIGNUP FORM FUNCTIONS
 
+// TOGGLE FUNCTIONS
+// HELP TAKEN FROM LINK #2 IN README
+  changeComponent(x) {
+      this.setState({
+        currentPage: x,
+      });
+  }
+
+  renderComponent(component) {
+    if (component === 0) {
+      return <TopicContainer topics={this.state.topics} changeComponent={this.changeComponent.bind(this)} />;
+    } else if (component === 1) {
+      return <CommentContainer changeComponent={this.changeComponent.bind(this)} />
+    }
+  }
+
+// END TOGGLE FUNCTIONS
 
   render() {
     return (
@@ -77,25 +94,8 @@ class App extends Component {
         <Header />
 
         <div id="main-container">
-          <TopicContainer
-            topics={this.state.topics}
-          />
-
-           <LoginForm
-            handleUsernameInput={event => this.handleUsernameInput(event)}
-            handlePasswordInput={event => this.handlePasswordInput(event)}
-            handleLogin={() => this.handleLogin()}
-          />
-
-          <SignupForm
-            handleUsernameInput={event => this.handleUsernameInput(event)}
-            handlePasswordInput={event => this.handlePasswordInput(event)}
-            handleSignup={() => this.handleSignup()}
-          />
-
-          <Aside />
+          {this.renderComponent(this.state.currentPage)}
           <Footer />
-
         </div>
 
       </div>

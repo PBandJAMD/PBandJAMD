@@ -4,9 +4,9 @@ DROP TABLE IF EXISTS comment;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
-  username VARCHAR(255) NOT NULL,
-  password VARCHAR(255) NOT NULL,
-  date_created TIMESTAMP NOT NULL DEFAULT NOW()
+  username VARCHAR NOT NULL UNIQUE,
+  password VARCHAR NOT NULL,
+  date_created TIMESTAMP DEFAULT current_timestamp
 );
 
 CREATE TABLE topic (

@@ -1,0 +1,10 @@
+<LoginForm
+  handleUsernameInput={event => this.handleUsernameInput(event)}
+  handlePasswordInput={event => this.handlePasswordInput(event)}
+  handleLogin={() => this.handleLogin()}
+/>
+<SignupForm
+  handleUsernameInput={event => this.handleUsernameInput(event)}
+  handlePasswordInput={event => this.handlePasswordInput(event)}
+  handleSignup={() => this.handleSignup()}
+/>

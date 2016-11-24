@@ -20,6 +20,7 @@ class App extends Component {
       currentPage: 0,
       topics: [],
       currentTopic: 0,
+      sidebar: false,
     };
   }
 
@@ -88,15 +89,36 @@ class App extends Component {
 
 // END TOGGLE FUNCTIONS
 
+// BEGIN ASIDE FUNCTIONS
+changeSidebar(x) {
+  this.setState({
+    sidebar: !this.state.sidebar,
+  });
+}
+
+renderSidebar(sidebar) {
+  if (sidebar === true) {
+    return <Aside sidebar="sidebarOpen" handleUsernameInput={event => this.handleUsernameInput(event)} handlePasswordInput={event => this.handlePasswordInput(event)} handleLogin={() => this.handleLogin()} />;
+  } else if (sidebar === false) {
+    return <Aside sidebar="sidebarClosed" handleUsernameInput={event => this.handleUsernameInput(event)} handlePasswordInput={event => this.handlePasswordInput(event)} handleLogin={() => this.handleLogin()} />;
+  }
+}
+// END ASIDE FUNCTIONS
+
   render() {
     return (
       <div id="app-container">
         <Header />
 
+        <button onClick={this.changeSidebar.bind(this)} >Click me</button>
+
+        {this.renderSidebar(this.state.sidebar)}
+
         <div id="main-container">
           {this.renderComponent(this.state.currentPage)}
-          <Footer />
         </div>
+
+        <Footer />
 
       </div>
     );

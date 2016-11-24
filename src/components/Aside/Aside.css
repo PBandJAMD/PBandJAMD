@@ -14,15 +14,23 @@ h3 {
   color: white;
 }
 
-.toggle {
-  background: tomato;
-  width: 32vw;
-  height: 74vh;
-  position: fixed;
-  bottom: -74vh;
-  right: 20px;
-  transition: bottom 0.5s ease-in-out;
+#sidebarClosed {
+  position: absolute;
+  background-color: white;
   z-index: 1;
+  left: -20vw;
+  width: 20vw;
+  height: 80vh;
+  transition: left 1s ease-in-out;
+}
+
+#sidebarOpen {
+  background-color: white;
+  z-index: 1;
+  left: 0;
+  width: 20vw;
+  height: 80vh;
+  transition: right 1s linear;
 }
 
 .toggle:target {

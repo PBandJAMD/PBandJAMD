@@ -1,0 +1,14 @@
+#header-container {
+  width: 100vw;
+  height: 200px;
+  background-color: black;
+}
+
+#banana {
+  width: 10vw;
+  margin: 4vw;
+}
+
+h1 {
+  color: white;
+}

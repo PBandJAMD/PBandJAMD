@@ -1,47 +1,27 @@
-import React, { Component } from 'react';
-import './TopicContainer.css';
+import React from 'react';
 import TopicTemplate from '../TopicTemplate/TopicTemplate.jsx';
+import './TopicContainer.css';
 
-class TopicContainer extends Component {
-  constructor() {
-    super();
-    this.state = {
-      topics: [],
-    };
-  }
-
-  getAllTopics() {
-    fetch('/topic')
-    .then(r => r.json())
-    .then((topics) => {
-      this.setState({
-        topics: topics,
-      });
-    })
-    .catch(err => console.log('getAllTopics', err))
-  }
-
-  showAllTopics() {
-    return this.state.topics.map(topic =>
+const TopicContainer = props => {
+  const topics = props.topics.map((topic) => {
+    return (
       <TopicTemplate
+        // key={i}
+        key={topic.id.toString()}
+        id={topic.id}
         title={topic.title}
         content={topic.content}
         date_created={topic.date_created}
         user_id={topic.user_id}
       />
     );
-  }
+  });
 
-  render() {
-    return (
-      <div className="main-container">
-
-        {this.showAllTopics()}
-
-
-      </div>
-    );
-  }
-}
+  return (
+    <div id="topics-container">
+      {topics}
+    </div>
+  );
+};
 
 export default TopicContainer;

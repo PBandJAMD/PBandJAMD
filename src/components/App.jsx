@@ -5,7 +5,6 @@ import Header from './Header/Header.jsx';
 import TopicContainer from './TopicContainer/TopicContainer.jsx';
 import './normalize.css';
 import './App.css';
-import Main from './Main/Main.jsx';
 import Aside from './Aside/Aside.jsx';
 
 class App extends Component {
@@ -13,11 +12,25 @@ class App extends Component {
     super();
 
     this.state = {
-      username: [],
-      password: [],
+      username: '',
+      password: '',
       currentPage: 0,
+      topics: [],
     };
   }
+
+// INITIAL FUNCTIONS
+  componentDidMount() {
+    fetch('/topic')
+      .then(r => r.json())
+      .then((topics) => {
+        this.setState({
+          topics: topics,
+        });
+      })
+      .catch(err => console.log('getAllTopics', err));
+  }
+// END INITIAL FUNCTIONS
 
 // BEGIN LOGIN FORM/SIGNUP FORM FUNCTIONS
   handleUsernameInput(e) {
@@ -43,7 +56,7 @@ class App extends Component {
       .catch(err => console.log('Error: ',err));
   }
 
-   handleSignup(e) {
+  handleSignup(e) {
       fetch(`http://www.omdbapi.com/?s=batman`)
       .then(r => r.json())
       .then((data) => {
@@ -53,11 +66,14 @@ class App extends Component {
   }
 // END LOGIN FORM/SIGNUP FORM FUNCTIONS
 
+
   render() {
     return (
       <div id="app-container">
         <Header />
-        <TopicContainer />
+        <TopicContainer
+          topics={this.state.topics}
+        />
         <LoginForm
           handleUsernameInput={event => this.handleUsernameInput(event)}
           handlePasswordInput={event => this.handlePasswordInput(event)}
@@ -70,9 +86,7 @@ class App extends Component {
           handleSignup={() => this.handleSignup()}
         />
 
-        <Aside
-
-        />
+        <Aside />
 
         <footer>
           <h1>Damira Ibragimova, Jaemin Han, Mohamed Gassama, Alexander Tong</h1>

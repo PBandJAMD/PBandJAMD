@@ -3,7 +3,7 @@ const user = express.Router();
 
 //connecting to 'topics' model
 //do we need  updateTopic as well?
-const { getAllTopics, addTopic, editTopic, deleteTopic } = require('../../models/user');
+const { getAllTopics, addTopic, editTopic, deleteTopic } = require('../../models/topics');
 
 //connecting to 'comments' model
 const dbComments = require('../../models/comments');

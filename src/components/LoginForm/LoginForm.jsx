@@ -1,4 +1,5 @@
 import React from 'react';
+import '../normalize.css';
 import './LoginForm.css';
 
 const LoginForm = props => (

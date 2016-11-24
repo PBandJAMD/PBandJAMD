@@ -12,7 +12,7 @@ CREATE TABLE users (
 CREATE TABLE topic (
   id SERIAL PRIMARY KEY,
   title VARCHAR(255) NOT NULL,
-  content text NOT NUll,
+  content text NOT NULL,
   user_id INT,
   date_created TIMESTAMP NOT NULL DEFAULT NOW()
 );

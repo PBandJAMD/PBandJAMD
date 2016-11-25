@@ -3,21 +3,30 @@ import '../normalize.css';
 import './LoginForm.css';
 
 const LoginForm = props => (
-  <div>
+  //div class containining user login and password
+  <div className="login-form-container">
+    <p>- Login In -</p>
 
     <input
-      type="text"
-      onChange={props.handleUsernameInput}
-      placeholder="Enter username."
+    type="text"
+    onChange={props.handleUsernameInput}
+    placeholder="Username"
     />
+
     <br />
+    <br />
+
     <input
-      type="text"
+      type="password"
       onChange={props.handlePasswordInput}
-      placeholder="Enter password."
+      placeholder="Password"
     />
     <br />
+    <br />
+
+  <div className="login-button">
     <button onClick={props.handleLogin}>Login</button>
+  </div>
 
   </div>
 );

@@ -110,7 +110,9 @@ renderSidebar(sidebar) {
       <div id="app-container">
         <Header />
 
-        <button onClick={this.changeSidebar.bind(this)} >Click me</button>
+        <div className="sidebar-submit">
+          <button onClick={this.changeSidebar.bind(this)} >Sign In || Register</button>
+        </div>
 
 
         <div id="main-container">

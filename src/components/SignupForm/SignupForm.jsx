@@ -3,21 +3,28 @@ import '../normalize.css';
 import './SignupForm.css';
 
 const SignupForm = props => (
-  <div>
-
+  <div className="login-container">
+    <p>- Sign Up -</p>
     <input
       type="text"
       onChange={props.handleUsernameInput}
-      placeholder="Make a username!"
+      placeholder="Username"
     />
+
     <br />
+    <br />
+
     <input
-      type="text"
+      type="Password"
       onChange={props.handlePasswordInput}
-      placeholder="Make a password!"
+      placeholder="Password"
     />
     <br />
-    <button onClick={props.handleSignup}>Sign up!</button>
+    <br />
+
+    <div className="sign-button">
+      <button onClick={props.handleSignup}>Sign up!</button>
+    </div>
 
   </div>
   );

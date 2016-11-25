@@ -12,7 +12,7 @@ function getAllTopics(req, res, next) {
 
 // adding one topic
 function addTopic(req, res, next) {
-  db.one(`INSERT INTO topic (title, content)
+  db.none(`INSERT INTO topic (title, content)
           VALUES ($1, $2);`, [req.body.title, req.body.content])
     .then(next())
     .catch(err => next(err));

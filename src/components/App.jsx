@@ -19,6 +19,7 @@ class App extends Component {
       password: '',
       currentPage: 0,
       topics: [],
+      comments: [],
       currentTopic: 0,
       sidebar: 'hidden',
 
@@ -48,6 +49,25 @@ class App extends Component {
   }
 // END INITIAL FUNCTIONS
 
+
+
+  //JH getting comment(s) based on specific id
+  getComment(id) {
+    fetch(`/api/comment/${id}`, {
+      method: 'GET'
+    })
+    .then(r => r.json())
+    .then((comments) => {
+      this.setState({
+        comments: comments,
+      });
+    })
+    .catch(err => console.log('getComment', err));
+  }
+
+
+// BEGIN AUTH FUNCTIONS
+  login() {
 // BEGIN LOGIN FORM FUNCTIONS *TAKEN FROM BOBBY KING'S REACT PUPPIES SOLUTION WITH AUTH*
   onSuccessfulLogIn(a,b) {
     console.log(a,b);
@@ -154,7 +174,7 @@ class App extends Component {
     if (component === 0) {
       return <TopicContainer topics={this.state.topics} changeComponent={this.changeComponent.bind(this)} />;
     } else if (component === 1) {
-      return <CommentContainer changeComponent={this.changeComponent.bind(this)} />
+      return <CommentContainer comments={this.state.comments} changeComponent={this.changeComponent.bind(this)} />
     }
   }
 

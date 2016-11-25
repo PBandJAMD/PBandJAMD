@@ -114,7 +114,6 @@ renderSidebar(sidebar) {
           <button onClick={this.changeSidebar.bind(this)} >Sign In || Register</button>
         </div>
 
-        {this.renderSidebar(this.state.sidebar)}
 
         <div id="main-container">
           {this.renderComponent(this.state.currentPage)}

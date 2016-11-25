@@ -2,17 +2,18 @@
   width: 100vw;
   height: 10vh;
   display: flex;
-  justify-content: space-around;
+ /* justify-content: space-around;*/
   align-items: center;
   background-color: navy;
 }
 
 #banana {
-  width: 15vw;
+  width: 7vw;
+  height: 5vh;
 }
 
 h1 {
   color: white;
-  font-size: 10vw;
+  font-size: 5vw;
   font-family: 'Cabin Sketch', cursive;
 }

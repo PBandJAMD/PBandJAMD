@@ -1,102 +1,31 @@
-
-.box {
-  width: 95vw;
-  height: 15vh;
-  border: 2px solid black;
-  margin: 20px 5px;
-}
-
-h3 {
-  font-size: 20px;
-  margin: 0;
-  text-align: center;
-  margin-bottom: 15px;
-  color: white;
-}
-
 #sidebarClosed {
   position: absolute;
-  background-color: white;
-  z-index: 1;
-  left: -20vw;
-  width: 20vw;
+  background-color: #FAEBD7;
+  z-index: 5;
+  left: -30vw;
+  width: 30vw;
   height: 80vh;
   transition: left 1s ease-in-out;
 }
 
 #sidebarOpen {
-  background-color: white;
-  z-index: 1;
-  left: 0;
-  width: 20vw;
-  height: 80vh;
-  transition: right 1s linear;
-}
-
-.toggle:target {
-  bottom: 0;
-}
-
-.sign-button {
-  text-decoration: none;
-  color: white;
-  background-color: #FF7F50;
-  height: 30px;
-  line-height: 30px;
-  padding: 0 10px;
-  display: block;
   position: absolute;
-  top: -30px;
-  right: 20px;
+  background-color: #FAEBD7;
+  z-index: 5;
+  left: 0;
+  width: 30vw;
+  height: 80vh;
+  transition: right 1s;
 }
 
-#log-in {
-  padding: 7vh 7vw;
+#sidebar {
+  display: flex;
+  justify-content: center;
+/*  align-content: space-between;*/
+  flex-wrap: wrap;
+  height: 60vh;
+  margin-top: 65px;
 }
 
-.label {
-  margin-bottom: 17px;
-  color: white;
-}
-
-.label > input[type="text"],
-.label > textarea {
-  font-size: 15px;
-  color: black;
-  width: 66%;
-  padding: 5px;
-  border: none;
-  outline: none;
-  box-sizing: border-box;
-  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-input[type="password"] {
-  width: 10vw;
-}
-
-.label > textarea {
-  resize: none;
-}
-
-.bt {
-  font-size: 15px;
-  color: black;
-  background: #e8e8e8;
-  display: inline-block;
-  border: none;
-  outline: none;
-  padding: 8px 12px;
-  text-decoration: none;
-}
-
-.bt.click {
-  color: white;
-  background:   #6495ED;
-}
-
-.button-position {
-  text-align: right;
-}
 
 

@@ -1,14 +1,17 @@
-#sidebarClosed {
-  position: absolute;
-  background-color: #FAEBD7;
-  z-index: 5;
+#hidden {
   left: -30vw;
   width: 30vw;
   height: 80vh;
+  position: absolute;
+  background-color: #FAEBD7;
+  z-index: 5;
   transition: left 1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-#sidebarOpen {
+#show {
   position: absolute;
   background-color: #FAEBD7;
   z-index: 5;
@@ -16,16 +19,19 @@
   width: 30vw;
   height: 80vh;
   transition: left 1s ease-in;
-}
-
-#sidebar {
   display: flex;
   justify-content: center;
-/*  align-content: space-between;*/
+  flex-wrap: wrap;
+}
+
+/*#sidebar {
+  display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   height: 60vh;
   margin-top: 65px;
+  background-color: white;
 }
-
+*/
 
 

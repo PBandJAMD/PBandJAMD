@@ -15,14 +15,24 @@ class App extends Component {
     super();
 
     this.state = {
-      authenticated: false,
       username: '',
       password: '',
       currentPage: 0,
       topics: [],
       comments: [],
       currentTopic: 0,
-      sidebar: false,
+      sidebar: 'hidden',
+
+      signup: {
+        username: '',
+        password: '',
+      },
+      login: {
+        loggedIn: false,
+        username: '',
+        password: '',
+      },
+
     };
   }
 
@@ -40,6 +50,7 @@ class App extends Component {
 // END INITIAL FUNCTIONS
 
 
+
   //JH getting comment(s) based on specific id
   function getComment(id) {
     fetch(`/api/comment/${id}`, {
@@ -55,59 +66,104 @@ class App extends Component {
   }
 
 
-
-
 // BEGIN AUTH FUNCTIONS
   login() {
-      // AuthActions.logUserOut();
-    this.setState({
-      authenticated: true,
-    });
+// BEGIN LOGIN FORM FUNCTIONS *TAKEN FROM BOBBY KING'S REACT PUPPIES SOLUTION WITH AUTH*
+  onSuccessfulLogIn(a,b) {
+    console.log(a,b);
   }
 
-  logout() {
-    this.setState({
-      authenticated: false,
-    });
-  }
-// END AUTH FUNCTIONS
-
-// BEGIN LOGIN FORM/SIGNUP FORM FUNCTIONS
-  handleUsernameInput(e) {
-    this.setState({
-      username: e.target.value,
-    });
-  }
-
-  handlePasswordInput(e) {
-    this.setState({
-      password: e.target.value,
-    });
-  }
-
-  handleLogin(e) {
-      fetch(`http://www.omdbapi.com/?s=batman`)
-      .then(r => r.json())
-      .then((data) => {
-        console.log("hello");
-        // this.setState({
-        // });
-      })
-      .catch(err => console.log('Error: ',err));
+  handleSignUp() {
+    fetch('/api/user', {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify({
+        username: this.state.signup.username,
+        password: this.state.signup.password,
+      }),
+    })
+    .then(this.setState({
+      signup: {
+        username: '',
+        password: '',
+      },
+    }))
+    .then(this.alertInfo('You have signed up!'))
+    .catch(err => console.log(err));
   }
 
-  handleSignup(e) {
-      fetch(`http://www.omdbapi.com/?s=batman`)
-      .then(r => r.json())
-      .then((data) => {
-        console.log("data");
-      })
-      .catch(err => console.log('Error: ',err));
+  handleLogIn() {
+    fetch('/api/auth', {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify({
+        username: this.state.login.username,
+        password: this.state.login.password,
+      }),
+    })
+    .then(this.setState({
+      login: {
+        username: '',
+        password: '',
+      },
+    }))
+    .then(this.onSuccessfulLogIn)
+    .catch(err => console.log(err));
+  }
+
+  alertInfo(msg) {
+    alert(msg);
   }
 // END LOGIN FORM/SIGNUP FORM FUNCTIONS
 
-// TOGGLE FUNCTIONS
-// HELP TAKEN FROM LINK #2 IN README
+// BEGIN FORM DISPLAY FUNCTIONS
+  updateFormSignUpUsername(e) {
+    this.setState({
+      signup: {
+        username: e.target.value,
+        password: this.state.signup.password,
+      },
+    });
+  }
+
+  updateFormSignUpPassword(e) {
+    this.setState({
+      signup: {
+        username: this.state.signup.username,
+        password: e.target.value,
+      },
+    });
+  }
+
+  updateFormLogInUsername(e) {
+    this.setState({
+      login: {
+        username: e.target.value,
+        password: this.state.login.password,
+      },
+    });
+  }
+
+  updateFormLogInPassword(e) {
+    this.setState({
+      login: {
+        username: this.state.login.username,
+        password: e.target.value,
+      },
+    });
+  }
+
+// END FORM DISPLAY FUNCTIONS
+
+
+
+
+// ALL TOGGLES
+// TOGGLE COMPONENT FUNCTIONS *HELP TAKEN FROM LINK #2 IN README*
   changeComponent(x) {
       this.setState({
         currentPage: x,
@@ -125,38 +181,50 @@ class App extends Component {
 // END TOGGLE FUNCTIONS
 
 // BEGIN ASIDE FUNCTIONS
-changeSidebar(x) {
-  this.setState({
-    sidebar: !this.state.sidebar,
-  });
-}
-
-renderSidebar(sidebar) {
-  if (sidebar === true) {
-    return <Aside sidebar="sidebarOpen" handleUsernameInput={event => this.handleUsernameInput(event)} handlePasswordInput={event => this.handlePasswordInput(event)} handleLogin={() => this.handleLogin()} />;
-  } else if (sidebar === false) {
-    return <Aside sidebar="sidebarClosed" handleUsernameInput={event => this.handleUsernameInput(event)} handlePasswordInput={event => this.handlePasswordInput(event)} handleLogin={() => this.handleLogin()} />;
+  changeSidebar() {
+    if (this.state.sidebar === 'hidden') {
+      this.setState({
+        sidebar: 'show',
+      });
+    } else if (this.state.sidebar === 'show') {
+      this.setState({
+        sidebar: 'hidden',
+      });
+    }
   }
-}
+  // changeSidebar() {
+  //   const css = (this.sidebar === 'hidden') ? 'show' : 'hidden';
+  //   this.setState({ sidebar: css });
+  // }
+
 // END ASIDE FUNCTIONS
 
   render() {
     return (
       <div id="app-container">
-        <Header />
+        <Header changeSidebar={this.changeSidebar.bind(this)} />
 
-        <div className="sidebar-submit">
-          <button onClick={this.changeSidebar.bind(this)} >Sign In || Register</button>
-        </div>
-
-        {this.renderSidebar(this.state.sidebar)}
+        <Aside
+        // SIGNUP
+          sidebar={this.state.sidebar}
+          signupUsername={this.state.signup.username}
+          updateSignupFormUsername={event => this.updateFormSignUpUsername(event)}
+          signupPassword={this.state.signup.password}
+          updateSignupFormPassword={event => this.updateFormSignUpPassword(event)}
+          handleSignupFormSubmit={() => this.handleSignUp()}
+          // LOGIN
+          className={this.state.login.loggedIn ? 'hidden' : ''}
+          loginUsername={this.state.login.username}
+          loginPassword={this.state.login.password}
+          updateLoginFormUsername={event => this.updateFormLogInUsername(event)}
+          updateLoginFormPassword={event => this.updateFormLogInPassword(event)}
+          handleLoginFormSubmit={() => this.handleLogIn()}
+        />
 
         <div id="main-container">
           {this.renderComponent(this.state.currentPage)}
         </div>
-
         <Footer />
-
       </div>
     );
   }

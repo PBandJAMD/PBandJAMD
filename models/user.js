@@ -33,20 +33,17 @@ function createUser(req, res, next) { // makes a new user upon signup page
 //     });
 
 
-
 //     return promise;
 //   };
 // }
 
 // function getUserByUsername(username) {
-//   return getDB().then((db) => {
+//   return db.then((db) => {
 //     const promise = new Promise((resolve, reject) => {
-//       db.collection('users')
-//         .findOne({ username }, (findError, user) => {
-//           if (findError) reject(findError);
-//           db.close();
-//           resolve(user);
-//         });
+//       db.one('SELECT * FROM users WHERE username = $1', [username]), (findError, user) => {
+//         if (findError) reject(findError);
+//         resolve(user);
+//       };
 //     });
 //     return promise;
 //   });

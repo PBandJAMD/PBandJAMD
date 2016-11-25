@@ -17,9 +17,9 @@ authRoute.post('/', logIn, (req, res) => {
 });
 
 // Logout by assigning null to the userId in the session
-authRoute.delete('/', (req, res) => {
-  req.session.userId = null;
-  res.redirect('/');
-});
+// authRoute.delete('/', (req, res) => {
+//   req.session.userId = null;
+//   res.redirect('/');
+// });
 
 module.exports = authRoute;

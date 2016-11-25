@@ -7,7 +7,7 @@ const TopicContainer = props => {
     return (
       <TopicTemplate
         key={topic.id.toString()}
-        // id={topic.id}
+        id={topic.id}
         title={topic.title}
         changeComponent={props.changeComponent}
         content={topic.content}

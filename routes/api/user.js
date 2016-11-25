@@ -10,7 +10,7 @@ const userRoute  = express.Router();
  * It uses the createUser middleware from the user model
  */
 
-userRoute.get('/', (req, res) => { // ROUTE TO CREATE A NEW USER UPON LOGIN
+userRoute.get('/', (req, res) => {
   res.send('hi');
 });
 

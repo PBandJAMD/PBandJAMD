@@ -40,17 +40,23 @@ function createUser(req, res, next) { // makes a new user upon signup page
 // function getUserByUsername(username) {
 //   return db.then((db) => {
 //     const promise = new Promise((resolve, reject) => {
-//       db.one('SELECT * FROM users WHERE username = $1', [username]), (findError, user) => {
+//       db.one('SELECT * FROM users WHERE username = $1', [username])
+//       .then ((findError, user) => {
 //         if (findError) reject(findError);
 //         resolve(user);
-//       };
+//       });
 //     });
 //     return promise;
 //   });
 // }
 
+function getUserByUsername(username) {
+  return db.one('SELECT * FROM users WHERE username = $1', [username]);
+}
+
+
 module.exports = {
   createUser,
   // getUserById,
-  // getUserByUsername,
+  getUserByUsername,
 };

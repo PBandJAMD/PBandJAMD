@@ -12,10 +12,11 @@ const db = require('../lib/dbConnect.js');
 // }
 
 function getComments(req, res, next) {
-  db.any(`SELECT topic.title, topic.content, comment.body
+  db.any(`SELECT *
           FROM topic
           LEFT JOIN comment
-          ON topic.id = comment.topic_id;
+          ON topic.id = comment.topic_id
+          WHERE topic.id= $1;
           `, [req.params.id])
   .then((comments) => {
     res.comments = comments;

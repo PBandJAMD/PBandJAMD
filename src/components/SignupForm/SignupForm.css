@@ -1,5 +1,4 @@
-.login-container {
-  display: inline;
+.signup-container {
 }
 
 p {
@@ -7,8 +6,8 @@ p {
 }
 
 .sign-button {
-  display: flex;
-  justify-content: center;
+  /*display: flex;*/
+  /*justify-content: center;*/
 }
 
 
@@ -16,7 +15,7 @@ p {
   background-color: #4CAF50;
   border: none;
   color: white;
-  padding: 10px 30px;
+/*  padding: 10px 30px;*/
   text-align: center;
   text-decoration: none;
   display: inline-block;

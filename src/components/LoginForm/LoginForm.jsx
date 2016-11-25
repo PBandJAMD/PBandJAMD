@@ -5,28 +5,22 @@ import './LoginForm.css';
 const LoginForm = props => (
   //div class containining user login and password
   <div className="login-form-container">
-    <p>- Login In -</p>
 
     <input
-    type="text"
-    onChange={props.handleUsernameInput}
-    placeholder="Username"
+      type="text"
+      placeholder="email"
+      value={props.loginUsername}
+      onChange={props.updateLoginFormUsername}
     />
-
-    <br />
-    <br />
-
     <input
       type="password"
-      onChange={props.handlePasswordInput}
-      placeholder="Password"
+      placeholder="password"
+      value={props.loginPassword}
+      onChange={props.updateLoginFormPassword}
     />
-    <br />
-    <br />
-
-  <div className="login-button">
-    <button onClick={props.handleLogin}>Login</button>
-  </div>
+    <button onClick={props.handleLoginFormSubmit}>
+      Log In!
+    </button>
 
   </div>
 );

@@ -1,5 +1,6 @@
 #footer-container {
   width: 100vw;
   height: 10vh;
+  margin: 0;
   background-color: navy;
 }

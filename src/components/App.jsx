@@ -52,7 +52,7 @@ class App extends Component {
 
 
   //JH getting comment(s) based on specific id
-  function getComment(id) {
+  getComment(id) {
     fetch(`/api/comment/${id}`, {
       method: 'GET'
     })
@@ -174,7 +174,7 @@ class App extends Component {
     if (component === 0) {
       return <TopicContainer topics={this.state.topics} changeComponent={this.changeComponent.bind(this)} />;
     } else if (component === 1) {
-      return <CommentContainer changeComponent={this.changeComponent.bind(this)} />
+      return <CommentContainer comments={this.state.comments} changeComponent={this.changeComponent.bind(this)} />
     }
   }
 

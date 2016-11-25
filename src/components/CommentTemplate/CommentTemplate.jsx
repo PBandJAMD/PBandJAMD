@@ -1,5 +1,4 @@
 import React from 'react';
-import CommentTemplateId from '../CommentTemplateId/CommentTemplateId.jsx';
 import '../normalize.css';
 import './CommentTemplate.css';
 

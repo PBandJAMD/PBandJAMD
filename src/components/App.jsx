@@ -54,7 +54,7 @@ class App extends Component {
       fetch(`http://www.omdbapi.com/?s=batman`)
       .then(r => r.json())
       .then((data) => {
-        console.log(data);
+        console.log("hello");
         // this.setState({
         // });
       })
@@ -65,7 +65,7 @@ class App extends Component {
       fetch(`http://www.omdbapi.com/?s=batman`)
       .then(r => r.json())
       .then((data) => {
-        console.log(data);
+        console.log("data");
       })
       .catch(err => console.log('Error: ',err));
   }
@@ -114,6 +114,7 @@ renderSidebar(sidebar) {
           <button onClick={this.changeSidebar.bind(this)} >Sign In || Register</button>
         </div>
 
+        {this.renderSidebar(this.state.sidebar)}
 
         <div id="main-container">
           {this.renderComponent(this.state.currentPage)}

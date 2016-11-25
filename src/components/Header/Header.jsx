@@ -8,6 +8,7 @@ const Header = props => (
   <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet" />
     <img src={banana} alt="banana" id="banana" />
     <h1>PB & JAMD Forum</h1>
+    <button onClick={props.changeSidebar}>Login/Signup</button>
   </div>
     );
 

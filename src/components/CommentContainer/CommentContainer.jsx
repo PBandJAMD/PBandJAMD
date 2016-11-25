@@ -2,7 +2,7 @@ import React from 'react';
 import CommentTemplate from '../CommentTemplate/CommentTemplate.jsx';
 import './CommentContainer.css';
 
-const CommentContainer = props => (
+const CommentContainer = props => {
  const comments = props.comments.map((comment) => {
     return (
       <CommentTemplate
@@ -22,6 +22,6 @@ const CommentContainer = props => (
       {comments}
     </div>
   );
-
+};
 
 export default CommentContainer;

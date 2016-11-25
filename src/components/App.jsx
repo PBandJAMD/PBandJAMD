@@ -58,6 +58,7 @@ class App extends Component {
     })
     .then(r => r.json())
     .then((comments) => {
+    console.log(comments);
       this.setState({
         comments: comments,
       });
@@ -67,57 +68,58 @@ class App extends Component {
 
 
 // BEGIN AUTH FUNCTIONS
-  login() {
+  // login() {
 // BEGIN LOGIN FORM FUNCTIONS *TAKEN FROM BOBBY KING'S REACT PUPPIES SOLUTION WITH AUTH*
-  onSuccessfulLogIn(a,b) {
-    console.log(a,b);
-  }
+//   onSuccessfulLogIn(a,b) {
+//     console.log(a,b);
+//   }
 
-  handleSignUp() {
-    fetch('/api/user', {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
-      body: JSON.stringify({
-        username: this.state.signup.username,
-        password: this.state.signup.password,
-      }),
-    })
-    .then(this.setState({
-      signup: {
-        username: '',
-        password: '',
-      },
-    }))
-    .then(this.alertInfo('You have signed up!'))
-    .catch(err => console.log(err));
-  }
+//   handleSignUp() {
+//     fetch('/api/user', {
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       method: 'POST',
+//       body: JSON.stringify({
+//         username: this.state.signup.username,
+//         password: this.state.signup.password,
+//       }),
+//     })
+//     .then(this.setState({
+//       signup: {
+//         username: '',
+//         password: '',
+//       },
+//     }))
+//     .then(this.alertInfo('You have signed up!'))
+//     .catch(err => console.log(err));
+//   }
 
-  handleLogIn() {
-    fetch('/api/auth', {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
-      body: JSON.stringify({
-        username: this.state.login.username,
-        password: this.state.login.password,
-      }),
-    })
-    .then(this.setState({
-      login: {
-        username: '',
-        password: '',
-      },
-    }))
-    .then(this.onSuccessfulLogIn)
-    .catch(err => console.log(err));
-  }
+//   handleLogIn() {
+//     fetch('/api/auth', {
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       method: 'POST',
+//       body: JSON.stringify({
+//         username: this.state.login.username,
+//         password: this.state.login.password,
+//       }),
+//     })
+//     .then(this.setState({
+//       login: {
+//         username: '',
+//         password: '',
+//       },
+//     }))
+//     .then(this.onSuccessfulLogIn)
+//     .catch(err => console.log(err));
+//   }
 
-  alertInfo(msg) {
-    alert(msg);
-  }
+//   alertInfo(msg) {
+//     alert(msg);
+//   }
+// }
 // END LOGIN FORM/SIGNUP FORM FUNCTIONS
 
 // BEGIN FORM DISPLAY FUNCTIONS

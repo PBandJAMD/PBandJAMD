@@ -25,3 +25,5 @@ CREATE TABLE comment (
   date_created TIMESTAMP NOT NULL DEFAULT NOW()
 );
 
+
+

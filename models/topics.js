@@ -5,7 +5,7 @@ function getAllTopics(req, res, next) {
   db.any('SELECT * FROM topic;')
     .then((topics) => {
       res.topics = topics;
-      console.log(res.topics);
+
       next();
     });
 }

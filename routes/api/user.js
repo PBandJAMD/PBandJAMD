@@ -4,16 +4,16 @@ const express      = require('express');
 const { createUser }    = require('../../models/user.js');
 const { authenticate }   = require('../../lib/auth.js');
 
-const usersRouter  = express.Router();
+const userRoute  = express.Router();
 /**
  * Creates a new user by handling the POST request from a form with action `/users`
  * It uses the createUser middleware from the user model
  */
 
 
-// usersRouter.post('/', createUser, (req, res) => { // ROUTE TO CREATE A NEW USER UPON LOGIN
-//   res.redirect('/login');
-// });
+userRoute.post('/', createUser, (req, res) => { // ROUTE TO CREATE A NEW USER UPON LOGIN
+  res.redirect('/login');
+});
 
 /**
  * Takes the user to its profile by handling any GET request to `/users/profile`
@@ -22,7 +22,7 @@ const usersRouter  = express.Router();
  */
 
 
-// usersRouter.get('/profile', authenticate, getMyListings, getMyFavorites, (req, res) => { // ROUTE TO GRAB PROFILE AND FILL OUT WITH USER SELLING LISTINGS AND FAVORITE BUY LISTINGS
+// userRoute.get('/profile', authenticate, (req, res) => { // ROUTE TO GRAB PROFILE AND FILL OUT WITH USER SELLING LISTINGS AND FAVORITE BUY LISTINGS
 //   res.render('users/profile', {
 //     user: res.user,
 //     myListings: res.myListings || [],
@@ -31,4 +31,4 @@ const usersRouter  = express.Router();
 // });
 
 
-module.exports = usersRouter;
+module.exports = userRoute;

@@ -1,14 +1,14 @@
 const express = require('express');
-const topic = express.Router();
+const topicRoute = express.Router();
 const { getAllTopics, addTopic, editTopic, deleteTopic } = require('../../models/topics.js');
 const sendJSONresp = (req, res) => res.json(res.topics || []);
 
-topic.route('/')
+topicRoute.route('/')
    .get(getAllTopics, sendJSONresp)
    .post(addTopic, sendJSONresp);
 
-topic.route('/:id')
+topicRoute.route('/:id')
    .put(editTopic, deleteTopic)
    .delete(deleteTopic, sendJSONresp);
 
-module.exports = topic;
+module.exports = topicRoute;

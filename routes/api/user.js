@@ -2,7 +2,7 @@
 
 const express      = require('express');
 const { createUser }    = require('../../models/user.js');
-const { authenticate }   = require('../../lib/auth.js');
+// const { authenticate }   = require('../../lib/auth.js');
 
 const userRoute  = express.Router();
 /**
@@ -10,9 +10,12 @@ const userRoute  = express.Router();
  * It uses the createUser middleware from the user model
  */
 
+userRoute.get('/', (req, res) => { // ROUTE TO CREATE A NEW USER UPON LOGIN
+  res.send('hi');
+});
 
 userRoute.post('/', createUser, (req, res) => { // ROUTE TO CREATE A NEW USER UPON LOGIN
-  res.redirect('/login');
+  res.send('user added');
 });
 
 /**
@@ -20,8 +23,6 @@ userRoute.post('/', createUser, (req, res) => { // ROUTE TO CREATE A NEW USER UP
  * It redirects to /login when attempted to be reached by a non logged in user
  * It is "protected" by the authenticate middleware from the auth library
  */
-
-
 // userRoute.get('/profile', authenticate, (req, res) => { // ROUTE TO GRAB PROFILE AND FILL OUT WITH USER SELLING LISTINGS AND FAVORITE BUY LISTINGS
 //   res.render('users/profile', {
 //     user: res.user,

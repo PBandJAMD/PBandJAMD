@@ -15,7 +15,7 @@
   left: 0;
   width: 30vw;
   height: 80vh;
-  transition: right 1s;
+  transition: left 1s ease-in;
 }
 
 #sidebar {

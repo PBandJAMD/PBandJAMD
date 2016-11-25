@@ -15,6 +15,7 @@ class App extends Component {
     super();
 
     this.state = {
+      authenticated: false,
       username: '',
       password: '',
       currentPage: 0,
@@ -36,6 +37,21 @@ class App extends Component {
       .catch(err => console.log('getAllTopics', err));
   }
 // END INITIAL FUNCTIONS
+
+// BEGIN AUTH FUNCTIONS
+  login() {
+      // AuthActions.logUserOut();
+    this.setState({
+      authenticated: true,
+    });
+  }
+
+  logout() {
+    this.setState({
+      authenticated: false,
+    });
+  }
+// END AUTH FUNCTIONS
 
 // BEGIN LOGIN FORM/SIGNUP FORM FUNCTIONS
   handleUsernameInput(e) {

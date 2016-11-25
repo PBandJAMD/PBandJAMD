@@ -33,7 +33,8 @@ INSERT INTO comment (id, body, topic_id, user_id) VALUES
   (7, 'After the social network failed', 6, 6),
   (8, 'Russia’s communications regulator', 7, 7),
   (9, 'show might soon have some competition', 9, 9),
-  (10, 'But they were not big fans,', 10, 10);
+  (10, 'But they were not big fans,', 10, 10),
+  (11, 'Try this way!', 1, 10);
 
 ALTER SEQUENCE users_id_seq RESTART WITH 11;
 ALTER SEQUENCE comment_id_seq RESTART WITH 11;

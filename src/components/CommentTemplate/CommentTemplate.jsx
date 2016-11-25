@@ -1,13 +1,14 @@
 import React from 'react';
+import CommentTemplateId from '../CommentTemplateId/CommentTemplateId.jsx';
 import '../normalize.css';
 import './CommentTemplate.css';
 
 const CommentTemplate = props => (
   <div className="comment-template">
-    <h3>{props.topic_id}</h3>
-    <p>{props.body}</p>
-    <p>{props.date_created}</p>
-    <p>{props.user_id}</p>
+    <h2>{props.topic_id}</h2>
+    <p>Comment: {props.body}</p>
+    <p>Date created: {props.date_created}</p>
+    <p>Started by user: {props.user_id}</p>
   </div>
 );
 

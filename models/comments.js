@@ -11,6 +11,15 @@ function getAllComment(req, res, next) {
   .catch(err => next(err));
 }
 
+function getComment(req, res, next) {
+  db.one(`SELECT *
+          FROM comment
+          WHERE id = $1;
+          `, [req.params.id])
+  .then(next())
+  .catch(err => next(err));
+}
+
 function addComment(req, res, next) {
   db.none(`INSERT INTO comment (body)
            VALUES ($1);`, [req.body.body])
@@ -35,6 +44,7 @@ function deleteComment(req, res, next) {
 
 module.exports = {
   getAllComment,
+  getComment,
   addComment,
   editComment,
   deleteComment,

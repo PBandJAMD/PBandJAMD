@@ -20,6 +20,7 @@ class App extends Component {
       password: '',
       currentPage: 0,
       topics: [],
+      comments: [],
       currentTopic: 0,
       sidebar: false,
     };
@@ -37,6 +38,24 @@ class App extends Component {
       .catch(err => console.log('getAllTopics', err));
   }
 // END INITIAL FUNCTIONS
+
+
+  //JH getting comment(s) based on specific id
+  function getComment(id) {
+    fetch(`/api/comment/${id}`, {
+      method: 'GET'
+    })
+    .then(r => r.json())
+    .then((comments) => {
+      this.setState({
+        comments: comments,
+      });
+    })
+    .catch(err => console.log('getComment', err));
+  }
+
+
+
 
 // BEGIN AUTH FUNCTIONS
   login() {

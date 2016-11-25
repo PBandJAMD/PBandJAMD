@@ -1,6 +1,6 @@
 const express = require('express');
 const commentRoute = express.Router();
-const { getAllComment, addComment, editComment, deleteComment } = require('../../models/comments');
+const { getAllComment, getComment, addComment, editComment, deleteComment } = require('../../models/comments');
 const sendJSONresp = (req, res) => res.json(res.comments || []);
 
 commentRoute.route('/')
@@ -8,6 +8,7 @@ commentRoute.route('/')
   .post(addComment, sendJSONresp);
 
 commentRoute.route('/:id')
+   .get(getComment, sendJSONresp)
    .put(editComment, sendJSONresp)
    .delete(deleteComment, sendJSONresp);
 

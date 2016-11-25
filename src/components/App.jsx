@@ -49,8 +49,10 @@ class App extends Component {
 // END INITIAL FUNCTIONS
 
 // BEGIN LOGIN FORM FUNCTIONS *TAKEN FROM BOBBY KING'S REACT PUPPIES SOLUTION WITH AUTH*
-  onSuccessfulLogIn(a,b) {
-    console.log(a,b);
+  onSuccessfulLogIn(a, b) {
+    console.log(a, b);
+
+    // this.alertInfo('You are logged in!');
   }
 
   handleSignUp() {
@@ -140,8 +142,6 @@ class App extends Component {
 // END FORM DISPLAY FUNCTIONS
 
 
-
-
 // ALL TOGGLES
 // TOGGLE COMPONENT FUNCTIONS *HELP TAKEN FROM LINK #2 IN README*
   changeComponent(x) {
@@ -152,9 +152,9 @@ class App extends Component {
 
   renderComponent(component) {
     if (component === 0) {
-      return <TopicContainer topics={this.state.topics} changeComponent={this.changeComponent.bind(this)} />;
+      return <TopicContainer topics={this.state.topics} changeComponent={event => this.changeComponent(event)} />;
     } else if (component === 1) {
-      return <CommentContainer changeComponent={this.changeComponent.bind(this)} />
+      return <CommentContainer changeComponent={event => this.changeComponent(event)} />;
     }
   }
 
@@ -182,7 +182,7 @@ class App extends Component {
   render() {
     return (
       <div id="app-container">
-        <Header changeSidebar={this.changeSidebar.bind(this)} />
+        <Header changeSidebar={event => this.changeSidebar(event)} />
 
         <Aside
         // SIGNUP
@@ -193,7 +193,8 @@ class App extends Component {
           updateSignupFormPassword={event => this.updateFormSignUpPassword(event)}
           handleSignupFormSubmit={() => this.handleSignUp()}
           // LOGIN
-          className={this.state.login.loggedIn ? 'hidden' : ''}
+          // className={this.state.login.loggedIn ? 'hidden' : ''}
+
           loginUsername={this.state.login.username}
           loginPassword={this.state.login.password}
           updateLoginFormUsername={event => this.updateFormLogInUsername(event)}

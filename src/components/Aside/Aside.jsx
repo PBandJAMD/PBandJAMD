@@ -7,22 +7,21 @@ import SignupForm from '../SignupForm/SignupForm.jsx';
 const Aside = props => (
 
   <div id={props.sidebar}>
-
-    <div id="sidebar">
+      <SignupForm
+        signupUsername={props.signupUsername}
+        updateSignupFormUsername={props.updateSignupFormUsername}
+        signupPassword={props.signupPassword}
+        updateSignupFormPassword={props.updateSignupFormPassword}
+        handleSignupFormSubmit={props.handleSignupFormSubmit}
+      />
 
       <LoginForm
-        handleUsernameInput={props.handleUsernameInput}
-        handlePasswordInput={props.handlePasswordInput}
-        handleLogin={props.handleLogin}
+        loginUsername={props.loginUsername}
+        updateLoginFormUsername={props.updateLoginFormUsername}
+        loginPassword={props.loginPassword}
+        updateLoginFormPassword={props.updateLoginFormPassword}
+        handleLoginFormSubmit={props.handleLoginFormSubmit}
       />
-
-      <SignupForm
-        handleUsernameInput={props.handleUsernameInput}
-        handlePasswordInput={props.handlePasswordInput}
-        handleSignup={props.handleSignup}
-      />
-    </div>
-
   </div>
     );
 

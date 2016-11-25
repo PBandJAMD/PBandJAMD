@@ -4,7 +4,6 @@ import './Footer.css';
 
 const Footer = props => (
   <div id="footer-container">
-    <p>Some copyright here</p>
   </div>
 );
 

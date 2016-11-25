@@ -1,9 +1,22 @@
 const db = require('../lib/dbConnect.js');
 
-function getAllComment(req, res, next) {
-  db.any(`SELECT *
-          FROM comment;
-          `)
+// function getAllComment(req, res, next) {
+//   db.any(`SELECT *
+//           FROM comment;
+//           `)
+//   .then((comments) => {
+//     res.comments = comments;
+//     next();
+//   })
+//   .catch(err => next(err));
+// }
+
+function getComments(req, res, next) {
+  db.any(`SELECT topic.title, topic.content, comment.body
+          FROM topic
+          LEFT JOIN comment
+          ON topic.id = comment.topic_id;
+          `, [req.params.id])
   .then((comments) => {
     res.comments = comments;
     next();
@@ -34,7 +47,7 @@ function deleteComment(req, res, next) {
 }
 
 module.exports = {
-  getAllComment,
+  getComments,
   addComment,
   editComment,
   deleteComment,

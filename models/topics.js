@@ -5,9 +5,9 @@ function getAllTopics(req, res, next) {
   db.any('SELECT * FROM topic;')
     .then((topics) => {
       res.topics = topics;
-
       next();
-    });
+    })
+    .catch(err => next(err));
 }
 
 // adding one topic

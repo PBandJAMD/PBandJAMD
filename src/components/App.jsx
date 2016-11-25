@@ -19,6 +19,7 @@ class App extends Component {
       password: '',
       currentPage: 0,
       topics: [],
+      comments: [],
       currentTopic: 0,
       sidebar: 'hidden',
 
@@ -52,54 +53,77 @@ class App extends Component {
   onSuccessfulLogIn(a, b) {
     console.log(a, b);
 
-    // this.alertInfo('You are logged in!');
-  }
 
-  handleSignUp() {
-    fetch('/api/user', {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
-      body: JSON.stringify({
-        username: this.state.signup.username,
-        password: this.state.signup.password,
-      }),
+
+  //JH getting comment(s) based on specific id
+  getComment(id) {
+    fetch(`/api/comment/${id}`, {
+      method: 'GET'
     })
-    .then(this.setState({
-      signup: {
-        username: '',
-        password: '',
-      },
-    }))
-    .then(this.alertInfo('You have signed up!'))
-    .catch(err => console.log(err));
-  }
-
-  handleLogIn() {
-    fetch('/api/auth', {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
-      body: JSON.stringify({
-        username: this.state.login.username,
-        password: this.state.login.password,
-      }),
+    .then(r => r.json())
+    .then((comments) => {
+    console.log(comments);
+      this.setState({
+        comments: comments,
+      });
     })
-    .then(this.setState({
-      login: {
-        username: '',
-        password: '',
-      },
-    }))
-    .then(this.onSuccessfulLogIn)
-    .catch(err => console.log(err));
+    .catch(err => console.log('getComment', err));
   }
 
-  alertInfo(msg) {
-    alert(msg);
-  }
+
+// BEGIN AUTH FUNCTIONS
+  // login() {
+// BEGIN LOGIN FORM FUNCTIONS *TAKEN FROM BOBBY KING'S REACT PUPPIES SOLUTION WITH AUTH*
+//   onSuccessfulLogIn(a,b) {
+//     console.log(a,b);
+//   }
+
+//   handleSignUp() {
+//     fetch('/api/user', {
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       method: 'POST',
+//       body: JSON.stringify({
+//         username: this.state.signup.username,
+//         password: this.state.signup.password,
+//       }),
+//     })
+//     .then(this.setState({
+//       signup: {
+//         username: '',
+//         password: '',
+//       },
+//     }))
+//     .then(this.alertInfo('You have signed up!'))
+//     .catch(err => console.log(err));
+//   }
+
+//   handleLogIn() {
+//     fetch('/api/auth', {
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       method: 'POST',
+//       body: JSON.stringify({
+//         username: this.state.login.username,
+//         password: this.state.login.password,
+//       }),
+//     })
+//     .then(this.setState({
+//       login: {
+//         username: '',
+//         password: '',
+//       },
+//     }))
+//     .then(this.onSuccessfulLogIn)
+//     .catch(err => console.log(err));
+//   }
+
+//   alertInfo(msg) {
+//     alert(msg);
+//   }
+// }
 // END LOGIN FORM/SIGNUP FORM FUNCTIONS
 
 // BEGIN FORM DISPLAY FUNCTIONS
@@ -154,7 +178,11 @@ class App extends Component {
     if (component === 0) {
       return <TopicContainer topics={this.state.topics} changeComponent={event => this.changeComponent(event)} />;
     } else if (component === 1) {
+<<<<<<< HEAD
       return <CommentContainer changeComponent={event => this.changeComponent(event)} />;
+=======
+      return <CommentContainer comments={this.state.comments} changeComponent={this.changeComponent.bind(this)} />
+>>>>>>> master
     }
   }
 

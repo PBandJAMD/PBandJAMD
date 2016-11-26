@@ -1,16 +1,5 @@
 const db = require('../lib/dbConnect.js');
 
-// function getAllComment(req, res, next) {
-//   db.any(`SELECT *
-//           FROM comment;
-//           `)
-//   .then((comments) => {
-//     res.comments = comments;
-//     next();
-//   })
-//   .catch(err => next(err));
-// }
-
 function getComments(req, res, next) {
   db.any(`SELECT *
           FROM topic
@@ -26,8 +15,8 @@ function getComments(req, res, next) {
 }
 
 function addComment(req, res, next) {
-  db.none(`INSERT INTO comment (body)
-           VALUES ($1);`, [req.body.body])
+  db.none(`INSERT INTO comment (body, topic_id, user_id)
+           VALUES ($/body/, $/topic_id/, $/user_id/);`, req.body)
   .then(next())
   .catch(err => next(err));
 }

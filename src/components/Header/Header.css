@@ -5,6 +5,7 @@
  /* justify-content: space-around;*/
   align-items: center;
 /*  background-color: #161616;*/
+  z-index: -5;
 }
 
 #banana {
@@ -22,7 +23,7 @@ h1 {
 .user-button button {
   background: none;
   border: none;
-  margin-left: 420px;
+  margin-left: 120px;
   margin-top: 20px;
   padding: 0;
   color: tomato;
@@ -30,8 +31,9 @@ h1 {
   font-family: 'Cabin Sketch', cursive;
 }
 
-button:hover {
+button:hover:first-line {
   color: white;
+  background: none;
   /*color: #b2391e;*/
 }
 

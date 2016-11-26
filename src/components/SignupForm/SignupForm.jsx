@@ -6,7 +6,7 @@ const SignupForm = props => (
   <div className="login-container">
 
     <div className="sign-in">
-      <h2>- Sign In -</h2>
+      <h2>- Sign Up -</h2>
       <br />
       <input
         className="sign-css"

@@ -29,7 +29,7 @@ p {
 }
 
 .sign-in h2 {
-  margin-top: 40px;
+  margin-top: -7vh;
   text-align: center;
   font-family: 'Cabin Sketch', cursive;
   color: tomato;
@@ -37,7 +37,7 @@ p {
 }
 
 .sign-in button {
-  width: 15vw;
+  width: 20.3vw;;
   background-color: #DEB887;
   border: none;
   color: white;

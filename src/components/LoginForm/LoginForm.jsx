@@ -7,7 +7,7 @@ const LoginForm = props => (
   <div className="login-form-container">
 
     <div className="log-in">
-      <h2>- Register Now -</h2>
+      <h2>- Log In -</h2>
       <br />
       <input
         className="login-css"

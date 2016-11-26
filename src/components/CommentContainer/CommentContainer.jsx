@@ -4,11 +4,12 @@ import CommentTemplate from '../CommentTemplate/CommentTemplate.jsx';
 import './CommentContainer.css';
 
 const CommentContainer = props => {
- const comments = props.comments.map((comment) => {
+  const comments = props.comments.map((comment) => {
     return (
       <CommentTemplate
         key={comment.id.toString()}
-        // id={comment.id}
+        id={comment.id}
+        title={comment.title}
         topic_id={comment.topic_id}
         body={comment.body}
         title={comment.title}

@@ -51,3 +51,7 @@ input[type=password] {
 .login-css {
   text-align: center;
 }
+
+input {
+  width: 20vw;
+}

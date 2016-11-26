@@ -17,6 +17,17 @@ function createUser(req, res, next) { // makes a new user upon signup page
     .catch(err => next(err));
 }
 
+function listUsers(req, res, next) {
+  db.any('SELECT * from users;')
+    .then((users) => {
+      res.users = users;
+      next();
+    })
+    .catch((error) => {
+      console.error('Error ', error);
+      next(error);
+    });
+}
 
 // function getUserById(id) {
 //   return (db) => {
@@ -38,8 +49,7 @@ function createUser(req, res, next) { // makes a new user upon signup page
 // }
 
 // function getUserByUsername(username) {
-//   return db.then((db) => {
-//     const promise = new Promise((resolve, reject) => {
+//   return {const promise = new Promise((resolve, reject) => {
 //       db.one('SELECT * FROM users WHERE username = $1', [username])
 //       .then ((findError, user) => {
 //         if (findError) reject(findError);
@@ -47,7 +57,7 @@ function createUser(req, res, next) { // makes a new user upon signup page
 //       });
 //     });
 //     return promise;
-//   });
+//   )}
 // }
 
 function getUserByUsername(username) {
@@ -57,6 +67,7 @@ function getUserByUsername(username) {
 
 module.exports = {
   createUser,
+  listUsers,
   // getUserById,
   getUserByUsername,
 };

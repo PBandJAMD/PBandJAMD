@@ -8,6 +8,7 @@
   transition: left 1s ease-in-out;
   display: flex;
   justify-content: center;
+  align-content: center;
   flex-wrap: wrap;
   overflow:auto;
   overflow-x:hidden;
@@ -23,6 +24,7 @@
   transition: left 1s ease-in;
   display: flex;
   justify-content: center;
+  align-content: center;
   flex-wrap: wrap;
   overflow:auto;
   overflow-x:hidden;

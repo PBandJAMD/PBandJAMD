@@ -13,9 +13,9 @@ We want to make a forum application that allows users to post topics that they a
 - CSS
 
 ## Wireframes
-![alt text][./media/landing.png]
-![alt text][./media/login.png]
-![alt text][./media/form.png]
+![landing](./media/landing.png)
+![login](./media/login.png)
+![form](./media/form.png)
 
 ### Group Members
 Jaemin Han, Alexander Tong, Mohamed Gassama and Damira Ibragimova

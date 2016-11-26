@@ -15,12 +15,11 @@ class App extends Component {
     super();
 
     this.state = {
-      username: '',
-      password: '',
+      currentUser: null,
+
       currentPage: 0,
       topics: [],
       comments: [],
-      currentTopic: 0,
       sidebar: 'hidden',
 
       signup: {
@@ -50,11 +49,20 @@ class App extends Component {
 // END INITIAL FUNCTIONS
 
 // BEGIN LOGIN FORM FUNCTIONS *TAKEN FROM BOBBY KING'S REACT PUPPIES SOLUTION WITH AUTH*
-  onSuccessfulLogIn(a, b) {
-    console.log(a, b);
-}
+  onSuccessfulLogIn(a) {
+    this.alertInfo('Youre logged in!');
+    console.log(a);
+    this.setState({
+      currentUser: a.id,
+      login: {
+        username: '',
+        password: '',
+        loggedIn: true,
+      },
+    });
+  }
 
-  //JH getting comment(s) based on specific id
+  // JH getting comment(s) based on specific id
   getAllComments(id) {
     fetch(`/api/comment/${id}`, {
       headers: {
@@ -72,13 +80,7 @@ class App extends Component {
     .catch(err => console.log('getComment', err));
   }
 
-
-// BEGIN AUTH FUNCTIONS
-  // login() {
 // BEGIN LOGIN FORM FUNCTIONS *TAKEN FROM BOBBY KING'S REACT PUPPIES SOLUTION WITH AUTH*
-//   onSuccessfulLogIn(a,b) {
-//     console.log(a,b);
-//   }
 
   handleSignUp() {
     fetch('/api/user', {
@@ -112,13 +114,15 @@ class App extends Component {
         password: this.state.login.password,
       }),
     })
+    .then(r => r.json())
     .then(this.setState({
       login: {
         username: '',
         password: '',
+        loggedIn: false,
       },
     }))
-    .then(this.onSuccessfulLogIn)
+    .then(this.onSuccessfulLogIn.bind(this))
     .catch(err => console.log(err));
   }
 
@@ -152,6 +156,7 @@ class App extends Component {
       login: {
         username: e.target.value,
         password: this.state.login.password,
+        loggedIn: false,
       },
     });
   }
@@ -161,6 +166,7 @@ class App extends Component {
       login: {
         username: this.state.login.username,
         password: e.target.value,
+        loggedIn: false,
       },
     });
   }

@@ -17,10 +17,21 @@ class App extends Component {
       currentUser: null,
       currentTopic: 0,
       currentPage: 0,
+
+      topics: [],
+      comments: [],
+      sidebar: 'hidden',
+
+      topic:{
+        title: '',
+        content: '',
+      },
+
       signup: {
         username: '',
         password: '',
       },
+
       login: {
         loggedIn: false,
         username: '',
@@ -222,6 +233,39 @@ class App extends Component {
     });
   }
 
+  updateTopicTitle(e){
+    this.setState({
+      topic:{
+       title: e.target.value,
+      },
+     });
+  }
+
+  updateTopicContent(e){
+    this.setState({
+      topic:{
+       content: e.target.value,
+      },
+     });
+  }
+// creating topic update
+  handleUpdateTopic(){
+    fetch(api/topic, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify({
+      title: this.state.topic.title,
+      content: this.state.topic.content,
+     }),
+   })
+    .then(r => r.json())
+    .then(this.setState({
+      topic: '',
+    }))
+    .catch(err => console.log(err));
+  }
 // END FORM DISPLAY FUNCTIONS
 
 
@@ -307,3 +351,6 @@ class App extends Component {
 }
 
 export default App;
+
+
+

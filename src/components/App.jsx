@@ -181,7 +181,7 @@ class App extends Component {
     if (component === 0) {
       return <TopicContainer topics={this.state.topics} changeComponent={(x, y) => this.changeComponent(x, y)} />;
     } else if (component === 1) {
-      return <CommentContainer comments={this.state.comments} changeComponent={event => this.changeComponent(event)} />;
+      return <CommentContainer comments={this.state.comments} changeComponent={(x, y) => this.changeComponent(x, y)} />;
     }
   }
 

@@ -11,14 +11,14 @@ const SignupForm = props => (
       value={props.signupUsername}
       onChange={props.updateSignupFormUsername}
     />
-
+    <br />
     <input
       type="password"
       placeholder="password"
       value={props.signupPassword}
       onChange={props.updateSignupFormPassword}
     />
-
+    <br />
     <button onClick={props.handleSignupFormSubmit}>
     SignUp!
     </button>

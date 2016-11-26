@@ -27,3 +27,7 @@ p {
 .sign-button button:hover {
   background-color: tomato;
 }
+
+input {
+  width: 20vw;
+}

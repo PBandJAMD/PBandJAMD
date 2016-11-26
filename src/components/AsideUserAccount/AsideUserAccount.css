@@ -1,19 +1,17 @@
 #hidden {
   left: 100vw;
-  top: 0vh;
+  top: 0;
   width: 30vw;
-  height: 100vh;
+  height: 100%;
   position: absolute;
   background-color: #F5DEB3;
   z-index: 5;
   transition: left 1s ease-in-out;
   display: flex;
   justify-content: center;
-  align-content: center;
   flex-wrap: wrap;
-  overflow:auto;
+  overflow: scroll;
   overflow-x:hidden;
-/*  margin-bottom: 100px;*/
 }
 
 #show {
@@ -21,31 +19,15 @@
   background-color: #F5DEB3;
   z-index: 5;
   left: 70vw;
-  top: 0vh;
+  top: 0;
   width: 30vw;
-  height: 100vh;
+  height: 100%;
   transition: left 1s ease-in;
   display: flex;
   justify-content: center;
-  align-content: center;
   flex-wrap: wrap;
-  overflow:auto;
+  overflow: scroll;
   overflow-x:hidden;
 }
-
-h2 {
-  margin: 0;
-  padding: 0;
-}
-
-/*#sidebar {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  height: 60vh;
-  margin-top: 65px;
-  background-color: white;
-}
-*/
 
 

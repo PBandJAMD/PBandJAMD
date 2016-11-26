@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import '../normalize.css';
-import './Aside.css';
+import './AsideLoginSignup.css';
 import LoginForm from '../LoginForm/LoginForm.jsx';
 import SignupForm from '../SignupForm/SignupForm.jsx';
 
-const Aside = props => (
+const AsideLoginSignup = props => (
 
   <div id={props.sidebar}>
       <SignupForm
@@ -25,4 +25,4 @@ const Aside = props => (
   </div>
     );
 
-export default Aside;
+export default AsideLoginSignup;

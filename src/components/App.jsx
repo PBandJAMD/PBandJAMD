@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import LoginForm from './LoginForm/LoginForm.jsx';
-import SignupForm from './SignupForm/SignupForm.jsx';
 import Header from './Header/Header.jsx';
 import Footer from './Footer/Footer.jsx';
 import TopicContainer from './TopicContainer/TopicContainer.jsx';
@@ -16,7 +14,6 @@ class App extends Component {
 
     this.state = {
       currentUser: null,
-
       currentPage: 0,
       topics: [],
       comments: [],
@@ -81,7 +78,6 @@ class App extends Component {
   }
 
 // BEGIN LOGIN FORM FUNCTIONS *TAKEN FROM BOBBY KING'S REACT PUPPIES SOLUTION WITH AUTH*
-
   handleSignUp() {
     fetch('/api/user', {
       headers: {
@@ -129,8 +125,8 @@ class App extends Component {
   alertInfo(msg) {
     alert(msg);
   }
-
 // END LOGIN FORM/SIGNUP FORM FUNCTIONS
+
 
 // BEGIN FORM DISPLAY FUNCTIONS
   updateFormSignUpUsername(e) {
@@ -192,8 +188,6 @@ class App extends Component {
   }
 
 // END TOGGLE FUNCTIONS
-
-
 
 // BEGIN ASIDE FUNCTIONS
   changeSidebar() {

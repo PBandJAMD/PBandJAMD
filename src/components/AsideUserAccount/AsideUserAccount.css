@@ -1,0 +1,36 @@
+#hidden {
+  left: 100vw;
+  top: 0vh;
+  width: 30vw;
+  height: 100vh;
+  position: absolute;
+  background-color: #F5DEB3;
+  z-index: 5;
+  transition: left 1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  overflow:auto;
+  overflow-x:hidden;
+/*  margin-bottom: 100px;*/
+}
+
+#show {
+  position: absolute;
+  background-color: #F5DEB3;
+  z-index: 5;
+  left: 70vw;
+  top: 0vh;
+  width: 30vw;
+  height: 100vh;
+  transition: left 1s ease-in;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  overflow:auto;
+  overflow-x:hidden;
+}
+
+

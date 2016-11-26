@@ -1,10 +1,7 @@
-/*#comments-containe {
+#comments-container {
   display: flex;
   justify-content: center;
-}*/
-
-.comments-button {
-  display: flex;
-  justify-content: center;
-  margin-top: 2vh;
+  flex-wrap: wrap;
+  width: 100vw;
 }
+

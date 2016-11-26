@@ -21,9 +21,7 @@ const CommentContainer = props => {
 
   return (
     <div id="comments-container">
-      <div className="comments-button">
-        <button onClick={() => props.changeComponent(0, 0)}>Click to return!</button>
-      </div>
+      <button onClick={() => props.changeComponent(0, 0)}>Click to return!</button>
       {comments}
       <CreateCommentForm updateComment={props.updateComment} commentBody={props.commentBody} submitComment={props.submitComment} />
     </div>

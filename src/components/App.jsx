@@ -3,8 +3,8 @@ import Header from './Header/Header.jsx';
 import Footer from './Footer/Footer.jsx';
 import TopicContainer from './TopicContainer/TopicContainer.jsx';
 import CommentContainer from './CommentContainer/CommentContainer.jsx';
-import Aside from './Aside/Aside.jsx';
-
+import AsideLoginSignup from './AsideLoginSignup/AsideLoginSignup.jsx';
+import AsideUserAccount from './AsideUserAccount/AsideUserAccount.jsx';
 
 import './normalize.css';
 import './App.css';
@@ -17,10 +17,6 @@ class App extends Component {
       currentUser: null,
       currentTopic: 0,
       currentPage: 0,
-      topics: [],
-      comments: [],
-      sidebar: 'hidden',
-
       signup: {
         username: '',
         password: '',
@@ -30,6 +26,12 @@ class App extends Component {
         username: '',
         password: '',
       },
+
+      topics: [],
+      comments: [],
+      userInfo: [],
+
+      sidebar: 'show',
 
       comment: '',
     };
@@ -60,9 +62,11 @@ class App extends Component {
         loggedIn: true,
       },
     });
+    this.getUserInfo(this.state.currentUser);
   }
+// END LOGIN FORM FUNCTIONS
 
-  // JH getting comment(s) based on specific id/ BEGIN COMMENT FETCH FUNCTIONS
+// BEGIN DISPLAY COMMENT FETCH FUNCTIONS
   getAllComments(id) {
     fetch(`/api/comment/${id}`, {
       headers: {
@@ -79,9 +83,9 @@ class App extends Component {
     })
     .catch(err => console.log('getComment', err));
   }
-// END COMMENT FETCH FUNCTIONS
+// END DISPLAY COMMENT FETCH FUNCTIONS
 
-// BEGIN LOGIN FORM FUNCTIONS *TAKEN FROM BOBBY KING'S REACT PUPPIES SOLUTION WITH AUTH*
+// BEGIN LOGIN FORM FETCH FUNCTIONS *TAKEN FROM BOBBY KING'S REACT PUPPIES SOLUTION WITH AUTH* #3
   handleSignUp() {
     fetch('/api/user', {
       headers: {
@@ -129,8 +133,46 @@ class App extends Component {
   alertInfo(msg) {
     alert(msg);
   }
-// END LOGIN FORM/SIGNUP FORM FUNCTIONS
+// END LOGIN FORM/SIGNUP  FETCHFORM FUNCTIONS
 
+// BEGIN SUBMIT COMMENT FETCH FUNCTIONS
+  submitComment() {
+    fetch('/api/comment', {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify({
+        body: this.state.comment,
+        topic_id: parseInt(this.state.currentTopic, 10),
+        user_id: parseInt(this.state.currentUser, 10),
+      }),
+    })
+    .then(r => r.json())
+    .then(this.setState({
+      comment: '',
+    }))
+    .catch(err => console.log(err));
+  }
+// END SUBMIT COMMENT FETCH FUNCTIONS
+
+// BEGIN USER ACCOUNT FETCH FUNCTIONS
+  getUserInfo(id) {
+      fetch(`/api/user/${id}`, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        method: 'GET',
+      })
+      .then(r => r.json())
+      .then((info) => {
+        this.setState({
+          userInfo: info,
+        });
+      })
+      .catch(err => console.log('getComment', err));
+  }
+// END USER ACCOUNT FETCH FUNCTIONS
 
 // BEGIN FORM DISPLAY FUNCTIONS
   updateFormSignUpUsername(e) {
@@ -179,26 +221,6 @@ class App extends Component {
 
 // END FORM DISPLAY FUNCTIONS
 
-// BEGIN SUBMIT COMMENT API FUNCTIONS
-  submitComment() {
-    fetch('/api/comment', {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
-      body: JSON.stringify({
-        body: this.state.comment,
-        topic_id: parseInt(this.state.currentTopic, 10),
-        user_id: parseInt(this.state.currentUser, 10),
-      }),
-    })
-    .then(r => r.json())
-    .then(this.setState({
-      comment: '',
-    }))
-    .catch(err => console.log(err));
-  }
-// END SUBMIT COMMENT API FUNCTIONS
 
 // ALL TOGGLES
 // TOGGLE COMPONENT FUNCTIONS *HELP TAKEN FROM LINK #2 IN README*
@@ -215,6 +237,29 @@ class App extends Component {
       return <TopicContainer topics={this.state.topics} changeComponent={(x, y) => this.changeComponent(x, y)} />;
     } else if (component === 1) {
       return <CommentContainer comments={this.state.comments} changeComponent={(x, y) => this.changeComponent(x, y)} updateComment={event => this.updateComment(event)} commentBody={this.state.comment} submitComment={() => this.submitComment()} />;
+    }
+  }
+
+  renderAside(loggedIn) {
+    if (loggedIn === false) {
+      return (<AsideLoginSignup
+        // SIGNUP
+        sidebar={this.state.sidebar}
+        signupUsername={this.state.signup.username}
+        updateSignupFormUsername={event => this.updateFormSignUpUsername(event)}
+        signupPassword={this.state.signup.password}
+        updateSignupFormPassword={event => this.updateFormSignUpPassword(event)}
+        handleSignupFormSubmit={() => this.handleSignUp()}
+        // LOGIN
+        className={this.state.login.loggedIn ? 'hidden' : ''}
+        loginUsername={this.state.login.username}
+        loginPassword={this.state.login.password}
+        updateLoginFormUsername={event => this.updateFormLogInUsername(event)}
+        updateLoginFormPassword={event => this.updateFormLogInPassword(event)}
+        handleLoginFormSubmit={() => this.handleLogIn()}
+      />);
+    } else if (loggedIn === true) {
+      return (<AsideUserAccount userInfo={this.state.userInfo} />);
     }
   }
 
@@ -239,23 +284,7 @@ class App extends Component {
     return (
       <div id="app-container">
         <Header changeSidebar={event => this.changeSidebar(event)} />
-
-        <Aside
-        // SIGNUP
-          sidebar={this.state.sidebar}
-          signupUsername={this.state.signup.username}
-          updateSignupFormUsername={event => this.updateFormSignUpUsername(event)}
-          signupPassword={this.state.signup.password}
-          updateSignupFormPassword={event => this.updateFormSignUpPassword(event)}
-          handleSignupFormSubmit={() => this.handleSignUp()}
-          // LOGIN
-          className={this.state.login.loggedIn ? 'hidden' : ''}
-          loginUsername={this.state.login.username}
-          loginPassword={this.state.login.password}
-          updateLoginFormUsername={event => this.updateFormLogInUsername(event)}
-          updateLoginFormPassword={event => this.updateFormLogInPassword(event)}
-          handleLoginFormSubmit={() => this.handleLogIn()}
-        />
+        {this.renderAside(this.state.login.loggedIn)}
 
         <div id="main-container">
           {this.renderComponent(this.state.currentPage)}

@@ -1,14 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../normalize.css';
 import './CreateTopicForm.css';
 
-export default class CreateTopicForm extends Component {
+const CreateTopicForm = props => (
+  <div className="topic-form">
+    <input
+      type="text"
+      placeholder="Topic Title"
+      value={props.title}
+      onChange={props.updateTopicTitle}
+    />
 
-  render() {
-    return(
-      <div>
+    <input
+      type="text"
+      placeholder="Topic Comment"
+      value={props.content}
+      onChange={props.updateTopicContent}
+    />
 
-      </div>
-    )
-  }
-}
+    <button onClick={props.handleUpdateTopic}>
+    Create New Topic
+    </button>
+  </div>
+  );
+
+export default CreateTopicForm;

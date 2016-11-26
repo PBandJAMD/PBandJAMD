@@ -1,9 +1,9 @@
 import React from 'react';
 import '../normalize.css';
-import './AsideUserAccount.css';
+import './AsideUserAccountContainer.css';
 import AsideUserAccountTemplate from '../AsideUserAccountTemplate/AsideUserAccountTemplate.jsx';
 
-const AsideUserAccount = props => {
+const AsideUserAccountContainer = props => {
   const userInfo = props.userInfo.map((userInfo) => {
     return (
       <AsideUserAccountTemplate
@@ -23,4 +23,4 @@ const AsideUserAccount = props => {
   );
 };
 
-export default AsideUserAccount;
+export default AsideUserAccountContainer;

@@ -4,7 +4,7 @@ import Footer from './Footer/Footer.jsx';
 import TopicContainer from './TopicContainer/TopicContainer.jsx';
 import CommentContainer from './CommentContainer/CommentContainer.jsx';
 import AsideLoginSignup from './AsideLoginSignup/AsideLoginSignup.jsx';
-import AsideUserAccount from './AsideUserAccount/AsideUserAccount.jsx';
+import AsideUserAccountContainer from './AsideUserAccountContainer/AsideUserAccountContainer.jsx';
 
 import './normalize.css';
 import './App.css';
@@ -306,7 +306,7 @@ class App extends Component {
         handleLoginFormSubmit={() => this.handleLogIn()}
       />);
     } else if (loggedIn === true) {
-      return (<AsideUserAccount userInfo={this.state.userInfo} sidebar={this.state.sidebar} />);
+      return (<AsideUserAccountContainer userInfo={this.state.userInfo} sidebar={this.state.sidebar} />);
     }
   }
 

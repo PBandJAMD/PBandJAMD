@@ -34,6 +34,8 @@ class App extends Component {
       sidebar: 'show',
 
       comment: '',
+
+      buttonText: 'Login/Signup',
     };
   }
 
@@ -56,6 +58,7 @@ class App extends Component {
     console.log(a);
     this.setState({
       currentUser: a.id,
+      buttonText: 'My Account',
       login: {
         username: '',
         password: '',
@@ -259,9 +262,17 @@ class App extends Component {
         handleLoginFormSubmit={() => this.handleLogIn()}
       />);
     } else if (loggedIn === true) {
-      return (<AsideUserAccount userInfo={this.state.userInfo} />);
+      return (<AsideUserAccount userInfo={this.state.userInfo} sidebar={this.state.sidebar} />);
     }
   }
+
+
+  // renderButton(x) {
+  //   if (this.state.loggedIn === false) {
+  //     return <button>Login/Signup</button>;
+  //   }
+  // }
+
 
 // END TOGGLE FUNCTIONS
 
@@ -277,13 +288,13 @@ class App extends Component {
       });
     }
   }
-
 // END ASIDE FUNCTIONS
 
   render() {
     return (
       <div id="app-container">
-        <Header changeSidebar={event => this.changeSidebar(event)} />
+        <Header changeSidebar={event => this.changeSidebar(event)} buttonText={this.state.buttonText} />
+
         {this.renderAside(this.state.login.loggedIn)}
 
         <div id="main-container">

@@ -6,4 +6,5 @@
 .comments-button {
   display: flex;
   justify-content: center;
+  margin-top: 2vh;
 }

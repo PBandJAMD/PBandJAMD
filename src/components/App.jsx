@@ -3,7 +3,7 @@ import Header from './Header/Header.jsx';
 import Footer from './Footer/Footer.jsx';
 import TopicContainer from './TopicContainer/TopicContainer.jsx';
 import CommentContainer from './CommentContainer/CommentContainer.jsx';
-import Aside from './Aside/Aside.jsx';
+import AsideLoginSignup from './AsideLoginSignup/AsideLoginSignup.jsx';
 
 
 import './normalize.css';
@@ -17,10 +17,6 @@ class App extends Component {
       currentUser: null,
       currentTopic: 0,
       currentPage: 0,
-      topics: [],
-      comments: [],
-      sidebar: 'hidden',
-
       signup: {
         username: '',
         password: '',
@@ -30,6 +26,11 @@ class App extends Component {
         username: '',
         password: '',
       },
+
+      topics: [],
+      comments: [],
+
+      sidebar: 'hidden',
 
       comment: '',
     };
@@ -240,7 +241,7 @@ class App extends Component {
       <div id="app-container">
         <Header changeSidebar={event => this.changeSidebar(event)} />
 
-        <Aside
+        <AsideLoginSignup
         // SIGNUP
           sidebar={this.state.sidebar}
           signupUsername={this.state.signup.username}

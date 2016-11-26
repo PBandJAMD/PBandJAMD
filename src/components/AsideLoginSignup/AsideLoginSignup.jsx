@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../normalize.css';
-import './Aside.css';
+import './AsideLoginSignup.css';
 import LoginForm from '../LoginForm/LoginForm.jsx';
 import SignupForm from '../SignupForm/SignupForm.jsx';
 

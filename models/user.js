@@ -17,6 +17,17 @@ function createUser(req, res, next) { // makes a new user upon signup page
     .catch(err => next(err));
 }
 
+function listUsers(req, res, next) {
+  db.any('SELECT * from users;')
+    .then((users) => {
+      res.users = users;
+      next();
+    })
+    .catch((error) => {
+      console.error('Error ', error);
+      next(error);
+    });
+}
 
 // function getUserById(id) {
 //   return (db) => {
@@ -56,6 +67,7 @@ function getUserByUsername(username) {
 
 module.exports = {
   createUser,
+  listUsers,
   // getUserById,
   getUserByUsername,
 };

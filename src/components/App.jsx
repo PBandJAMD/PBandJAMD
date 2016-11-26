@@ -187,6 +187,8 @@ class App extends Component {
 
 // END TOGGLE FUNCTIONS
 
+
+
 // BEGIN ASIDE FUNCTIONS
   changeSidebar() {
     if (this.state.sidebar === 'hidden') {
@@ -216,8 +218,7 @@ class App extends Component {
           updateSignupFormPassword={event => this.updateFormSignUpPassword(event)}
           handleSignupFormSubmit={() => this.handleSignUp()}
           // LOGIN
-          // className={this.state.login.loggedIn ? 'hidden' : ''}
-
+          className={this.state.login.loggedIn ? 'hidden' : ''}
           loginUsername={this.state.login.username}
           loginPassword={this.state.login.password}
           updateLoginFormUsername={event => this.updateFormLogInUsername(event)}

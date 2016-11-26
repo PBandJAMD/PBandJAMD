@@ -1,18 +1,26 @@
 /* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
 
 const express      = require('express');
-const { createUser }    = require('../../models/user.js');
+const { createUser, listUsers }    = require('../../models/user.js');
 // const { authenticate }   = require('../../lib/auth.js');
 
 const userRoute  = express.Router();
+// const tokenService = require('../../services/tokenService.js')
+
 /**
  * Creates a new user by handling the POST request from a form with action `/users`
  * It uses the createUser middleware from the user model
  */
 
-userRoute.get('/', (req, res) => {
-  res.send('hi');
+userRoute.get('/', listUsers, (req, res) => {
+  res.json(res.users.map((user) => {
+    // only pull out the username and the id
+    const { id, username } = user;
+    return { id, username };
+  }));
 });
+
+// userRoute.use(tokenService.validateToken);
 
 userRoute.post('/', createUser, (req, res) => { // ROUTE TO CREATE A NEW USER UPON LOGIN
   res.send('user added');

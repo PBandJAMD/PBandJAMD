@@ -298,7 +298,6 @@ class App extends Component {
         updateSignupFormPassword={event => this.updateFormSignUpPassword(event)}
         handleSignupFormSubmit={() => this.handleSignUp()}
         // LOGIN
-        className={this.state.login.loggedIn ? 'hidden' : ''}
         loginUsername={this.state.login.username}
         loginPassword={this.state.login.password}
         updateLoginFormUsername={event => this.updateFormLogInUsername(event)}

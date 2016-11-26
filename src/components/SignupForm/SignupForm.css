@@ -1,4 +1,4 @@
-.signup-container {
+/*.signup-container {
 }
 
 p {
@@ -6,8 +6,7 @@ p {
 }
 
 .sign-button {
-  /*display: flex;*/
-  /*justify-content: center;*/
+
 }
 
 
@@ -15,7 +14,6 @@ p {
   background-color: #4CAF50;
   border: none;
   color: white;
-/*  padding: 10px 30px;*/
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -52,4 +50,22 @@ p {
 .sign-in button:hover {
   background-color: #D2B48C;
   color: black;
+}
+*/
+
+#signup-form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#signupTitle {
+  width: 100%;
+  text-align: center;
+}
+
+.signup-css {
+  width: 100%;
+  text-align: center;
 }

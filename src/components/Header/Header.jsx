@@ -10,7 +10,7 @@ const Header = props => (
     <h1>PB & JAMD Forum</h1>
 
     <div className="user-button">
-      <button onClick={props.changeSidebar}>Login | Signup</button>
+      <button onClick={props.changeSidebar}>{props.buttonText}</button>
     </div>
   </div>
     );

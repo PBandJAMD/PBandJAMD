@@ -1,0 +1,12 @@
+#commentTitle {
+  font-size: 20px;
+}
+
+#aside-user-account-template {
+  text-align: center;
+  background-color: white;
+  width: 80%;
+  border-radius: 4vw;
+  height: 200px;
+  font-size: 10px;
+}

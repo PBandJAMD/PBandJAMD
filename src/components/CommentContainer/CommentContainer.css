@@ -1,5 +1,9 @@
-#comments-container {
+/*#comments-containe {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+}*/
+
+.comments-button {
+  display: flex;
+  justify-content: center;
 }

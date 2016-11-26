@@ -1,6 +1,15 @@
 #footer-container {
   width: 100vw;
-  height: 10vh;
+  height: 0;
   margin: 0;
-  background-color: navy;
+/*  background-color: #161616;*/
 }
+
+h3 {
+  color: tomato;
+  margin: 0;
+  padding-top: 23px;
+  text-align: center;
+  font-family: 'Cabin Sketch', cursive;
+}
+

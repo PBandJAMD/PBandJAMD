@@ -1,8 +1,30 @@
 .topic-template {
   background-color: white;
-  border-radius: 4vw;
-  width: 80vw;
+  border-radius: 1vw;
+  border: 2px black solid;
+  width: 100vw;
   margin: 4vw;
   text-align: center;
   font-family: 'Lora', serif;
+  padding: 2vw;
+  font-family: 'Cabin Sketch', cursive;
 }
+
+button {
+  width: 15vw;
+  background-color: #DEB887;
+  border: none;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'Cabin Sketch', cursive;
+  border: 1px solid black;
+}
+
+  button:hover {
+  background-color: #D2B48C;
+  color: white;
+}
+

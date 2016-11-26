@@ -1,7 +1,8 @@
 #app-container {
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background-image: url(./bulletin.jpg);
+  /*background-color: #b2391e;*/
 }
 
 #main-container {
@@ -10,3 +11,4 @@
   overflow: scroll;
   z-index: -1;
 }
+

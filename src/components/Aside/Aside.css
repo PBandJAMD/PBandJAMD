@@ -1,29 +1,38 @@
 #hidden {
-  left: -30vw;
+  left: 100vw;
   width: 30vw;
-  height: 80vh;
+  height: 81vh;
   position: absolute;
-  background-color: #FAEBD7;
+  background-color: #F5DEB3;
   z-index: 5;
   transition: left 1s ease-in-out;
   display: flex;
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
+  overflow:auto;
+  overflow-x:hidden;
 }
 
 #show {
   position: absolute;
-  background-color: #FAEBD7;
+  background-color: #F5DEB3;
   z-index: 5;
-  left: 0;
+  left: 70vw;
   width: 30vw;
-  height: 80vh;
+  height: 81vh;
   transition: left 1s ease-in;
   display: flex;
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
+  overflow:auto;
+  overflow-x:hidden;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
 }
 
 /*#sidebar {

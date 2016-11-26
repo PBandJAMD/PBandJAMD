@@ -34,3 +34,7 @@ input[type=password] {
 .login-button button:hover {
   background-color: tomato;
 }
+
+input {
+  width: 20vw;
+}

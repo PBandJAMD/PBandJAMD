@@ -3,11 +3,12 @@ import CommentTemplate from '../CommentTemplate/CommentTemplate.jsx';
 import './CommentContainer.css';
 
 const CommentContainer = props => {
- const comments = props.comments.map((comment) => {
+  const comments = props.comments.map((comment) => {
     return (
       <CommentTemplate
         key={comment.id.toString()}
-        // id={comment.id}
+        id={comment.id}
+        title={comment.title}
         topic_id={comment.topic_id}
         body={comment.body}
         date_created={comment.date_created}
@@ -18,7 +19,7 @@ const CommentContainer = props => {
 
   return (
     <div id="comments-container">
-    <button onClick={() => props.changeComponent(0)}>Click to return!</button>
+      <button onClick={() => props.changeComponent(0, 0)}>Click to return!</button>
       {comments}
     </div>
   );

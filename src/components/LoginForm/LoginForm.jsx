@@ -12,12 +12,14 @@ const LoginForm = props => (
       value={props.loginUsername}
       onChange={props.updateLoginFormUsername}
     />
+    <br />
     <input
       type="password"
       placeholder="password"
       value={props.loginPassword}
       onChange={props.updateLoginFormPassword}
     />
+    <br />
     <button onClick={props.handleLoginFormSubmit}>
       Log In!
     </button>

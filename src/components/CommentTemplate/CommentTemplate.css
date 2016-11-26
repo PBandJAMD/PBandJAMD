@@ -1,7 +1,11 @@
 .comment-template {
   background-color: white;
-  border-radius: 4vw;
-  width: 80vw;
-  margin: 4vw;
+  border-radius: 1vw;
+  border: 2px black solid;
+  width: 90vw;
+  margin: 2vw;
   text-align: center;
+  font-family: 'Lora', serif;
+  padding: 1vw;
+  font-family: 'Cabin Sketch', cursive;
 }

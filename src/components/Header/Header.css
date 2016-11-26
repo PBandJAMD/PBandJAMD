@@ -4,33 +4,37 @@
   display: flex;
  /* justify-content: space-around;*/
   align-items: center;
-  background-color: navy;
+/*  background-color: #161616;*/
 }
 
 #banana {
-  width: 7vw;
-  height: 5vh;
+  height: 8vh;
+  width: 4vw;
 }
 
 h1 {
-  color: white;
+  color: tomato;
+  /*color: #b2391e;*/
   font-size: 5vw;
   font-family: 'Cabin Sketch', cursive;
 }
 
-button {
-  background-color: #4CAF50;
+.user-button button {
+  background: none;
   border: none;
-  color: white;
-  padding: 10px 30px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 3px 1px;
-  cursor: pointer;
+  margin-left: 420px;
+  margin-top: 20px;
+  padding: 0;
+  color: tomato;
+  font-size: 28px;
+  font-family: 'Cabin Sketch', cursive;
 }
 
 button:hover {
-  background-color: tomato;
+  color: white;
+  /*color: #b2391e;*/
+}
+
+.sign-css {
+  text-align: center;
 }

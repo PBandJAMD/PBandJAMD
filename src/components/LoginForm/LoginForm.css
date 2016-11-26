@@ -18,19 +18,36 @@ input[type=password] {
 /*justify-content: center;*/
 }
 
-.login-button button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  /*padding: 10px 30px;*/
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  /*margin: 3px 1px;*/
-  cursor: pointer;
-}
-
 .login-button button:hover {
   background-color: tomato;
+}
+
+.log-in h2 {
+  margin-top: 40px;
+  text-align: center;
+  font-family: 'Cabin Sketch', cursive;
+  color: tomato;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.log-in button {
+  width: 15vw;
+  background-color: #DEB887;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'Cabin Sketch', cursive;
+  border: 1px solid black;
+}
+
+.log-in button:hover {
+  background-color: #D2B48C;
+  color: black;
+}
+
+.login-css {
+  text-align: center;
 }

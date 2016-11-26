@@ -1,6 +1,6 @@
 import React from 'react';
 import CommentTemplate from '../CommentTemplate/CommentTemplate.jsx';
-
+import CreateCommentForm from '../CreateCommentForm/CreateCommentForm.jsx';
 import './CommentContainer.css';
 
 const CommentContainer = props => {
@@ -22,10 +22,10 @@ const CommentContainer = props => {
   return (
     <div id="comments-container">
       <div className="comments-button">
-        <button onClick={() => props.changeComponent(0)}>Click to return!</button>
+        <button onClick={() => props.changeComponent(0, 0)}>Click to return!</button>
       </div>
       {comments}
-
+      <CreateCommentForm updateComment={props.updateComment} commentBody={props.commentBody} submitComment={props.submitComment} />
     </div>
   );
 };

@@ -15,6 +15,7 @@ class App extends Component {
 
     this.state = {
       currentUser: null,
+      currentTopic: 0,
       currentPage: 0,
       topics: [],
       comments: [],
@@ -30,6 +31,7 @@ class App extends Component {
         password: '',
       },
 
+      comment: '',
     };
   }
 
@@ -60,7 +62,7 @@ class App extends Component {
     });
   }
 
-  // JH getting comment(s) based on specific id
+  // JH getting comment(s) based on specific id/ BEGIN COMMENT FETCH FUNCTIONS
   getAllComments(id) {
     fetch(`/api/comment/${id}`, {
       headers: {
@@ -77,6 +79,7 @@ class App extends Component {
     })
     .catch(err => console.log('getComment', err));
   }
+// END COMMENT FETCH FUNCTIONS
 
 // BEGIN LOGIN FORM FUNCTIONS *TAKEN FROM BOBBY KING'S REACT PUPPIES SOLUTION WITH AUTH*
   handleSignUp() {
@@ -168,8 +171,34 @@ class App extends Component {
     });
   }
 
+  updateComment(e) {
+    this.setState({
+      comment: e.target.value,
+    });
+  }
+
 // END FORM DISPLAY FUNCTIONS
 
+// BEGIN SUBMIT COMMENT API FUNCTIONS
+  submitComment() {
+    fetch('/api/comment', {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify({
+        body: this.state.comment,
+        topic_id: parseInt(this.state.currentTopic, 10),
+        user_id: parseInt(this.state.currentUser, 10),
+      }),
+    })
+    .then(r => r.json())
+    .then(this.setState({
+      comment: '',
+    }))
+    .catch(err => console.log(err));
+  }
+// END SUBMIT COMMENT API FUNCTIONS
 
 // ALL TOGGLES
 // TOGGLE COMPONENT FUNCTIONS *HELP TAKEN FROM LINK #2 IN README*
@@ -177,6 +206,7 @@ class App extends Component {
       this.getAllComments(y);
       this.setState({
         currentPage: x,
+        currentTopic: y,
       });
   }
 
@@ -184,7 +214,7 @@ class App extends Component {
     if (component === 0) {
       return <TopicContainer topics={this.state.topics} changeComponent={(x, y) => this.changeComponent(x, y)} />;
     } else if (component === 1) {
-      return <CommentContainer comments={this.state.comments} changeComponent={(x, y) => this.changeComponent(x, y)} />;
+      return <CommentContainer comments={this.state.comments} changeComponent={(x, y) => this.changeComponent(x, y)} updateComment={event => this.updateComment(event)} commentBody={this.state.comment} submitComment={() => this.submitComment()} />;
     }
   }
 

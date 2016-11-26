@@ -48,20 +48,24 @@ function listUsers(req, res, next) {
 //   };
 // }
 
-// function getUserByUsername(username) {
-//   return {const promise = new Promise((resolve, reject) => {
-//       db.one('SELECT * FROM users WHERE username = $1', [username])
-//       .then ((findError, user) => {
-//         if (findError) reject(findError);
-//         resolve(user);
-//       });
-//     });
-//     return promise;
-//   )}
-// }
-
 function getUserByUsername(username) {
   return db.one('SELECT * FROM users WHERE username = $1', [username]);
+}
+
+function getUserInfo(req, res, next) {
+  db.any(`SELECT *
+          FROM users
+          INNER JOIN topic
+          ON users.id = topic.user_id
+          INNER JOIN comment
+          ON topic.user_id = comment.user_id
+          WHERE users.id= $1;
+          `, [req.params.id])
+  .then((info) => {
+    res.info = info;
+    next();
+  })
+  .catch(err => next(err));
 }
 
 
@@ -69,5 +73,6 @@ module.exports = {
   createUser,
   listUsers,
   // getUserById,
+  getUserInfo,
   getUserByUsername,
 };

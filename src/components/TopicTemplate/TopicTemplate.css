@@ -1,32 +1,42 @@
 .topic-template {
-  background-color: white;
+  background-color: #FFDEC4;
   border-radius: 1vw;
   border: 2px black solid;
-  width: 100vw;
-  margin: 4vw;
+  width: 40vw;
+  margin: 1vw 9vh;
   text-align: center;
-  font-family: 'Lora', serif;
-  padding: 2vw;
+  padding: 1vw;
   font-family: 'Cabin Sketch', cursive;
+  margin-left: -3vw;
 }
 
-/*button {
-  width: 15vw;
-  background-color: #DEB887;
-  border: none;
-  color: black;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  cursor: pointer;
-  font-family: 'Cabin Sketch', cursive;
-  border: 1px solid black;
+#topicTitle {
+  margin: 0;
+  padding: 0;
+  font-size: 25px;
 }
 
-button:hover {
-  background-color: #D2B48C;
-  color: white;
-}*/
+#topicContent {
+  margin: 0;
+  padding: 0;
+}
+
+#topicDate {
+  margin: 0;
+  padding: 0;
+}
+
+#topicUser {
+  margin: 0;
+  padding: 0;
+}
+
+#topicButton {
+  font-family: 'Cabin Sketch', cursive;
+  background:none;
+  border:none;
+  text-decoration: underline
+}
 
 .hideButton {
   display: none;

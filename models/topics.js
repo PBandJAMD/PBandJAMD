@@ -2,7 +2,11 @@ const db = require('../lib/dbConnect.js');
 
 // displaying all topics
 function getAllTopics(req, res, next) {
-  db.any('SELECT * FROM topic ORDER BY date_created DESC;')
+  db.any(`SELECT topic.id, topic.title, topic.content, users.username, topic.date_created
+          FROM topic
+          INNER JOIN users
+          ON topic.user_id = users.id
+          ORDER BY topic.date_created DESC;`)
     .then((topics) => {
       res.topics = topics;
       next();

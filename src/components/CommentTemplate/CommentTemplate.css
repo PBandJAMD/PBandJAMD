@@ -9,3 +9,11 @@
   padding: 1vw;
   font-family: 'Cabin Sketch', cursive;
 }
+
+.deleteButton {
+  display: none;
+}
+
+.showDeleteButton {
+  display: block;
+}

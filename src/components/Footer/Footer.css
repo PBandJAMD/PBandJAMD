@@ -1,18 +1,14 @@
 #footer-container {
+  background-image: url(../bulletin.jpg);
   width: 100vw;
-  height: 0;
+  height: 10vh;
   margin: 0;
-  background-color: blue;
-/*  background-image: url(../bulletin.jpg);*/
+  z-index: 5;
+  text-align: center;
 }
 
-/*#footer-container h3 {
+#footerText {
   color: tomato;
   margin: 0;
-  padding-top: 23px;
-  text-align: center;
   font-family: 'Cabin Sketch', cursive;
-  background-image: url(../bulletin.jpg);
-  height: 6.5vh;
 }
-*/

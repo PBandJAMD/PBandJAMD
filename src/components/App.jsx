@@ -278,6 +278,7 @@ class App extends Component {
     })
     .then(r => r.json())
     .then(this.getAllTopics())
+    .then(this.getUserInfo(this.state.currentUser))
     .then(this.setState({
       topic: {
         title: '',

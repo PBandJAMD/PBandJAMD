@@ -51,6 +51,7 @@
   opacity: .8;
   color: white;
   z-index: 1;
+  font-family: 'Cabin Sketch', cursive;
 }
 
 #sidebarButton:hover {

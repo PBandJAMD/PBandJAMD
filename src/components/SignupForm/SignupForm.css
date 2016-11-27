@@ -8,14 +8,6 @@
 #signupTitle {
   width: 100%;
   text-align: center;
-}
-
-.signup-css {
-  width: 60%;
-  text-align: center;
-}
-
-#signup-form-container h2 {
   margin-top: 5vh;
   text-align: center;
   font-family: 'Cabin Sketch', cursive;
@@ -23,8 +15,15 @@
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-#signup-form-container button {
-  width: 10%;
+.signup-css {
+  width: 60%;
+  text-align: center;
+  font-family: 'Cabin Sketch', cursive;
+}
+
+
+#signupFormButton {
+  width: 80%;
   background-color: #DEB887;
   border: none;
   color: white;
@@ -35,20 +34,8 @@
   font-family: 'Cabin Sketch', cursive;
 }
 
-#signup-form-container button:hover {
+#signupFormButton:hover {
   background-color: #D2B48C;
   color: black;
-  font-family: 'Cabin Sketch', cursive;
-}
-
-#signup-form-container input[type=text] {
-  /*height: 3.5vh;*/
-}
-
-#signup-form-container input[type=password] {
-  /*height: 3.5vh;*/
-}
-
-#signup-form-container input {
   font-family: 'Cabin Sketch', cursive;
 }

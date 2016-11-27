@@ -37,7 +37,7 @@ class App extends Component {
         password: '',
       },
 
-      userTopics: [],
+      userInfo: [],
 
       sidebar: 'hidden',
 
@@ -191,7 +191,7 @@ class App extends Component {
       .then(r => r.json())
       .then((info) => {
         this.setState({
-          userTopics: info,
+          userInfo: info,
         });
       })
       .catch(err => console.log('getComment', err));
@@ -344,7 +344,7 @@ class App extends Component {
         buttonText={this.state.buttonText}
         topicTitle={this.state.topic.title}
         topicContent={this.state.topic.content}
-        userTopics={this.state.userTopics}
+        userInfo={this.state.userInfo}
         sidebar={this.state.sidebar}
         updateTopicTitle={event => this.updateTopicTitle(event)}
         updateTopicContent={event => this.updateTopicContent(event)}

@@ -22,16 +22,6 @@ function addTopic(req, res, next) {
     .catch(err => next(err));
 }
 
-// updating one topic
-function editTopic(req, res, next) {
-  db.none(`UPDATE topic
-            SET title = $1, console = $2
-            WHERE id = $1`, [req.body.title, req.body.content])
-   .then(next())
-   .catch(err => next(err));
-}
-
-
 // deleting one topic
 function deleteTopic(req, res, next) {
   db.none(`DELETE FROM topic WHERE id = $1;`, [req.params.id])
@@ -43,6 +33,5 @@ function deleteTopic(req, res, next) {
 module.exports = {
   getAllTopics,
   addTopic,
-  editTopic,
   deleteTopic,
 };

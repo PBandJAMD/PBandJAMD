@@ -9,11 +9,10 @@
   transition: left 1s ease-in-out;
   display: flex;
   justify-content: center;
-  /*align-content: center;*/
+  align-items: center;
   flex-wrap: wrap;
-  overflow:auto;
+  overflow: scroll;
   overflow-x:hidden;
-/*  margin-bottom: 100px;*/
 }
 
 #show {
@@ -27,25 +26,10 @@
   transition: left 1s ease-in;
   display: flex;
   justify-content: center;
-  /*align-content: center;*/
+  align-items: center;
   flex-wrap: wrap;
-  overflow:auto;
+  overflow: scroll;
   overflow-x:hidden;
 }
-
-h2 {
-  margin: 0;
-  padding: 0;
-}
-
-/*#sidebar {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  height: 60vh;
-  margin-top: 65px;
-  background-color: white;
-}
-*/
 
 

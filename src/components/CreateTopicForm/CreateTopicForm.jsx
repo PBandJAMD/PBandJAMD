@@ -3,22 +3,24 @@ import '../normalize.css';
 import './CreateTopicForm.css';
 
 const CreateTopicForm = props => (
-  <div className="topic-form">
+  <div id="createTopicForm">
     <input
+      className="topicInput"
       type="text"
       placeholder="Topic Title"
-      value={props.title}
+      value={props.topicTitle}
       onChange={props.updateTopicTitle}
     />
 
     <input
+      className="topicInput"
       type="text"
       placeholder="Topic Comment"
-      value={props.content}
+      value={props.topicContent}
       onChange={props.updateTopicContent}
     />
 
-    <button onClick={props.handleUpdateTopic}>
+    <button onClick={props.handleCreateTopic}>
     Create New Topic
     </button>
   </div>

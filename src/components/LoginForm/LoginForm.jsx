@@ -4,10 +4,9 @@ import './LoginForm.css';
 
 const LoginForm = props => (
   //div class containining user login and password
-  <div className="login-form-container">
+  <div id="login-form-container">
 
-    <div className="log-in">
-      <h2>- Log In -</h2>
+      <h2 id="loginTitle">- Log In -</h2>
       <br />
       <input
         className="login-css"
@@ -17,20 +16,20 @@ const LoginForm = props => (
         onChange={props.updateLoginFormUsername}
       />
       <br />
-      <br />
+
       <input
-      className="login-css"
+        className="login-css"
         type="password"
         placeholder="Password"
         value={props.loginPassword}
         onChange={props.updateLoginFormPassword}
       />
       <br />
-      <br />
-      <button onClick={props.handleLoginFormSubmit}>
+
+      <button id="loginButton" onClick={props.handleLoginFormSubmit}>
         Log In!
       </button>
-    </div>
+
   </div>
 );
 

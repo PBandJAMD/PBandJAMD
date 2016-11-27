@@ -2,9 +2,6 @@ import React from 'react';
 import '../normalize.css';
 import './TopicTemplate.css';
 
-
-    // <button onClick={() => props.getAllComments(props.id)}>Change Comments</button>
-
 const TopicTemplate = props => (
   <div className="topic-template">
     <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet" />

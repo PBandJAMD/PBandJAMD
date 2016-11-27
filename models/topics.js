@@ -2,7 +2,7 @@ const db = require('../lib/dbConnect.js');
 
 // displaying all topics
 function getAllTopics(req, res, next) {
-  db.any('SELECT * FROM topic;')
+  db.any('SELECT * FROM topic ORDER BY date_created DESC;')
     .then((topics) => {
       res.topics = topics;
       next();
@@ -12,8 +12,8 @@ function getAllTopics(req, res, next) {
 
 // adding one topic
 function addTopic(req, res, next) {
-  db.none(`INSERT INTO topic (title, content)
-          VALUES ($1, $2);`, [req.body.title, req.body.content])
+  db.none(`INSERT INTO topic (title, content, user_id)
+          VALUES ($1, $2, $3);`, [req.body.title, req.body.content, req.body.user_id])
     .then(next())
     .catch(err => next(err));
 }

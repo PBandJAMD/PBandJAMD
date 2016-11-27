@@ -20,9 +20,8 @@ class App extends Component {
 
       topics: [],
       comments: [],
-      sidebar: 'hidden',
 
-      topic:{
+      topic: {
         title: '',
         content: '',
       },
@@ -38,8 +37,6 @@ class App extends Component {
         password: '',
       },
 
-      topics: [],
-      comments: [],
       userInfo: [],
 
       sidebar: 'show',
@@ -233,40 +230,49 @@ class App extends Component {
     });
   }
 
-  updateTopicTitle(e){
+  updateTopicTitle(e) {
     this.setState({
-      topic:{
-       title: e.target.value,
+      topic: {
+        title: e.target.value,
+        content: this.state.topic.content,
       },
-     });
+    });
   }
 
-  updateTopicContent(e){
+  updateTopicContent(e) {
     this.setState({
-      topic:{
-       content: e.target.value,
+      topic: {
+        title: this.state.topic.title,
+        content: e.target.value,
       },
-     });
+    });
   }
-// creating topic update
-  handleUpdateTopic(){
-    fetch(api/topic, {
+
+// END FORM DISPLAY FUNCTIONS
+
+// FETCH CREATE TOPIC
+  handleCreateTopic() {
+    fetch('api/topic', {
       headers: {
         'Content-Type': 'application/json',
       },
       method: 'POST',
       body: JSON.stringify({
-      title: this.state.topic.title,
-      content: this.state.topic.content,
-     }),
-   })
+        title: this.state.topic.title,
+        content: this.state.topic.content,
+        user_id: this.state.currentUser,
+      }),
+    })
     .then(r => r.json())
     .then(this.setState({
-      topic: '',
+      topic: {
+        title: '',
+        content: '',
+      },
     }))
     .catch(err => console.log(err));
   }
-// END FORM DISPLAY FUNCTIONS
+// FETCH CREATE TOPIC
 
 
 // ALL TOGGLES
@@ -298,7 +304,6 @@ class App extends Component {
         updateSignupFormPassword={event => this.updateFormSignUpPassword(event)}
         handleSignupFormSubmit={() => this.handleSignUp()}
         // LOGIN
-        className={this.state.login.loggedIn ? 'hidden' : ''}
         loginUsername={this.state.login.username}
         loginPassword={this.state.login.password}
         updateLoginFormUsername={event => this.updateFormLogInUsername(event)}
@@ -306,7 +311,7 @@ class App extends Component {
         handleLoginFormSubmit={() => this.handleLogIn()}
       />);
     } else if (loggedIn === true) {
-      return (<AsideUserAccountContainer userInfo={this.state.userInfo} sidebar={this.state.sidebar} />);
+      return (<AsideUserAccountContainer topicTitle={this.state.topic.title} topicContent={this.state.topic.content} userInfo={this.state.userInfo} sidebar={this.state.sidebar} updateTopicTitle={event => this.updateTopicTitle(event)} updateTopicContent={event => this.updateTopicContent(event)} handleCreateTopic={event => this.handleCreateTopic(event)} />);
     }
   }
 
@@ -351,6 +356,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-

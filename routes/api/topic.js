@@ -8,7 +8,7 @@ topicRoute.route('/')
    .post(addTopic, sendJSONresp);
 
 topicRoute.route('/:id')
-   .put(editTopic, deleteTopic)
+   .put(editTopic, sendJSONresp)
    .delete(deleteTopic, sendJSONresp);
 
 module.exports = topicRoute;

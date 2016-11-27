@@ -6,18 +6,13 @@ p {
   text-align: center;
 }
 
-input[type=text] {
+/*input[type=text] {
   border: 1px solid black;
 }
 
 input[type=password] {
   border: 1px solid black;
-}
-
-.login-button {
-/*display: flex;*/
-/*justify-content: center;*/
-}
+}*/
 
 .login-button button:hover {
   background-color: tomato;
@@ -31,7 +26,7 @@ input[type=password] {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-.log-in button {
+#loginButton {
   width: 20.3vw;
   background-color: #DEB887;
   border: none;
@@ -44,15 +39,25 @@ input[type=password] {
   border: 1px solid black;
 }
 
-.log-in button:hover {
+#loginButton:hover {
   background-color: #D2B48C;
   color: black;
 }
 
-.login-css {
+
+#login-form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#loginTitle {
+  width: 100%;
   text-align: center;
 }
 
-input {
-  width: 20vw;
+.login-css {
+  width: 100%;
+  text-align: center;
 }

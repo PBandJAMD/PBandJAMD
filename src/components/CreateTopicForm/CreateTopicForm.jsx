@@ -5,16 +5,17 @@ import './CreateTopicForm.css';
 const CreateTopicForm = props => (
   <div id="createTopicForm">
     <input
-      className="topicInput"
+      className="topicInputTitle"
       type="text"
       placeholder="Topic Title"
       value={props.topicTitle}
       onChange={props.updateTopicTitle}
     />
-
+    <br />
+    <br />
     <input
-      className="topicInput"
-      type="text"
+      className="topicInputContent"
+      type="textarea"
       placeholder="Topic Comment"
       value={props.topicContent}
       onChange={props.updateTopicContent}

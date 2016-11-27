@@ -5,6 +5,18 @@
   margin-top: 10vh;
 }
 
+/*#createTopicForm input[type=text] {
+  height: 2vh;
+}*/
+
+/*.createTopicForm input[type=text] {
+  height: 2vh;
+}
+
+.createTopicForm input[type=textarea] {
+  height: 6vh;
+}*/
+
 .topicInput {
   /*outline: none;*/
   border: none;

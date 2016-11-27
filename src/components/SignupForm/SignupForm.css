@@ -1,58 +1,3 @@
-/*.signup-container {
-}
-
-p {
-  text-align: center;
-}
-
-.sign-button {
-
-}
-
-
-.sign-button button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 3px 1px;
-  cursor: pointer;
-}
-
-.sign-button button:hover {
-  background-color: tomato;
-}
-
-.sign-in h2 {
-  margin-top: -7vh;
-  text-align: center;
-  font-family: 'Cabin Sketch', cursive;
-  color: tomato;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-
-.sign-in button {
-  width: 20.3vw;;
-  background-color: #DEB887;
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  cursor: pointer;
-  font-family: 'Cabin Sketch', cursive;
-  border: 1px solid black;
-}
-
-.sign-in button:hover {
-  background-color: #D2B48C;
-  color: black;
-}
-*/
-
 #signup-form-container {
   width: 100%;
   display: flex;
@@ -66,6 +11,47 @@ p {
 }
 
 .signup-css {
-  width: 100%;
+  width: 60%;
   text-align: center;
+}
+
+#signup-form-container h2 {
+  margin-top: 5vh;
+  text-align: center;
+  font-family: 'Cabin Sketch', cursive;
+  color: tomato;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#signup-form-container button {
+  width: 12.3vw;
+  background-color: #DEB887;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'Cabin Sketch', cursive;
+  border: 1px solid black;
+}
+
+#signup-form-container button:hover {
+  background-color: #D2B48C;
+  color: black;
+  font-family: 'Cabin Sketch', cursive;
+}
+
+#signup-form-container input[type=text] {
+  border: 1px solid black;
+  height: 3.5vh;
+}
+
+#signup-form-container input[type=password] {
+  border: 1px solid black;
+  height: 3.5vh;
+}
+
+#signup-form-container input {
+  font-family: 'Cabin Sketch', cursive;
 }

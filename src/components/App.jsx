@@ -37,9 +37,9 @@ class App extends Component {
         password: '',
       },
 
-      userInfo: [],
+      userTopics: [],
 
-      sidebar: 'show',
+      sidebar: 'hidden',
 
       comment: '',
 
@@ -47,16 +47,14 @@ class App extends Component {
     };
   }
 
-// INITIAL FUNCTIONS
+// INITIAL FUNCTIONS *http://stackoverflow.com/questions/31023308/clearinterval-is-not-working-in-reactjs*
   componentDidMount() {
-    fetch('/api/topic')
-      .then(r => r.json())
-      .then((topics) => {
-        this.setState({
-          topics: topics,
-        });
-      })
-      .catch(err => console.log('getAllTopics', err));
+    // this.intervalId = setInterval(this.getAllTopics.bind(this), 1000);, THIS LINE CAUSE IT TO AUTO UPDATE
+    this.getAllTopics();
+  }
+
+  componentWillUnmount() { // CLEAR ABOVE INTERVAL WHEN COMPONENT UNMOUNTS
+   clearInterval(this.intervalId);
   }
 // END INITIAL FUNCTIONS
 
@@ -78,8 +76,19 @@ class App extends Component {
 // END LOGIN FORM FUNCTIONS
 
 // BEGIN DISPLAY COMMENT FETCH FUNCTIONS
-  getAllComments(id) {
-    fetch(`/api/comment/${id}`, {
+  getAllTopics() {
+    fetch('/api/topic')
+        .then(r => r.json())
+        .then((topics) => {
+          this.setState({
+            topics: topics,
+          });
+        })
+        .catch(err => console.log('getAllTopics', err));
+  }
+
+  getAllComments(topicId) {
+    fetch(`/api/comment/${topicId}`, {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -160,6 +169,7 @@ class App extends Component {
       }),
     })
     .then(r => r.json())
+    .then(this.getAllComments(this.state.currentTopic))
     .then(this.setState({
       comment: '',
     }))
@@ -178,7 +188,7 @@ class App extends Component {
       .then(r => r.json())
       .then((info) => {
         this.setState({
-          userInfo: info,
+          userTopics: info,
         });
       })
       .catch(err => console.log('getComment', err));
@@ -264,6 +274,7 @@ class App extends Component {
       }),
     })
     .then(r => r.json())
+    .then(this.getAllTopics())
     .then(this.setState({
       topic: {
         title: '',
@@ -296,6 +307,7 @@ class App extends Component {
   renderAside(loggedIn) {
     if (loggedIn === false) {
       return (<AsideLoginSignup
+        changeSidebar={event => this.changeSidebar(event)} buttonText={this.state.buttonText}
         // SIGNUP
         sidebar={this.state.sidebar}
         signupUsername={this.state.signup.username}
@@ -311,17 +323,9 @@ class App extends Component {
         handleLoginFormSubmit={() => this.handleLogIn()}
       />);
     } else if (loggedIn === true) {
-      return (<AsideUserAccountContainer topicTitle={this.state.topic.title} topicContent={this.state.topic.content} userInfo={this.state.userInfo} sidebar={this.state.sidebar} updateTopicTitle={event => this.updateTopicTitle(event)} updateTopicContent={event => this.updateTopicContent(event)} handleCreateTopic={event => this.handleCreateTopic(event)} />);
+      return (<AsideUserAccountContainer topicTitle={this.state.topic.title} topicContent={this.state.topic.content} userTopics={this.state.userTopics} sidebar={this.state.sidebar} updateTopicTitle={event => this.updateTopicTitle(event)} updateTopicContent={event => this.updateTopicContent(event)} handleCreateTopic={event => this.handleCreateTopic(event)} />);
     }
   }
-
-
-  // renderButton(x) {
-  //   if (this.state.loggedIn === false) {
-  //     return <button>Login/Signup</button>;
-  //   }
-  // }
-
 
 // END TOGGLE FUNCTIONS
 
@@ -342,7 +346,7 @@ class App extends Component {
   render() {
     return (
       <div id="app-container">
-        <Header changeSidebar={event => this.changeSidebar(event)} buttonText={this.state.buttonText} />
+        <Header />
 
         {this.renderAside(this.state.login.loggedIn)}
 

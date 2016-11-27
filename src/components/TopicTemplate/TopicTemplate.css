@@ -10,7 +10,7 @@
   font-family: 'Cabin Sketch', cursive;
 }
 
-button {
+/*button {
   width: 15vw;
   background-color: #DEB887;
   border: none;
@@ -26,5 +26,12 @@ button {
 button:hover {
   background-color: #D2B48C;
   color: white;
+}*/
+
+.hideButton {
+  display: none;
 }
 
+.showButton {
+  display: initial;
+}

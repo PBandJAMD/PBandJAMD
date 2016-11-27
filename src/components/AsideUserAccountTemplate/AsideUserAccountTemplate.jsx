@@ -9,6 +9,9 @@ const AsideUserAccountTemplate = props => (
       <p>{props.content}</p>
       <br />
       <p>Created on: {props.date_created}</p>
+
+      <button>Delete</button>
+      <button>Edit</button>
   </div>
 );
 

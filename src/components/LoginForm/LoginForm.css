@@ -11,7 +11,7 @@
 }
 
 #loginButton {
-  width: 12.3vw;
+  width: 70%;
   background-color: #DEB887;
   border: none;
   color: black;
@@ -20,7 +20,6 @@
   font-size: 16px;
   cursor: pointer;
   font-family: 'Cabin Sketch', cursive;
-  border: 1px solid black;
 }
 
 #loginButton:hover {
@@ -38,14 +37,6 @@
 #loginTitle {
   width: 100%;
   text-align: center;
-}
-
-.login-css {
-  width: 60%;
-  text-align: center;
-}
-
-#login-form-container h2 {
   margin-top: -5vh;
   text-align: center;
   font-family: 'Cabin Sketch', cursive;
@@ -53,16 +44,8 @@
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-#login-form-container input[type=text] {
-  border: 1px solid black;
-  height: 3.5vh;
-}
-
-#login-form-container input[type=password] {
-  border: 1px solid black;
-  height: 3.5vh;
-}
-
-#login-form-container input {
+.login-css {
+  width: 60%;
+  text-align: center;
   font-family: 'Cabin Sketch', cursive;
 }

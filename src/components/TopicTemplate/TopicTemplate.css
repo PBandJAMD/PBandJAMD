@@ -2,31 +2,33 @@
   background-color: white;
   border-radius: 1vw;
   border: 2px black solid;
-  width: 100vw;
-  margin: 4vw;
+  width: 40vw;
+  margin: 1.5vw;
   text-align: center;
   font-family: 'Lora', serif;
   padding: 2vw;
   font-family: 'Cabin Sketch', cursive;
 }
 
-/*button {
-  width: 15vw;
-  background-color: #DEB887;
-  border: none;
-  color: black;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  cursor: pointer;
-  font-family: 'Cabin Sketch', cursive;
-  border: 1px solid black;
+#topicTitle {
+  margin: 0;
+  padding: 0;
 }
 
-button:hover {
-  background-color: #D2B48C;
-  color: white;
-}*/
+#topicContent {
+  margin: 0;
+  padding: 0;
+}
+
+#topicDate {
+  margin: 0;
+  padding: 0;
+}
+
+#topicUser {
+  margin: 0;
+  padding: 0;
+}
 
 .hideButton {
   display: none;

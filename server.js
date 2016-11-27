@@ -3,7 +3,6 @@ require('dotenv').config({ silent: true });
 const express = require('express');
 const logger = require('morgan');
 const path = require('path');
-// const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 const commentRoute = require('./routes/api/comment.js');
@@ -18,7 +17,6 @@ app.use(logger('dev'));
 
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// app.use(cookieParser());
 app.use(bodyParser.json());
 
 app.use('/api/comment', commentRoute);

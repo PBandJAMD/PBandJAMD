@@ -11,7 +11,7 @@ const TopicTemplate = props => (
     <br />
     <br />
     <p id="topicDate">{props.date_created}</p>
-    <p id="topicUser">Started by user: {props.username}</p>
+    <p id="topicUser">Started by user: <span>{props.username}</span></p>
     <br />
     <button id="topicButton"onClick={() => props.changeComponent(1, props.id)}>Click to See More!</button>
 

@@ -28,3 +28,10 @@ button:hover {
   color: white;
 }
 
+.hideButton {
+  display: none;
+}
+
+.showButton {
+  display: initial;
+}

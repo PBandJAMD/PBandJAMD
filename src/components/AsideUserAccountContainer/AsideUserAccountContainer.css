@@ -1,14 +1,15 @@
-/*#hidden {
-  left: 100vw;
-  top: 0;
-  width: 30vw;
-  height: 100%;
+#hidden {
   position: absolute;
+  right:0;
   background-color: #F5DEB3;
+  top: 0;
+  width: 0;
+  transition: width 1s;
+  height: 100%;
   z-index: 5;
-  transition: left 1s ease-in-out;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   overflow: scroll;
   overflow-x:hidden;
@@ -16,19 +17,17 @@
 
 #show {
   position: absolute;
+  right: 0;
   background-color: #F5DEB3;
   z-index: 5;
-  left: 70vw;
   top: 0;
   width: 30vw;
   height: 100%;
-  transition: left 1s ease-in;
   display: flex;
+  transition: width 1s;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   overflow: scroll;
   overflow-x:hidden;
 }
-
-
-*/

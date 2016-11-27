@@ -21,10 +21,15 @@ const AsideUserAccountContainer = props => {
   });
 
   return (
-    <div id={props.sidebar}>
-      <CreateTopicForm topicTitle={props.topicTitle} topicContent={props.topicContent} updateTopicTitle={props.updateTopicTitle} updateTopicContent={props.updateTopicContent} handleCreateTopic={props.handleCreateTopic} />
-      <p>Threads you have started:</p>
-      {userTopics}
+    <div id="AsideUserAccountContainer">
+      <button onClick={props.changeSidebar} id="sidebarButton">{props.buttonText}</button>
+
+      <div id={props.sidebar}>
+        <CreateTopicForm topicTitle={props.topicTitle} topicContent={props.topicContent} updateTopicTitle={props.updateTopicTitle} updateTopicContent={props.updateTopicContent} handleCreateTopic={props.handleCreateTopic} />
+        <p>Threads you have started:</p>
+        {userTopics}
+      </div>
+
     </div>
   );
 };

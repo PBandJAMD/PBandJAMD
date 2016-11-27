@@ -1,37 +1,55 @@
-#hidden {
-  position: absolute;
-  right:0;
-  background-color: #F5DEB3;
-  top: 0;
-  width: 0;
-  transition: width 1s;
-  height: 100%;
+#AsideUserAccountContainer {
   z-index: 5;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: absolute;
+  transform: rotate(0deg);
+  width: auto;
+  right: 0;
+  top: 0;
+}
+
+#hidden {
+  transition: width 1s;
+  background-color: #F5DEB3;
+  width: 0vw;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   overflow: scroll;
-  overflow-x:hidden;
+  overflow-x: hidden;
 }
 
 #show {
-  position: absolute;
-  right: 0;
   background-color: #F5DEB3;
-  z-index: 5;
-  top: 0;
-  width: 30vw;
+  width: 50vw;
   height: 100%;
-  display: flex;
   transition: width 1s;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   overflow: scroll;
-  overflow-x:hidden;
+  overflow-x: hidden;
+}
+
+#sidebarButton {
+  background-color: black;
+  height: 100vw;
+  width: 8vw;
+  opacity: .5;
+  color: white;
+  z-index: 1;
+}
+
+#sidebarButton:hover {
+  opacity: 1;
 }
 
 p {
   font-family: 'Cabin Sketch', cursive;
 }
+

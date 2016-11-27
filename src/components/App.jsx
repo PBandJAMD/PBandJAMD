@@ -41,6 +41,8 @@ class App extends Component {
 
       sidebar: 'hidden',
 
+      disabled: 'disabled',
+
       comment: '',
 
       buttonText: 'Login/Signup',
@@ -63,6 +65,7 @@ class App extends Component {
     this.alertInfo('Youre logged in!');
     console.log(a);
     this.setState({
+      disabled: '',
       currentUser: a.id,
       buttonText: 'My Account',
       login: {
@@ -298,16 +301,29 @@ class App extends Component {
 
   renderComponent(component) {
     if (component === 0) {
-      return <TopicContainer topics={this.state.topics} changeComponent={(x, y) => this.changeComponent(x, y)} />;
+      return (<TopicContainer
+        topics={this.state.topics}
+        changeComponent={(x, y) => this.changeComponent(x, y)}
+      />
+      );
     } else if (component === 1) {
-      return <CommentContainer comments={this.state.comments} changeComponent={(x, y) => this.changeComponent(x, y)} updateComment={event => this.updateComment(event)} commentBody={this.state.comment} submitComment={() => this.submitComment()} />;
+      return (<CommentContainer
+        disabled={this.state.disabled}
+        comments={this.state.comments}
+        changeComponent={(x, y) => this.changeComponent(x, y)}
+        updateComment={event => this.updateComment(event)}
+        commentBody={this.state.comment}
+        submitComment={() => this.submitComment()}
+      />
+      );
     }
   }
 
   renderAside(loggedIn) {
     if (loggedIn === false) {
       return (<AsideLoginSignup
-        changeSidebar={event => this.changeSidebar(event)} buttonText={this.state.buttonText}
+        changeSidebar={event => this.changeSidebar(event)}
+        buttonText={this.state.buttonText}
         // SIGNUP
         sidebar={this.state.sidebar}
         signupUsername={this.state.signup.username}
@@ -323,7 +339,17 @@ class App extends Component {
         handleLoginFormSubmit={() => this.handleLogIn()}
       />);
     } else if (loggedIn === true) {
-      return (<AsideUserAccountContainer topicTitle={this.state.topic.title} topicContent={this.state.topic.content} userTopics={this.state.userTopics} sidebar={this.state.sidebar} updateTopicTitle={event => this.updateTopicTitle(event)} updateTopicContent={event => this.updateTopicContent(event)} handleCreateTopic={event => this.handleCreateTopic(event)} />);
+      return (<AsideUserAccountContainer
+        changeSidebar={event => this.changeSidebar(event)}
+        buttonText={this.state.buttonText}
+        topicTitle={this.state.topic.title}
+        topicContent={this.state.topic.content}
+        userTopics={this.state.userTopics}
+        sidebar={this.state.sidebar}
+        updateTopicTitle={event => this.updateTopicTitle(event)}
+        updateTopicContent={event => this.updateTopicContent(event)}
+        handleCreateTopic={event => this.handleCreateTopic(event)}
+      />);
     }
   }
 

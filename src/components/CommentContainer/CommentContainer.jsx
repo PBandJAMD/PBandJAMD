@@ -23,7 +23,12 @@ const CommentContainer = props => {
     <div id="comments-container">
       <button onClick={() => props.changeComponent(0, 0)}>Click to return!</button>
       {comments}
-      <CreateCommentForm updateComment={props.updateComment} commentBody={props.commentBody} submitComment={props.submitComment} />
+      <CreateCommentForm
+        disabled={props.disabled}
+        updateComment={props.updateComment}
+        commentBody={props.commentBody}
+        submitComment={props.submitComment}
+      />
     </div>
   );
 };

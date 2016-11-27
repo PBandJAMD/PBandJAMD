@@ -30,12 +30,11 @@ h1 {
   font-size: 28px;
   font-family: 'Cabin Sketch', cursive;
 }
-
+/*
 button:hover:first-line {
   color: white;
   background: none;
-  /*color: #b2391e;*/
-}
+}*/
 
 .sign-css {
   text-align: center;

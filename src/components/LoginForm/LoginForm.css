@@ -6,13 +6,13 @@ p {
   text-align: center;
 }
 
-input[type=text] {
+/*input[type=text] {
   border: 1px solid black;
 }
 
 input[type=password] {
   border: 1px solid black;
-}
+}*/
 
 .login-button button:hover {
   background-color: tomato;

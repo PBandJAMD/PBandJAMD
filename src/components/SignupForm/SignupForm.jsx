@@ -15,6 +15,7 @@ const SignupForm = props => (
         onChange={props.updateSignupFormUsername}
       />
       <br />
+      <br />
 
       <input
         className="signup-css"
@@ -24,12 +25,15 @@ const SignupForm = props => (
         onChange={props.updateSignupFormPassword}
       />
       <br />
+      <br />
 
       <button onClick={props.handleSignupFormSubmit}>
       SignUp!
       </button>
 
-  </div>
+    </div>
+
+
   );
 
 export default SignupForm;

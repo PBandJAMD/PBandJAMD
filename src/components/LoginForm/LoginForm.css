@@ -27,7 +27,7 @@ input[type=password] {
 }
 
 #loginButton {
-  width: 20.3vw;
+  width: 12.3vw;
   background-color: #DEB887;
   border: none;
   color: white;
@@ -44,7 +44,6 @@ input[type=password] {
   color: black;
 }
 
-
 #login-form-container {
   width: 100%;
   display: flex;
@@ -58,6 +57,28 @@ input[type=password] {
 }
 
 .login-css {
-  width: 100%;
+  width: 60%;
   text-align: center;
+}
+
+#login-form-container h2 {
+  margin-top: -5vh;
+  text-align: center;
+  font-family: 'Cabin Sketch', cursive;
+  color: tomato;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#login-form-container input[type=text] {
+  border: 1px solid black;
+  height: 3.5vh;
+}
+
+#login-form-container input[type=password] {
+  border: 1px solid black;
+  height: 3.5vh;
+}
+
+#login-form-container input {
+  font-family: 'Cabin Sketch', cursive;
 }

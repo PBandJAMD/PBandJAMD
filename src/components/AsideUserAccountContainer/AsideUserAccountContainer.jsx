@@ -5,17 +5,13 @@ import AsideUserAccountTemplate from '../AsideUserAccountTemplate/AsideUserAccou
 import CreateTopicForm from '../CreateTopicForm/CreateTopicForm.jsx';
 
 const AsideUserAccountContainer = props => {
-  const userTopics = props.userTopics.map((topic) => {
+  const userInfo = props.userInfo.map((userInfo) => {
     return (
       <AsideUserAccountTemplate
+        key={userInfo.id.toString()}
         title={userInfo.title}
         content={userInfo.content}
         date_created={userInfo.date_created}
-        // content={userInfo.content}
-        key={topic.id.toString()}
-        title={topic.title}
-        content={topic.content}
-        date_created={topic.date_created}
       />
     );
   });
@@ -25,9 +21,15 @@ const AsideUserAccountContainer = props => {
       <button onClick={props.changeSidebar} id="sidebarButton">{props.buttonText}</button>
 
       <div id={props.sidebar}>
-        <CreateTopicForm topicTitle={props.topicTitle} topicContent={props.topicContent} updateTopicTitle={props.updateTopicTitle} updateTopicContent={props.updateTopicContent} handleCreateTopic={props.handleCreateTopic} />
+        <CreateTopicForm
+          topicTitle={props.topicTitle}
+          topicContent={props.topicContent}
+          updateTopicTitle={props.updateTopicTitle}
+          updateTopicContent={props.updateTopicContent}
+          handleCreateTopic={props.handleCreateTopic}
+        />
         <p>Threads you have started:</p>
-        {userTopics}
+        {userInfo}
       </div>
 
     </div>

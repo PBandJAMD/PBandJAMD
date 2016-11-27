@@ -16,6 +16,7 @@ const LoginForm = props => (
         onChange={props.updateLoginFormUsername}
       />
       <br />
+      <br />
 
       <input
         className="login-css"
@@ -25,7 +26,7 @@ const LoginForm = props => (
         onChange={props.updateLoginFormPassword}
       />
       <br />
-
+      <br />
       <button id="loginButton" onClick={props.handleLoginFormSubmit}>
         Log In!
       </button>

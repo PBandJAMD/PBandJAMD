@@ -36,11 +36,19 @@
   overflow-x: hidden;
 }
 
+@keyframes sidebarGradient {
+    0%{background-position:97% 0%}
+    50%{background-position:4% 100%}
+    100%{background-position:97% 0%}
+}
+/* https://www.gradient-animator.com/ */
 #sidebarButton {
-  background-color: black;
+  background: linear-gradient(212deg, tomato, #40b8d3);
+  background-size: 500% 500%;
+  animation: sidebarGradient 40s ease infinite;
   height: 100%;
   width: 8vw;
-  opacity: .5;
+  opacity: .8;
   color: white;
   z-index: 1;
 }
@@ -48,8 +56,3 @@
 #sidebarButton:hover {
   opacity: 1;
 }
-
-p {
-  font-family: 'Cabin Sketch', cursive;
-}
-

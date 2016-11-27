@@ -1,12 +1,20 @@
-.login-container {
-  margin: 0;
+.login-button button:hover {
+  background-color: tomato;
+}
+
+.log-in h2 {
+  margin-top: 9vh;
+  text-align: center;
+  font-family: 'Cabin Sketch', cursive;
+  color: tomato;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 #loginButton {
   width: 70%;
   background-color: #DEB887;
   border: none;
-  color: white;
+  color: black;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
@@ -16,7 +24,7 @@
 
 #loginButton:hover {
   background-color: #D2B48C;
-  color: black;
+  color: white;
 }
 
 #login-form-container {

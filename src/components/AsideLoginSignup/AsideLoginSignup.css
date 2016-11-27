@@ -1,33 +1,65 @@
-#hidden {
+#AsideLoginSignupContainer {
+  z-index: 5;
+  display: flex;
+  height: 100%;
+  top: 0;
+  width: auto;
   position: absolute;
+  right: 0;
+}
+
+#hidden {
+  /*position: absolute;
   right:0;
   background-color: #F5DEB3;
   top: 0;
-  width: 0;
+  width: 0;*/
   transition: width 1s;
-  height: 100%;
+/*  height: 100%;
   z-index: 5;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   overflow: scroll;
-  overflow-x:hidden;
+  overflow-x:hidden;*/
+  background-color: #F5DEB3;
+  width: 0vw;
+  height: 100%;
 }
 
 #show {
-  position: absolute;
-  right: 0;
+  /*position: absolute;*/
+  /*right: 0;*/
   background-color: #F5DEB3;
-  z-index: 5;
-  top: 0;
+  /*z-index: 5;*/
+  /*top: 0;*/
   width: 30vw;
   height: 100%;
-  display: flex;
+  /*display: flex;*/
   transition: width 1s;
-  justify-content: center;
+ /* justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   overflow: scroll;
-  overflow-x:hidden;
+  overflow-x:hidden;*/
+}
+
+#sidebarButton {
+  /*position: absolute;*/
+  width: 5vw;
+  /*z-index: 5;*/
+  /*top: 0;*/
+  height: 100%;
+  background-color: black;
+  display: flex;
+  /*justify-content: center;*/
+  align-items: center;
+}
+
+#sidebarButtonText {
+  display: inline;
+  margin: 0;
+  transform: rotate(-90deg);
+  color: white;
 }

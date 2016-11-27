@@ -2,9 +2,9 @@
   margin: 0;
 }
 
-p {
+/*p {
   text-align: center;
-}
+}*/
 
 /*input[type=text] {
   border: 1px solid black;
@@ -14,20 +14,20 @@ input[type=password] {
   border: 1px solid black;
 }*/
 
-.login-button button:hover {
+/*.login-button button:hover {
   background-color: tomato;
-}
+}*/
 
-.log-in h2 {
+/*.log-in h2 {
   margin-top: 9vh;
   text-align: center;
   font-family: 'Cabin Sketch', cursive;
   color: tomato;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
+}*/
 
 #loginButton {
-  width: 12.3vw;
+  width: 10%;
   background-color: #DEB887;
   border: none;
   color: white;
@@ -70,13 +70,11 @@ input[type=password] {
 }
 
 #login-form-container input[type=text] {
-  border: 1px solid black;
-  height: 3.5vh;
+  /*height: 3.5vh;*/
 }
 
 #login-form-container input[type=password] {
-  border: 1px solid black;
-  height: 3.5vh;
+  /*height: 3.5vh;*/
 }
 
 #login-form-container input {

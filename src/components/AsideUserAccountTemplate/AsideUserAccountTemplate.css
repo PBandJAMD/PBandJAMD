@@ -5,9 +5,23 @@
 #aside-user-account-template {
   text-align: center;
   background-color: white;
-  width: 80%;
-  border-radius: 4vw;
-  height: 200px;
+  width: 87%;
+  border-radius: 1vw;
+  height: 80px;
   font-size: 10px;
+  margin: 5px;
+  border: 1px solid black;
+}
+
+#aside-user-account-template h1 {
+  margin: 0;
+  padding-top: 5px;
+}
+
+#aside-user-account-template p {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-family: 'Cabin Sketch', cursive;
   margin-top: 5vh;
 }

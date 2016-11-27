@@ -8,6 +8,10 @@ const AsideUserAccountContainer = props => {
   const userTopics = props.userTopics.map((topic) => {
     return (
       <AsideUserAccountTemplate
+        title={userInfo.title}
+        content={userInfo.content}
+        date_created={userInfo.date_created}
+        // content={userInfo.content}
         key={topic.id.toString()}
         title={topic.title}
         content={topic.content}

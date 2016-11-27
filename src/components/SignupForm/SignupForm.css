@@ -26,7 +26,7 @@
   width: 80%;
   background-color: #DEB887;
   border: none;
-  color: white;
+  color: black;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
@@ -36,6 +36,6 @@
 
 #signupFormButton:hover {
   background-color: #D2B48C;
-  color: black;
+  color: white;
   font-family: 'Cabin Sketch', cursive;
 }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../normalize.css';
 import './AsideLoginSignup.css';
 import LoginForm from '../LoginForm/LoginForm.jsx';
@@ -6,8 +6,9 @@ import SignupForm from '../SignupForm/SignupForm.jsx';
 
 const AsideLoginSignup = props => (
   <div id="AsideLoginSignupContainer">
+
     <div id="sidebarButton">
-      <p id="sidebarButtonText">Hide Login/Signup</p>
+      <button id="sidebarButtonText" onClick={props.changeSidebar}>{props.buttonText}</button>
     </div>
 
     <div id={props.sidebar}>

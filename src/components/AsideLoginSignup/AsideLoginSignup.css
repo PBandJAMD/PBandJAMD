@@ -9,57 +9,47 @@
 }
 
 #hidden {
-  /*position: absolute;
-  right:0;
-  background-color: #F5DEB3;
-  top: 0;
-  width: 0;*/
   transition: width 1s;
-/*  height: 100%;
-  z-index: 5;
+  background-color: #F5DEB3;
+  width: 0vw;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   overflow: scroll;
-  overflow-x:hidden;*/
-  background-color: #F5DEB3;
-  width: 0vw;
-  height: 100%;
+  overflow-x: hidden;
 }
 
 #show {
-  /*position: absolute;*/
-  /*right: 0;*/
   background-color: #F5DEB3;
-  /*z-index: 5;*/
-  /*top: 0;*/
-  width: 30vw;
+  width: 50vw;
   height: 100%;
-  /*display: flex;*/
   transition: width 1s;
- /* justify-content: center;
+  display: flex;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   overflow: scroll;
-  overflow-x:hidden;*/
+  overflow-x: hidden;
 }
 
 #sidebarButton {
-  /*position: absolute;*/
-  width: 5vw;
-  /*z-index: 5;*/
-  /*top: 0;*/
   height: 100%;
   background-color: black;
   display: flex;
-  /*justify-content: center;*/
+  width: 3vw;
   align-items: center;
+  opacity: .5;
+}
+
+#sidebarButton:hover {
+  opacity: 1;
 }
 
 #sidebarButtonText {
-  display: inline;
   margin: 0;
+  background-color: black;
   transform: rotate(-90deg);
   color: white;
 }

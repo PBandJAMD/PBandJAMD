@@ -24,7 +24,7 @@
 }
 
 #signup-form-container button {
-  width: 12.3vw;
+  width: 10%;
   background-color: #DEB887;
   border: none;
   color: white;
@@ -33,7 +33,6 @@
   font-size: 16px;
   cursor: pointer;
   font-family: 'Cabin Sketch', cursive;
-  border: 1px solid black;
 }
 
 #signup-form-container button:hover {
@@ -43,13 +42,11 @@
 }
 
 #signup-form-container input[type=text] {
-  border: 1px solid black;
-  height: 3.5vh;
+  /*height: 3.5vh;*/
 }
 
 #signup-form-container input[type=password] {
-  border: 1px solid black;
-  height: 3.5vh;
+  /*height: 3.5vh;*/
 }
 
 #signup-form-container input {

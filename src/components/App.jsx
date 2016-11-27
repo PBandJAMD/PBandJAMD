@@ -315,14 +315,6 @@ class App extends Component {
     }
   }
 
-
-  // renderButton(x) {
-  //   if (this.state.loggedIn === false) {
-  //     return <button>Login/Signup</button>;
-  //   }
-  // }
-
-
 // END TOGGLE FUNCTIONS
 
 // BEGIN ASIDE FUNCTIONS

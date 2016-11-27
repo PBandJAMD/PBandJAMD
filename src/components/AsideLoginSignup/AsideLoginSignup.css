@@ -37,12 +37,12 @@
 }
 
 #sidebarButton {
-  border-radius: 500px;
   background-color: black;
-  height: 5vw;
-  width: 5vw;
-  opacity: .8;
+  height: 100vw;
+  width: 8vw;
+  opacity: .5;
   color: white;
+  z-index: 1;
 }
 
 #sidebarButton:hover {

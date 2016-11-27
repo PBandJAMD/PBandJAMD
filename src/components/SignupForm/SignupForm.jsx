@@ -6,6 +6,7 @@ const SignupForm = props => (
   <div id="signup-form-container">
 
       <h2 id="signupTitle">- Sign Up -</h2>
+
       <br />
       <input
         className="signup-css"
@@ -14,7 +15,7 @@ const SignupForm = props => (
         value={props.signupUsername}
         onChange={props.updateSignupFormUsername}
       />
-      <br />
+
       <br />
 
       <input
@@ -24,10 +25,10 @@ const SignupForm = props => (
         value={props.signupPassword}
         onChange={props.updateSignupFormPassword}
       />
-      <br />
+
       <br />
 
-      <button onClick={props.handleSignupFormSubmit}>
+      <button id="signupFormButton" onClick={props.handleSignupFormSubmit}>
       SignUp!
       </button>
 

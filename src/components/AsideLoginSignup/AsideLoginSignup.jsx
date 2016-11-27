@@ -7,9 +7,7 @@ import SignupForm from '../SignupForm/SignupForm.jsx';
 const AsideLoginSignup = props => (
   <div id="AsideLoginSignupContainer">
 
-    <div id="sidebarButton">
-      <button id="sidebarButtonText" onClick={props.changeSidebar}>{props.buttonText}</button>
-    </div>
+    <button onClick={props.changeSidebar} id="sidebarButton">{props.buttonText}</button>
 
     <div id={props.sidebar}>
         <SignupForm

@@ -1,11 +1,13 @@
 #AsideLoginSignupContainer {
   z-index: 5;
   display: flex;
+  align-items: center;
   height: 100%;
-  top: 0;
-  width: auto;
   position: absolute;
+  transform: rotate(0deg);
+  width: auto;
   right: 0;
+  top: 0;
 }
 
 #hidden {
@@ -35,21 +37,14 @@
 }
 
 #sidebarButton {
-  height: 100%;
+  border-radius: 500px;
   background-color: black;
-  display: flex;
-  width: 3vw;
-  align-items: center;
-  opacity: .5;
+  height: 5vw;
+  width: 5vw;
+  opacity: .8;
+  color: white;
 }
 
 #sidebarButton:hover {
   opacity: 1;
-}
-
-#sidebarButtonText {
-  margin: 0;
-  background-color: black;
-  transform: rotate(-90deg);
-  color: white;
 }

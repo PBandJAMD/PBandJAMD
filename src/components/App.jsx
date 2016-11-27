@@ -307,6 +307,7 @@ class App extends Component {
   renderAside(loggedIn) {
     if (loggedIn === false) {
       return (<AsideLoginSignup
+        changeSidebar={event => this.changeSidebar(event)} buttonText={this.state.buttonText}
         // SIGNUP
         sidebar={this.state.sidebar}
         signupUsername={this.state.signup.username}
@@ -345,7 +346,7 @@ class App extends Component {
   render() {
     return (
       <div id="app-container">
-        <Header changeSidebar={event => this.changeSidebar(event)} buttonText={this.state.buttonText} />
+        <Header />
 
         {this.renderAside(this.state.login.loggedIn)}
 

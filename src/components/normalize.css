@@ -258,6 +258,8 @@ textarea {
   font-size: 100%; /* 1 */
   line-height: 1.15; /* 1 */
   margin: 0; /* 2 */
+  padding: 0;
+  border: none;
 }
 
 /**
@@ -267,7 +269,7 @@ textarea {
 
 button,
 input { /* 1 */
-  overflow: visible;
+  overflow: hidden;
 }
 
 /**

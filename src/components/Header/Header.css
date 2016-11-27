@@ -2,9 +2,7 @@
   width: 100vw;
   height: 10vh;
   display: flex;
- /* justify-content: space-around;*/
   align-items: center;
-/*  background-color: #161616;*/
   z-index: -5;
 }
 
@@ -13,12 +11,12 @@
   width: 4vw;
 }
 
-/*h1 {
+#siteTitle {
   color: tomato;
-  /*color: #b2391e;*/
- /* font-size: 5vw;
+  color: #b2391e;
+  font-size: 5vw;
   font-family: 'Cabin Sketch', cursive;
-}*/*/
+}
 
 /*.user-button button {
   background: none;
@@ -30,12 +28,10 @@
   font-size: 28px;
   font-family: 'Cabin Sketch', cursive;
 }*/
+
 /*
 button:hover:first-line {
   color: white;
   background: none;
-}*/
-
-.sign-css {
-  text-align: center;
 }
+*/

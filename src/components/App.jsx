@@ -39,7 +39,7 @@ class App extends Component {
 
       userTopics: [],
 
-      sidebar: 'show',
+      sidebar: 'hidden',
 
       comment: '',
 

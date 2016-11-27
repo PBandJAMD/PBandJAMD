@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../normalize.css';
 import './AsideLoginSignup.css';
 import LoginForm from '../LoginForm/LoginForm.jsx';
@@ -9,7 +9,6 @@ const AsideLoginSignup = props => (
 
     <div id="sidebarButton">
       <button id="sidebarButtonText" onClick={props.changeSidebar}>{props.buttonText}</button>
-
     </div>
 
     <div id={props.sidebar}>

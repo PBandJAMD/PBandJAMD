@@ -30,4 +30,6 @@
   overflow-x:hidden;
 }
 
-
+p {
+  font-family: 'Cabin Sketch', cursive;
+}

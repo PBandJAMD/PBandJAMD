@@ -11,7 +11,7 @@ const AsideUserAccountContainer = props => {
         title={userInfo.title}
         content={userInfo.content}
         date_created={userInfo.date_created}
-        content={userInfo.content}
+        // content={userInfo.content}
       />
     );
   });

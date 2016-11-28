@@ -3,7 +3,6 @@ import './EditCommentContainer.css';
 
 const EditCommentContainer = props => (
   <div id="editCommentContainer">
-    <h3 id="editCommentContainerTitle">Hi. Im Paul.</h3>
 
      <input
       id="editCommentInput"

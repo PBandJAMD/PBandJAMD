@@ -9,7 +9,7 @@ const TopicTemplate = props => (
     <p>Description: {props.content}</p>
     <p>Date started: {props.date_created}</p>
     <p>Started by user: {props.user_id}</p>
-    <button onClick={() => props.changeComponent(1, props.id)}>Click Me!</button>
+    <button onClick={() => props.changeComponent(1, props.id)}>Learn More!</button>
 
   </div>
 

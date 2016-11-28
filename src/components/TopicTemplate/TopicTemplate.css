@@ -1,16 +1,27 @@
 .topic-template {
-  background-color: white;
-  border-radius: 1vw;
-  border: 2px black solid;
-  width: 100vw;
-  margin: 4vw;
-  text-align: center;
-  font-family: 'Lora', serif;
-  padding: 2vw;
-  font-family: 'Cabin Sketch', cursive;
+    background-color: #000;
+    color:#fff;
+    opacity:.5;
+    border-radius: 50px 0px;
+    width: 366px;
+    height: 360px;
+    margin: 20px;
+    text-align: center;
+    padding: 2vw;
+    font-family: 'Cabin Sketch', cursive;
+    position: relative;
 }
 
-button {
+
+.topic-template:hover{
+  opacity: 0.7;
+  z-index: 60;
+}
+
+
+
+
+.topic-template button {
   width: 15vw;
   background-color: #DEB887;
   border: none;
@@ -21,6 +32,9 @@ button {
   cursor: pointer;
   font-family: 'Cabin Sketch', cursive;
   border: 1px solid black;
+  position: absolute;
+  top: 340px;
+  left: 100px;
 }
 
 button:hover {

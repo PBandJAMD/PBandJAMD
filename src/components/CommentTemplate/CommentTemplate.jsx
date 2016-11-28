@@ -2,6 +2,7 @@ import React from 'react';
 import '../normalize.css';
 import './CommentTemplate.css';
 import trash from './delete.png';
+import edit from './edit.png';
 
 const CommentTemplate = props => (
   <div className="comment-template">
@@ -14,7 +15,16 @@ const CommentTemplate = props => (
       alt="delete"
       height="40"
       width="40"
-      onClick={() => { props.deleteComment(props.id) }}
+      onClick={() => props.deleteComment(props.id)}
+    />
+
+    <img
+      id={props.deleteButton()}
+      src={edit}
+      alt="edit"
+      height="40"
+      width="40"
+      onClick={() => props.changeComponent(2, props.currentTopic)}
     />
 
   </div>

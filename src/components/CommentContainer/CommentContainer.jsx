@@ -12,6 +12,9 @@ const CommentContainer = props => {
         body={comment.body}
         date_created={comment.date_created}
         username={comment.username}
+        changeComponent={props.changeComponent}
+
+        currentTopic={props.currentTopic}
         deleteButton={() => props.checkUserPrivileges(comment.user_id)}
         deleteComment={props.deleteComment}
       />

@@ -5,6 +5,7 @@ import TopicContainer from './TopicContainer/TopicContainer.jsx';
 import CommentContainer from './CommentContainer/CommentContainer.jsx';
 import AsideLoginSignup from './AsideLoginSignup/AsideLoginSignup.jsx';
 import AsideUserAccountContainer from './AsideUserAccountContainer/AsideUserAccountContainer.jsx';
+import EditCommentContainer from './EditCommentContainer/EditCommentContainer.jsx';
 
 import './normalize.css';
 import './App.css';
@@ -327,14 +328,22 @@ class App extends Component {
       );
     } else if (component === 1) {
       return (<CommentContainer
-        checkUserPrivileges={event => this.checkUserPrivileges(event)}
         disabled={this.state.disabled}
         comments={this.state.comments}
         changeComponent={(x, y) => this.changeComponent(x, y)}
         updateComment={event => this.updateComment(event)}
         commentBody={this.state.comment}
         submitComment={() => this.submitComment()}
+
+        currentTopic={this.state.currentTopic}
+        checkUserPrivileges={event => this.checkUserPrivileges(event)}
         deleteComment={event => this.deleteComment(event)}
+      />
+      );
+    } else if (component === 2) {
+      return (<EditCommentContainer
+        currentTopic={this.state.currentTopic}
+        changeComponent={(x, y) => this.changeComponent(x, y)}
       />
       );
     }

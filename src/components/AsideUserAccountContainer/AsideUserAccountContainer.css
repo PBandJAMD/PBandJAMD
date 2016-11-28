@@ -92,9 +92,9 @@
 
 #threadsContainer {
   overflow-y: scroll;
-  top: 44vh;
+ /* top: 44vh;*/
   width: 29vw;
-  margin: 1vh 0 1vh 1.6vw;
+  margin: 24vh 0 1vh 1.6vw;
   position: relative;
   z-index: 1;
 }

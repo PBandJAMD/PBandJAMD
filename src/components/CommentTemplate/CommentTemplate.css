@@ -13,6 +13,10 @@
 
 }
 
+#showTrash:hover {
+  filter: invert(1);
+}
+
 #hideTrash {
   display: none;
 }

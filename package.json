@@ -18,10 +18,8 @@
   "author": "Jaemin Han, Alexander Tong, Mohamed Gassama and Damira Ibragimova",
   "license": "MIT",
   "dependencies": {
-    "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.2",
     "cookie-parser": "^1.4.3",
-    "dotenv": "^2.0.0",
     "express": "^4.14.0",
     "morgan": "^1.7.0",
     "path": "^0.12.7",

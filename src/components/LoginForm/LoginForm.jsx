@@ -16,7 +16,6 @@ const LoginForm = props => (
         value={props.loginUsername}
         onChange={props.updateLoginFormUsername}
       />
-
       <br />
 
       <input
@@ -26,9 +25,7 @@ const LoginForm = props => (
         value={props.loginPassword}
         onChange={props.updateLoginFormPassword}
       />
-
       <br />
-
       <button id="loginButton" onClick={props.handleLoginFormSubmit}>
         Log In!
       </button>

@@ -12,7 +12,7 @@
 
 #hidden {
   transition: width 1s;
-  background-color: #F5DEB3;
+  background-color: #D4976A;
   width: 0vw;
   height: 100%;
   display: flex;
@@ -24,8 +24,10 @@
 }
 
 #show {
-  background-color: #F5DEB3;
-  width: 50vw;
+  /*background-color: #F5DEB3;*/
+  background-color:  #D4976A;
+  /*background-image: url(./bulletin1.jpg);*/
+  width: 30vw;
   height: 100%;
   transition: width 1s;
   display: flex;
@@ -46,16 +48,23 @@
  /* background: linear-gradient(212deg, tomato, #40b8d3);
   background-size: 500% 500%;
   animation: sidebarGradient 40s ease infinite;*/
-  border-radius: 100vw;
-  background-color: green;
-  height: 8vw;
-  width: 8vw;
-  opacity: .5;
+/*  border-radius: 100vw;*/
+  background-color: tomato;
+  height: 4vw;
+  width: 10vw;
+  opacity: .7;
   color: white;
   z-index: 1;
   font-family: 'Cabin Sketch', cursive;
+  margin-top: -88vh;
 }
 
 #sidebarButton:hover {
   opacity: 1;
+}
+
+#threadsPara {
+  font-family: 'Cabin Sketch', cursive;
+  margin: 0;
+  padding: 0;
 }

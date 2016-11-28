@@ -3,11 +3,11 @@
   border-radius: 1vw;
   border: 2px black solid;
   width: 40vw;
-  margin: 1vw 9vh;
+  margin: 1vw 1vh;
   text-align: center;
   padding: 1vw;
   font-family: 'Cabin Sketch', cursive;
-  margin-left: -3vw;
+  margin-left: 1vw;
 }
 
 #topicTitle {

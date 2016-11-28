@@ -46,7 +46,7 @@ class App extends Component {
 
       comment: '',
 
-      buttonText: 'Login/Signup',
+      buttonText: 'Login | Signup',
     };
   }
 

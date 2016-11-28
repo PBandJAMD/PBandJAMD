@@ -22,7 +22,7 @@ const CreateTopicForm = props => (
     />
     <br />
     <br />
-    <button onClick={props.handleCreateTopic}>
+    <button id="createButton" onClick={props.handleCreateTopic}>
     Create New Topic
     </button>
   </div>

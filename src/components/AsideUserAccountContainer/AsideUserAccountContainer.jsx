@@ -28,7 +28,7 @@ const AsideUserAccountContainer = props => {
           updateTopicContent={props.updateTopicContent}
           handleCreateTopic={props.handleCreateTopic}
         />
-        <p>Threads you have started:</p>
+        <p id="threadsPara">Threads you have started:</p>
         {userInfo}
       </div>
 

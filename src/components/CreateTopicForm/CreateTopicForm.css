@@ -15,3 +15,16 @@
   width: 26vw;
   border: 1px solid black;
 }
+
+#createButton {
+  background-color: tomato;
+  color: white;
+  height: 4vh;
+  width: 14vw;
+  font-family: 'Cabin Sketch', cursive;
+  border: 1px solid black;
+}
+
+#createButton:hover {
+  color: black;
+}

@@ -11,11 +11,11 @@
 }
 
 #comment-input {
-  width: 75%;
+  width: 71%;
   height: 20vh;
   border-radius: 1vw;
   text-align: center;
-  margin: 1vh 1vw 0 2vw;
+  margin: 1vh 2vw 0 9vw;
   border: 1px solid black;
 }
 
@@ -31,4 +31,3 @@
 #submitCommentButton:hover {
   color: white;
 }
-

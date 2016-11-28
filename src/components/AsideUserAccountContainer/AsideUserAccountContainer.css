@@ -1,5 +1,5 @@
 #AsideUserAccountContainer {
-  z-index: 5;
+  z-index: 1;
   display: flex;
   align-items: center;
   height: 100%;
@@ -20,13 +20,11 @@
   align-items: center;
   flex-wrap: wrap;
   overflow: scroll;
-  overflow-x: hidden;
 }
 
 #show {
-  /*background-color: #F5DEB3;*/
+
   background-color:  #D4976A;
-  /*background-image: url(./bulletin1.jpg);*/
   width: 30vw;
   height: 100%;
   transition: width 1s;
@@ -35,7 +33,6 @@
   align-items: center;
   flex-wrap: wrap;
   overflow: scroll;
-  overflow-x: hidden;
 }
 
 /*@keyframes sidebarGradient {
@@ -79,24 +76,31 @@
   font-size: 20px;
 /*  z-index: 2;
   position: absolute;*/
-  padding: 3vh 0 1vw 6.5vw;
+  /*padding: 3vh 0 1vw 6.5vw;*/
 }
 
-#createTopicFormContainer {
-  position: absolute;
-  z-index: 2;
+/*#createTopicFormContainer {
   background-color: #D4976A;
-  top: -6vh;
-  width: inherit;
-}
+  height: 20%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+}*/
 
 #threadsContainer {
-  overflow-y: scroll;
- /* top: 44vh;*/
-  width: 29vw;
-  margin: 24vh 0 1vh 1.6vw;
-  position: relative;
-  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  overflow: scroll;
+  width: 100%;
+  height: 80%;
+  top: auto;
+ /* top: 44vh;
+  margin: 24vh 0 1vh 1.6vw;*/
+  /*position: relative;*/
+
 }
 
 

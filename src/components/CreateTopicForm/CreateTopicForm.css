@@ -1,10 +1,10 @@
-#createTopicForm {
+/*#createTopicForm {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 10vh;
-}
-
+/*  margin-top: 10vh;*/
+/*}*/
+/*
 #createTopicForm input {
   font-family: 'Cabin Sketch', cursive;
   text-align: center;
@@ -14,17 +14,17 @@
   height: 4vh;
   width: 26vw;
   border: 1px solid black;
-}
+}*/
 
-#createButton {
+/*#createButton {
   background-color: tomato;
   color: white;
   height: 4vh;
   width: 14vw;
   font-family: 'Cabin Sketch', cursive;
   border: 1px solid black;
-}
-
+}*/
+/*
 #createButton:hover {
   color: black;
-}
+}*/

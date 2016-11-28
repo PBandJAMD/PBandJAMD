@@ -4,24 +4,27 @@ import './EditCommentContainer.css';
 const EditCommentContainer = props => (
   <div id="editCommentContainer">
 
-     <input
-      id="editCommentInput"
-      type="text"
-      placeholder="Edit body"
-      value={props.currentComment}
-      onChange={props.updateComment}
-    />
+    <div id="editCommentInputContainer">
+       <input
+        id="editCommentInput"
+        type="text"
+        placeholder="Edit body"
+        value={props.currentComment}
+        onChange={props.updateComment}
+        />
+    </div>
 
-    <button
-      id="submitEditedCommentButton"
-      onClick={() => props.submitEditedComment(props.currentCommentId)}
-    >Submit</button>
+    <div id="editCommentButtonsContainer">
+      <button
+        className="editedCommentButtons"
+        onClick={() => props.submitEditedComment(props.currentCommentId)}
+      >Submit</button>
 
-
-    <button
-      id="returnToTopicButton"
-      onClick={() => props.changeComponent(1, props.currentTopic, '', 0)}
-    >Return to topic.</button>
+      <button
+        className="editedCommentButtons"
+        onClick={() => props.changeComponent(1, props.currentTopic, '', 0)}
+      >Return to Topic</button>
+    </div>
 
   </div>
 );

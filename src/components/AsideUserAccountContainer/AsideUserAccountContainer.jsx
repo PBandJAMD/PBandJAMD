@@ -24,7 +24,6 @@ const AsideUserAccountContainer = props => {
 
         <div id="createTopicFormContainer">
 
-          <h1 id="createTopicHeader">Create New Topic</h1>
           <CreateTopicForm
             topicTitle={props.topicTitle}
             topicContent={props.topicContent}
@@ -32,7 +31,6 @@ const AsideUserAccountContainer = props => {
             updateTopicContent={props.updateTopicContent}
             handleCreateTopic={props.handleCreateTopic}
           />
-          <p id="threadsPara">Threads you have started:</p>
         </div>
 
         <div id="threadsContainer">

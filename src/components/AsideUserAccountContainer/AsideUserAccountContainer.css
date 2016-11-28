@@ -19,11 +19,9 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  overflow: scroll;
 }
 
 #show {
-
   background-color:  #D4976A;
   width: 30vw;
   height: 100%;
@@ -32,20 +30,9 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  overflow: scroll;
 }
 
-/*@keyframes sidebarGradient {
-    0%{background-position:97% 0%}
-    50%{background-position:4% 100%}
-    100%{background-position:97% 0%}
-}*/
-/* https://www.gradient-animator.com/ */
 #sidebarButton {
- /* background: linear-gradient(212deg, tomato, #40b8d3);
-  background-size: 500% 500%;
-  animation: sidebarGradient 40s ease infinite;*/
-/*  border-radius: 100vw;*/
   background-color: tomato;
   height: 4vw;
   width: 10vw;
@@ -72,21 +59,8 @@
 #threadsPara {
   font-family: 'Cabin Sketch', cursive;
   margin: 0;
-/*  padding: 5vh 0 0 0;*/
   font-size: 20px;
-/*  z-index: 2;
-  position: absolute;*/
-  /*padding: 3vh 0 1vw 6.5vw;*/
 }
-
-/*#createTopicFormContainer {
-  background-color: #D4976A;
-  height: 20%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-}*/
 
 #threadsContainer {
   display: flex;
@@ -97,10 +71,6 @@
   width: 100%;
   height: 80%;
   top: auto;
- /* top: 44vh;
-  margin: 24vh 0 1vh 1.6vw;*/
-  /*position: relative;*/
-
 }
 
 

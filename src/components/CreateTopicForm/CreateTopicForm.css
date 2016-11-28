@@ -1,30 +1,35 @@
-/*#createTopicForm {
+#createTopicForm {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-/*  margin-top: 10vh;*/
-/*}*/
-/*
-#createTopicForm input {
-  font-family: 'Cabin Sketch', cursive;
-  text-align: center;
 }
 
-#createTopicForm input[type=text] {
-  height: 4vh;
-  width: 26vw;
+.topicInput {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 1em;
+  text-align: center;
+  width: 70%;
   border: 1px solid black;
-}*/
+  margin-top: 30px;
+  height: 100px;
+}
 
-/*#createButton {
-  background-color: tomato;
-  color: white;
-  height: 4vh;
-  width: 14vw;
+#createButton {
+  width: 40%;
+  background-color: #DEB887;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
   font-family: 'Cabin Sketch', cursive;
   border: 1px solid black;
-}*/
-/*
+  margin-top: 30px;
+}
+
 #createButton:hover {
-  color: black;
-}*/
+  background-color: #D2B48C;
+  color: white;
+  font-family: 'Cabin Sketch', cursive;
+}

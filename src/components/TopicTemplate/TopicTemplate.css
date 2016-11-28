@@ -1,55 +1,43 @@
 .topic-template {
-  background-color: #FFDEC4;
-  border-radius: 1vw;
-  border: 2px black solid;
-  width: 40vw;
-  margin: 1vw 1vh;
+    background-color: #000;
+    color:#fff;
+    opacity:.5;
+    border-radius: 50px 0px;
+    width: 366px;
+    height: 360px;
+    margin: 20px;
+    text-align: center;
+    padding: 2vw;
+    font-family: 'Cabin Sketch', cursive;
+    position: relative;
+}
+
+
+.topic-template:hover{
+  opacity: 0.7;
+  z-index: 60;
+}
+
+
+
+
+.topic-template button {
+  width: 15vw;
+  background-color: #DEB887;
+  border: none;
+  color: black;
   text-align: center;
-  padding: 1vw;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
   font-family: 'Cabin Sketch', cursive;
-  margin-left: 1vw;
+  border: 1px solid black;
+  position: absolute;
+  top: 340px;
+  left: 100px;
 }
 
-#topicTitle {
-  margin: 0;
-  padding: 0;
-  font-size: 25px;
-}
-
-#topicContent {
-  margin: 0;
-  padding: 0;
-}
-
-#topicDate {
-  margin: 0;
-  padding: 0;
-}
-
-#topicUser {
-  margin: 0;
-  padding: 0;
-}
-
-#topicUser span {
-  font-weight: bold;
-}
-
-#topicButton {
-  font-family: 'Cabin Sketch', cursive;
-  background:none;
-  border:none;
-  text-decoration: underline;
-}
-
-#topicButton:hover {
-  color: tomato;
-}
-
-.hideButton {
-  display: none;
-}
-
-.showButton {
-  display: initial;
+button:hover {
+  background-color: #D2B48C;
+  color: white;
 }

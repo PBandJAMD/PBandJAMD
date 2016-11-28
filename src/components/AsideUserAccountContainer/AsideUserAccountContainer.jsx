@@ -21,15 +21,23 @@ const AsideUserAccountContainer = props => {
       <button onClick={props.changeSidebar} id="sidebarButton">{props.buttonText}</button>
 
       <div id={props.sidebar}>
-        <CreateTopicForm
-          topicTitle={props.topicTitle}
-          topicContent={props.topicContent}
-          updateTopicTitle={props.updateTopicTitle}
-          updateTopicContent={props.updateTopicContent}
-          handleCreateTopic={props.handleCreateTopic}
-        />
-        <p id="threadsPara">Threads you have started:</p>
-        {userInfo}
+        <div id="createTopicFormContainer">
+          <h1 id="createTopicHeader">Create New Topic</h1>
+          <CreateTopicForm
+            topicTitle={props.topicTitle}
+            topicContent={props.topicContent}
+            updateTopicTitle={props.updateTopicTitle}
+            updateTopicContent={props.updateTopicContent}
+            handleCreateTopic={props.handleCreateTopic}
+          />
+          <p id="threadsPara">Threads you have started:</p>
+        </div>
+
+
+
+        <div id="threadsContainer">
+          {userInfo}
+        </div>
       </div>
 
     </div>

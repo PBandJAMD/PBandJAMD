@@ -63,8 +63,40 @@
   opacity: 1;
 }
 
+#createTopicHeader {
+  position: relative;
+  top: 8vh;
+  padding: 0;
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 24px;
+  text-align: center;
+}
+
 #threadsPara {
   font-family: 'Cabin Sketch', cursive;
   margin: 0;
-  padding: 0;
+/*  padding: 5vh 0 0 0;*/
+  font-size: 20px;
+/*  z-index: 2;
+  position: absolute;*/
+  padding: 3vh 0 1vw 6.5vw;
 }
+
+#createTopicFormContainer {
+  position: absolute;
+  z-index: 2;
+  background-color: #D4976A;
+  top: -6vh;
+  width: inherit;
+}
+
+#threadsContainer {
+  overflow-y: scroll;
+  top: 44vh;
+  width: 29vw;
+  margin: 1vh 0 1vh 1.6vw;
+  position: relative;
+  z-index: 1;
+}
+
+

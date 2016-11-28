@@ -2,7 +2,7 @@
   "name": "pbandjamd",
   "version": "1.0.0",
   "engines": {
-    "node": "7.0.0"
+    "node": "6.6.0"
   },
   "description": "Project 3 forum built with backend API and frontend React.",
   "main": "server.js",
@@ -12,18 +12,11 @@
     "heroku-postbuild": "scripts/deployment_cleanup.sh",
     "start": "node server.js",
     "rebuild": "webpack -d --progress --colors",
-    "watch": "webpack -d --progress --watch"
-  },
-  "repository": {
-    "type": "",
-    "url": ""
+    "watch": "webpack -d --progress --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
   },
   "author": "Jaemin Han, Alexander Tong, Mohamed Gassama and Damira Ibragimova",
   "license": "MIT",
-  "bugs": {
-    "url": ""
-  },
-  "homepage": "",
   "dependencies": {
     "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.2",

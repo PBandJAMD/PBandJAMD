@@ -1,11 +1,41 @@
-.comment-template {
+/*.comment-template {
   background-color: white;
   border-radius: 1vw;
   border: 2px black solid;
   width: 90vw;
-  margin: 2vw;
+  margin: 4vw;
   text-align: center;
-  font-family: 'Lora', serif;
   padding: 1vw;
   font-family: 'Cabin Sketch', cursive;
+}*/
+
+/*#showTrash {
+
+}*/
+
+#showTrash:hover {
+  filter: invert(1);
+}
+
+#hideTrash {
+  display: none;
+}
+
+.comment-template {
+  background-color: #FFDEC4;
+  border-radius: 1vw;
+  border: 2px black solid;
+  width: 80vw;
+  margin: 1vw 18vh;
+  text-align: center;
+  padding: 1vw;
+  font-family: 'Cabin Sketch', cursive;
+}
+
+.deleteButton {
+  display: none;
+}
+
+.showDeleteButton {
+  display: block;
 }

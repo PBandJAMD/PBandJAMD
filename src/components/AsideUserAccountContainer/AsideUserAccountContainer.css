@@ -1,33 +1,70 @@
-#hidden {
-  left: 100vw;
-  top: 0;
-  width: 30vw;
+#AsideUserAccountContainer {
+  z-index: 5;
+  display: flex;
+  align-items: center;
   height: 100%;
   position: absolute;
-  background-color: #F5DEB3;
-  z-index: 5;
-  transition: left 1s ease-in-out;
+  transform: rotate(0deg);
+  width: auto;
+  right: 0;
+  top: 0;
+}
+
+#hidden {
+  transition: width 1s;
+  background-color: #D4976A;
+  width: 0vw;
+  height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   overflow: scroll;
-  overflow-x:hidden;
+  overflow-x: hidden;
 }
 
 #show {
-  position: absolute;
-  background-color: #F5DEB3;
-  z-index: 5;
-  left: 70vw;
-  top: 0;
+  /*background-color: #F5DEB3;*/
+  background-color:  #D4976A;
+  /*background-image: url(./bulletin1.jpg);*/
   width: 30vw;
   height: 100%;
-  transition: left 1s ease-in;
+  transition: width 1s;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   overflow: scroll;
-  overflow-x:hidden;
+  overflow-x: hidden;
 }
 
+/*@keyframes sidebarGradient {
+    0%{background-position:97% 0%}
+    50%{background-position:4% 100%}
+    100%{background-position:97% 0%}
+}*/
+/* https://www.gradient-animator.com/ */
+#sidebarButton {
+ /* background: linear-gradient(212deg, tomato, #40b8d3);
+  background-size: 500% 500%;
+  animation: sidebarGradient 40s ease infinite;*/
+/*  border-radius: 100vw;*/
+  background-color: tomato;
+  height: 4vw;
+  width: 10vw;
+  opacity: .7;
+  color: white;
+  z-index: 1;
+  font-family: 'Cabin Sketch', cursive;
+  margin-top: -88vh;
+}
 
+#sidebarButton:hover {
+  opacity: 1;
+}
+
+#threadsPara {
+  font-family: 'Cabin Sketch', cursive;
+  margin: 0;
+  padding: 0;
+}

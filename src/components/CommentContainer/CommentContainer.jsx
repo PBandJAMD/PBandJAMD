@@ -9,21 +9,31 @@ const CommentContainer = props => {
       <CommentTemplate
         key={comment.id.toString()}
         id={comment.id}
-        title={comment.title}
-        topic_id={comment.topic_id}
         body={comment.body}
-        title={comment.title}
         date_created={comment.date_created}
-        user_id={comment.user_id}
+        username={comment.username}
+        changeComponent={props.changeComponent}
+
+        currentTopic={props.currentTopic}
+        deleteButton={() => props.checkUserPrivileges(comment.user_id)}
+        deleteComment={props.deleteComment}
       />
     );
   });
 
   return (
     <div id="comments-container">
-      <button onClick={() => props.changeComponent(0, 0)}>Click to return!</button>
-      {comments}
-      <CreateCommentForm updateComment={props.updateComment} commentBody={props.commentBody} submitComment={props.submitComment} />
+
+        <button id="commentsButtonHolder" onClick={() => props.changeComponent(0, 0)}>Click to return!</button>
+
+      <br />
+        {comments}
+        <CreateCommentForm
+          disabled={props.disabled}
+          updateComment={props.updateComment}
+          commentBody={props.commentBody}
+          submitComment={props.submitComment}
+      />
     </div>
   );
 };

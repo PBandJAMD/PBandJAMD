@@ -3,55 +3,44 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: -30vh;
+  margin-top: -15vh;
 }
 
 #signupTitle {
   width: 100%;
   text-align: center;
-}
-
-.signup-css {
-  width: 60%;
-  text-align: center;
-}
-
-#signup-form-container h2 {
-  margin-top: 5vh;
+  margin-top: 6vh;
   text-align: center;
   font-family: 'Cabin Sketch', cursive;
   color: tomato;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-#signup-form-container button {
-  width: 12.3vw;
+.signup-css {
+  width: 60%;
+  text-align: center;
+  font-family: 'Cabin Sketch', cursive;
+  border: 1px solid black;
+  margin-top: 1vh;
+}
+
+
+#signupFormButton {
+  width: 40%;
   background-color: #DEB887;
-  border: none;
-  color: white;
+  color: black;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
   cursor: pointer;
   font-family: 'Cabin Sketch', cursive;
+  margin-top: 3vh;
   border: 1px solid black;
 }
 
-#signup-form-container button:hover {
+#signupFormButton:hover {
   background-color: #D2B48C;
-  color: black;
-  font-family: 'Cabin Sketch', cursive;
-}
-
-#signup-form-container input[type=text] {
-  border: 1px solid black;
-  height: 3.5vh;
-}
-
-#signup-form-container input[type=password] {
-  border: 1px solid black;
-  height: 3.5vh;
-}
-
-#signup-form-container input {
+  color: white;
   font-family: 'Cabin Sketch', cursive;
 }

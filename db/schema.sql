@@ -6,7 +6,7 @@ CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   username VARCHAR NOT NULL UNIQUE,
   password VARCHAR NOT NULL,
-  date_created TIMESTAMP DEFAULT current_timestamp
+  date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE topic (
@@ -14,7 +14,7 @@ CREATE TABLE topic (
   title VARCHAR(255) NOT NULL,
   content text NOT NULL,
   user_id INT,
-  date_created TIMESTAMP NOT NULL DEFAULT NOW()
+  date_created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE comment (
@@ -22,7 +22,7 @@ CREATE TABLE comment (
   body TEXT NOT NULL,
   topic_id INT,
   user_id INT,
-  date_created TIMESTAMP NOT NULL DEFAULT NOW()
+  date_created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 

@@ -1,35 +1,11 @@
-#hidden {
-  left: 100vw;
-  top: 0;
-  width: 30vw;
+#AsideLoginSignupContainer {
+  z-index: 5;
+  display: flex;
+  align-items: center;
   height: 100%;
   position: absolute;
-  background-color: #F5DEB3;
-  z-index: 5;
-  transition: left 1s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  overflow: scroll;
-  overflow-x:hidden;
-}
-
-#show {
-  position: absolute;
-  background-color: #F5DEB3;
-  z-index: 5;
-  left: 70vw;
+  transform: rotate(0deg);
+  width: auto;
+  right: 0;
   top: 0;
-  width: 30vw;
-  height: 100%;
-  transition: left 1s ease-in;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  overflow: scroll;
-  overflow-x:hidden;
 }
-
-

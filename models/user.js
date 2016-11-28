@@ -53,12 +53,10 @@ function getUserByUsername(username) {
 }
 
 function getUserInfo(req, res, next) {
-  db.any(`SELECT *
+  db.any(`SELECT topic.id, topic.date_created, topic.title, topic.content
           FROM users
           INNER JOIN topic
           ON users.id = topic.user_id
-          INNER JOIN comment
-          ON topic.user_id = comment.user_id
           WHERE users.id= $1;
           `, [req.params.id])
   .then((info) => {

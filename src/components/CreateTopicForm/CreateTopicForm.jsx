@@ -5,23 +5,24 @@ import './CreateTopicForm.css';
 const CreateTopicForm = props => (
   <div id="createTopicForm">
     <input
-      className="topicInputTitle"
+      // className="topicInputTitle"
       type="text"
-      placeholder="Topic Title"
+      placeholder="New Topic Title"
       value={props.topicTitle}
       onChange={props.updateTopicTitle}
     />
     <br />
     <br />
     <input
-      className="topicInputContent"
-      type="textarea"
-      placeholder="Topic Comment"
+      // className="topicInputContent"
+      type="text"
+      placeholder="New Topic Comment"
       value={props.topicContent}
       onChange={props.updateTopicContent}
     />
-
-    <button onClick={props.handleCreateTopic}>
+    <br />
+    <br />
+    <button id="createButton" onClick={props.handleCreateTopic}>
     Create New Topic
     </button>
   </div>

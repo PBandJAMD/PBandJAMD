@@ -1,16 +1,16 @@
 INSERT INTO users (id, username, password)  VALUES
-  (1, 'jae', 'min' ),
-  (2, 'mo', 'hamed'),
-  (3, 'da', 'mira'),
-  (4, 'al', 'ex'),
-  (5, 'Wlliam', 7484);
+  (1, 'jaemin', 'jaemin' ),
+  (2, 'mohamed', 'mohamed'),
+  (3, 'damira', 'damira'),
+  (4, 'alex', 'alex'),
+  (5, 'jason', 'jason');
 
 INSERT INTO topic (id, title, content, user_id) VALUES
-  (1, 'Programming Bootcamps', 'Programming Bootcamps', 1),
-  (2, 'What is more impressive, brvard?', 'Har from Harvard each year.', 2),
-  (3, 'Why does Manchester United suck?', 'Stop rd spiral.', 3),
-  (4, 'Is Python a dying language?', 'Oh, yes, and Programming in Python.', 4),
-  (5, 'Keeping The Party Alive', 'The ape staying power.', 5);
+  (1, 'Programming Bootcamps', 'Programming Bootcamps', 3),
+  (2, 'Potatoes', 'Why is there an "e" in potatoes?', 4),
+  (3, 'Manchester United', 'Why does this team suck?', 2),
+  (4, 'Python', 'If the language were to get into a fight with the animal, who would win?', 1),
+  (5, 'Donald Trump', 'Censored', 2);
 
 INSERT INTO comment (id, body, topic_id, user_id) VALUES
   (1, 'This is cooldnflsdnfldsfndlskf fdsfmsflksdmflkdsfmsdlkmfsdlkmfds', 1, 1),
@@ -24,7 +24,7 @@ INSERT INTO comment (id, body, topic_id, user_id) VALUES
   (9, 'show might soon have some competition', 4, 4),
   (10, 'But they were not big fans,', 5, 5);
 
-ALTER SEQUENCE users_id_seq RESTART WITH 11;
+ALTER SEQUENCE users_id_seq RESTART WITH 6;
 ALTER SEQUENCE comment_id_seq RESTART WITH 11;
 ALTER SEQUENCE topic_id_seq RESTART WITH 6;
 

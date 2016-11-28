@@ -13,6 +13,7 @@ const TopicContainer = props => {
         content={topic.content}
         date_created={topic.date_created}
         user_id={topic.user_id}
+        username={topic.username}
       />
     );
   });

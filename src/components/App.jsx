@@ -5,6 +5,7 @@ import TopicContainer from './TopicContainer/TopicContainer.jsx';
 import CommentContainer from './CommentContainer/CommentContainer.jsx';
 import AsideLoginSignup from './AsideLoginSignup/AsideLoginSignup.jsx';
 import AsideUserAccountContainer from './AsideUserAccountContainer/AsideUserAccountContainer.jsx';
+import EditCommentContainer from './EditCommentContainer/EditCommentContainer.jsx';
 
 import './normalize.css';
 import './App.css';
@@ -39,24 +40,24 @@ class App extends Component {
 
       userInfo: [],
 
-      sidebar: 'show',
+      sidebar: 'hidden',
+
+      disabled: 'disabled',
 
       comment: '',
 
-      buttonText: 'Login/Signup',
+      buttonText: 'Login | Signup',
     };
   }
 
-// INITIAL FUNCTIONS
+// INITIAL FUNCTIONS *http://stackoverflow.com/questions/31023308/clearinterval-is-not-working-in-reactjs*
   componentDidMount() {
-    fetch('/api/topic')
-      .then(r => r.json())
-      .then((topics) => {
-        this.setState({
-          topics: topics,
-        });
-      })
-      .catch(err => console.log('getAllTopics', err));
+    // this.intervalId = setInterval(this.getAllTopics.bind(this), 1000);, THIS LINE CAUSE IT TO AUTO UPDATE
+    this.getAllTopics();
+  }
+
+  componentWillUnmount() { // CLEAR ABOVE INTERVAL WHEN COMPONENT UNMOUNTS
+    clearInterval(this.intervalId);
   }
 // END INITIAL FUNCTIONS
 
@@ -65,6 +66,7 @@ class App extends Component {
     this.alertInfo('Youre logged in!');
     console.log(a);
     this.setState({
+      disabled: '',
       currentUser: a.id,
       buttonText: 'My Account',
       login: {
@@ -78,8 +80,19 @@ class App extends Component {
 // END LOGIN FORM FUNCTIONS
 
 // BEGIN DISPLAY COMMENT FETCH FUNCTIONS
-  getAllComments(id) {
-    fetch(`/api/comment/${id}`, {
+  getAllTopics() {
+    fetch('/api/topic')
+        .then(r => r.json())
+        .then((topics) => {
+          this.setState({
+            topics: topics,
+          });
+        })
+        .catch(err => console.log('getAllTopics', err));
+  }
+
+  getAllComments(topicId) {
+    fetch(`/api/comment/${topicId}`, {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -146,7 +159,7 @@ class App extends Component {
   }
 // END LOGIN FORM/SIGNUP  FETCHFORM FUNCTIONS
 
-// BEGIN SUBMIT COMMENT FETCH FUNCTIONS
+// BEGIN TOPIC/SUBMIT COMMENT FETCH FUNCTIONS
   submitComment() {
     fetch('/api/comment', {
       headers: {
@@ -160,12 +173,51 @@ class App extends Component {
       }),
     })
     .then(r => r.json())
+    .then(this.getAllComments(this.state.currentTopic))
     .then(this.setState({
       comment: '',
     }))
     .catch(err => console.log(err));
   }
-// END SUBMIT COMMENT FETCH FUNCTIONS
+
+  handleCreateTopic() {
+    fetch('api/topic', {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify({
+        title: this.state.topic.title,
+        content: this.state.topic.content,
+        user_id: this.state.currentUser,
+      }),
+    })
+    .then(r => r.json())
+    .then(this.getAllTopics())
+    .then(this.getUserInfo(this.state.currentUser))
+    .then(this.setState({
+      topic: {
+        title: '',
+        content: '',
+      },
+    }))
+    .catch(err => console.log(err));
+  }
+// END SUBMIT TOPIC/COMMENT FETCH FUNCTIONS
+
+// START DELETE COMMENT FETCH FUNCTIONS
+  deleteComment(commentId) {
+    fetch(`api/comment/${commentId}`, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'DELETE',
+    })
+    .then(r => r.json())
+    .then(this.getAllComments(this.state.currentTopic))
+    .catch(err => console.log(err));
+  }
+// END DELETE COMMENT FETCH FUNCTIONS
 
 // BEGIN USER ACCOUNT FETCH FUNCTIONS
   getUserInfo(id) {
@@ -247,36 +299,18 @@ class App extends Component {
       },
     });
   }
-
 // END FORM DISPLAY FUNCTIONS
-
-// FETCH CREATE TOPIC
-  handleCreateTopic() {
-    fetch('api/topic', {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
-      body: JSON.stringify({
-        title: this.state.topic.title,
-        content: this.state.topic.content,
-        user_id: this.state.currentUser,
-      }),
-    })
-    .then(r => r.json())
-    .then(this.setState({
-      topic: {
-        title: '',
-        content: '',
-      },
-    }))
-    .catch(err => console.log(err));
-  }
-// FETCH CREATE TOPIC
-
 
 // ALL TOGGLES
 // TOGGLE COMPONENT FUNCTIONS *HELP TAKEN FROM LINK #2 IN README*
+
+  checkUserPrivileges(userId) {
+    if (this.state.currentUser === userId) {
+      return 'showTrash';
+    }
+    return 'hideTrash';
+  }
+
   changeComponent(x, y) {
       this.getAllComments(y);
       this.setState({
@@ -287,15 +321,39 @@ class App extends Component {
 
   renderComponent(component) {
     if (component === 0) {
-      return <TopicContainer topics={this.state.topics} changeComponent={(x, y) => this.changeComponent(x, y)} />;
+      return (<TopicContainer
+        topics={this.state.topics}
+        changeComponent={(x, y) => this.changeComponent(x, y)}
+      />
+      );
     } else if (component === 1) {
-      return <CommentContainer comments={this.state.comments} changeComponent={(x, y) => this.changeComponent(x, y)} updateComment={event => this.updateComment(event)} commentBody={this.state.comment} submitComment={() => this.submitComment()} />;
+      return (<CommentContainer
+        disabled={this.state.disabled}
+        comments={this.state.comments}
+        changeComponent={(x, y) => this.changeComponent(x, y)}
+        updateComment={event => this.updateComment(event)}
+        commentBody={this.state.comment}
+        submitComment={() => this.submitComment()}
+
+        currentTopic={this.state.currentTopic}
+        checkUserPrivileges={event => this.checkUserPrivileges(event)}
+        deleteComment={event => this.deleteComment(event)}
+      />
+      );
+    } else if (component === 2) {
+      return (<EditCommentContainer
+        currentTopic={this.state.currentTopic}
+        changeComponent={(x, y) => this.changeComponent(x, y)}
+      />
+      );
     }
   }
 
   renderAside(loggedIn) {
     if (loggedIn === false) {
       return (<AsideLoginSignup
+        changeSidebar={event => this.changeSidebar(event)}
+        buttonText={this.state.buttonText}
         // SIGNUP
         sidebar={this.state.sidebar}
         signupUsername={this.state.signup.username}
@@ -311,21 +369,20 @@ class App extends Component {
         handleLoginFormSubmit={() => this.handleLogIn()}
       />);
     } else if (loggedIn === true) {
-      return (<AsideUserAccountContainer topicTitle={this.state.topic.title} topicContent={this.state.topic.content} userInfo={this.state.userInfo} sidebar={this.state.sidebar} updateTopicTitle={event => this.updateTopicTitle(event)} updateTopicContent={event => this.updateTopicContent(event)} handleCreateTopic={event => this.handleCreateTopic(event)} />);
+      return (<AsideUserAccountContainer
+        changeSidebar={event => this.changeSidebar(event)}
+        buttonText={this.state.buttonText}
+        topicTitle={this.state.topic.title}
+        topicContent={this.state.topic.content}
+        userInfo={this.state.userInfo}
+        sidebar={this.state.sidebar}
+        updateTopicTitle={event => this.updateTopicTitle(event)}
+        updateTopicContent={event => this.updateTopicContent(event)}
+        handleCreateTopic={event => this.handleCreateTopic(event)}
+      />);
     }
   }
 
-
-  // renderButton(x) {
-  //   if (this.state.loggedIn === false) {
-  //     return <button>Login/Signup</button>;
-  //   }
-  // }
-
-
-// END TOGGLE FUNCTIONS
-
-// BEGIN ASIDE FUNCTIONS
   changeSidebar() {
     if (this.state.sidebar === 'hidden') {
       this.setState({
@@ -337,12 +394,15 @@ class App extends Component {
       });
     }
   }
-// END ASIDE FUNCTIONS
 
+// END TOGGLE FUNCTIONS
+
+
+// MAIN RENDER
   render() {
     return (
       <div id="app-container">
-        <Header changeSidebar={event => this.changeSidebar(event)} buttonText={this.state.buttonText} />
+        <Header />
 
         {this.renderAside(this.state.login.loggedIn)}
 

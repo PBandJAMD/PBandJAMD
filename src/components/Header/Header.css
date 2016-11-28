@@ -2,10 +2,9 @@
   width: 100vw;
   height: 10vh;
   display: flex;
- /* justify-content: space-around;*/
   align-items: center;
-/*  background-color: #161616;*/
   z-index: -5;
+  background-image: url(../bulletin.jpg);
 }
 
 #banana {
@@ -13,28 +12,9 @@
   width: 4vw;
 }
 
-h1 {
+#siteTitle {
   color: tomato;
-  font-size: 35px;
+  font-size: 4.5vw;
   font-family: 'Cabin Sketch', cursive;
-}
-
-.user-button button {
-  background: none;
-  border: none;
-  margin-left: 440px;
-  margin-top: 13px;
-  padding: 0;
-  color: tomato;
-  font-size: 28px;
-  font-family: 'Cabin Sketch', cursive;
-}
-/*
-button:hover:first-line {
-  color: white;
-  background: none;
-}*/
-
-.sign-css {
-  text-align: center;
+  margin-top: 5vh;
 }

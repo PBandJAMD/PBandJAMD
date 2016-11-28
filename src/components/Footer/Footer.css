@@ -10,5 +10,6 @@
 #footerText {
   color: tomato;
   margin: 4vh;
+  margin-left: -6vh;
   font-family: 'Cabin Sketch', cursive;
 }

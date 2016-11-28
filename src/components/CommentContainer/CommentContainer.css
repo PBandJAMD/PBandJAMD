@@ -1,7 +1,16 @@
 #comments-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   width: 100vw;
 }
 
+#commentsButtonHolder {
+  font-size: 30px;
+  margin-left: 39vw;
+  font-family: 'Cabin Sketch', cursive;
+  background:none;
+  border:none;
+  color: white;
+}
+
+#commentsButtonHolder:hover {
+  color: tomato;
+}

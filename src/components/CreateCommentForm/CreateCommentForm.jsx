@@ -12,7 +12,8 @@ const CreateCommentForm = props => (
       onChange={props.updateComment}
       disabled={props.disabled}
     />
-
+    <br />
+    <br />
     <button id="submitCommentButton"
       onClick={props.submitComment}
     >

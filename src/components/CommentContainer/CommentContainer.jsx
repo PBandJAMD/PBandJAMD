@@ -12,7 +12,6 @@ const CommentContainer = props => {
         title={comment.title}
         topic_id={comment.topic_id}
         body={comment.body}
-        title={comment.title}
         date_created={comment.date_created}
         user_id={comment.user_id}
       />
@@ -21,13 +20,16 @@ const CommentContainer = props => {
 
   return (
     <div id="comments-container">
-      <button onClick={() => props.changeComponent(0, 0)}>Click to return!</button>
-      {comments}
-      <CreateCommentForm
-        disabled={props.disabled}
-        updateComment={props.updateComment}
-        commentBody={props.commentBody}
-        submitComment={props.submitComment}
+
+        <button id="commentsButtonHolder" onClick={() => props.changeComponent(0, 0)}>Click to return!</button>
+
+      <br />
+        {comments}
+        <CreateCommentForm
+          disabled={props.disabled}
+          updateComment={props.updateComment}
+          commentBody={props.commentBody}
+          submitComment={props.submitComment}
       />
     </div>
   );

@@ -25,8 +25,8 @@ function addComment(req, res, next) {
 
 function editComment(req, res, next) {
   db.none(`UPDATE comment
-           SET body = body
-           WHERE id = $1;`, [req.body.id])
+           SET body = $2
+           WHERE id = $1;`, [req.params.id, req.body.body])
   .then(next())
   .catch(err => next(err));
 }

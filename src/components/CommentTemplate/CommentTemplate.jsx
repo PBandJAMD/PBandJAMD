@@ -24,7 +24,7 @@ const CommentTemplate = props => (
       alt="edit"
       height="40"
       width="40"
-      onClick={() => props.changeComponent(2, props.currentTopic)}
+      onClick={() => props.changeComponent(2, props.currentTopic, props.body, props.id)}
     />
 
   </div>

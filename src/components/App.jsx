@@ -18,6 +18,8 @@ class App extends Component {
       currentUser: null,
       currentTopic: 0,
       currentPage: 0,
+      currentComment: '',
+      currentCommentId: 0,
 
       topics: [],
       comments: [],
@@ -203,6 +205,21 @@ class App extends Component {
     }))
     .catch(err => console.log(err));
   }
+
+  submitEditedComment(id) {
+    fetch(`api/comment/${id}`, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'PUT',
+      body: JSON.stringify({
+        body: this.state.currentComment,
+      }),
+    })
+    .then(r => r.json())
+    .then(this.alertInfo('Comment edited!'))
+    .catch(err => console.log(err));
+  }
 // END SUBMIT TOPIC/COMMENT FETCH FUNCTIONS
 
 // START DELETE COMMENT FETCH FUNCTIONS
@@ -282,6 +299,12 @@ class App extends Component {
     });
   }
 
+  updateEditedComment(e) {
+    this.setState({
+      currentComment: e.target.value,
+    });
+  }
+
   updateTopicTitle(e) {
     this.setState({
       topic: {
@@ -311,11 +334,13 @@ class App extends Component {
     return 'hideTrash';
   }
 
-  changeComponent(x, y) {
+  changeComponent(x, y, z, a) {
       this.getAllComments(y);
       this.setState({
         currentPage: x,
         currentTopic: y,
+        currentComment: z,
+        currentCommentId: a,
       });
   }
 
@@ -323,14 +348,14 @@ class App extends Component {
     if (component === 0) {
       return (<TopicContainer
         topics={this.state.topics}
-        changeComponent={(x, y) => this.changeComponent(x, y)}
+        changeComponent={(x, y, z, a) => this.changeComponent(x, y, z, a)}
       />
       );
     } else if (component === 1) {
       return (<CommentContainer
         disabled={this.state.disabled}
         comments={this.state.comments}
-        changeComponent={(x, y) => this.changeComponent(x, y)}
+        changeComponent={(x, y, z, a) => this.changeComponent(x, y, z, a)}
         updateComment={event => this.updateComment(event)}
         commentBody={this.state.comment}
         submitComment={() => this.submitComment()}
@@ -343,7 +368,11 @@ class App extends Component {
     } else if (component === 2) {
       return (<EditCommentContainer
         currentTopic={this.state.currentTopic}
-        changeComponent={(x, y) => this.changeComponent(x, y)}
+        currentComment={this.state.currentComment}
+        updateComment={event => this.updateEditedComment(event)}
+        changeComponent={(x, y, z, a) => this.changeComponent(x, y, z, a)}
+        currentCommentId={this.state.currentCommentId}
+        submitEditedComment={event => this.submitEditedComment(event)}
       />
       );
     }

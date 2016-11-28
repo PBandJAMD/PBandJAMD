@@ -1,0 +1,24 @@
+#editCommentContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+#editCommentContainerTitle {
+  font-size: 5em;
+}
+
+#editCommentInput {
+  width: 80vw;
+}
+
+#returnToTopicButton {
+  background-color: green;
+  width: 20vw;
+}
+
+#submitEditedCommentButton {
+  background-color: green;
+  width: 20vw;
+}

@@ -24,7 +24,7 @@ const CommentContainer = props => {
   return (
     <div id="comments-container">
 
-        <button id="commentsButtonHolder" onClick={() => props.changeComponent(0, 0)}>Click to return!</button>
+        <button id="commentsButtonHolder" onClick={() => props.changeComponent(0, 0, '', 0)}>Click to return!</button>
 
       <br />
         {comments}

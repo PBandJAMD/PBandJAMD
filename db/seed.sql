@@ -9,8 +9,8 @@ INSERT INTO topic (id, title, content, user_id) VALUES
   (1, 'Programming Bootcamps', 'Programming Bootcamps', 3),
   (2, 'Potatoes', 'Why is there an "e" in potatoes?', 4),
   (3, 'Manchester United', 'Why does this team suck?', 2),
-  (4, 'Python', 'If the language were to get into a fight with the animal, who would win?', 4),
-  (5, 'Donald Trump', 'Censored', 1);
+  (4, 'Python', 'If the language were to get into a fight with the animal, who would win?', 1),
+  (5, 'Donald Trump', 'Censored', 2);
 
 INSERT INTO comment (id, body, topic_id, user_id) VALUES
   (1, 'This is cooldnflsdnfldsfndlskf fdsfmsflksdmflkdsfmsdlkmfsdlkmfds', 1, 1),

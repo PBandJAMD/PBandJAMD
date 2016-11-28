@@ -9,6 +9,14 @@
   font-family: 'Cabin Sketch', cursive;
 }*/
 
+#showTrash {
+
+}
+
+#hideTrash {
+  display: none;
+}
+
 .comment-template {
   background-color: #FFDEC4;
   border-radius: 1vw;

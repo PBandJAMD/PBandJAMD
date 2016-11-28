@@ -56,7 +56,7 @@ class App extends Component {
   }
 
   componentWillUnmount() { // CLEAR ABOVE INTERVAL WHEN COMPONENT UNMOUNTS
-   clearInterval(this.intervalId);
+    clearInterval(this.intervalId);
   }
 // END INITIAL FUNCTIONS
 
@@ -158,7 +158,7 @@ class App extends Component {
   }
 // END LOGIN FORM/SIGNUP  FETCHFORM FUNCTIONS
 
-// BEGIN SUBMIT COMMENT FETCH FUNCTIONS
+// BEGIN TOPIC/SUBMIT COMMENT FETCH FUNCTIONS
   submitComment() {
     fetch('/api/comment', {
       headers: {
@@ -178,7 +178,45 @@ class App extends Component {
     }))
     .catch(err => console.log(err));
   }
-// END SUBMIT COMMENT FETCH FUNCTIONS
+
+  handleCreateTopic() {
+    fetch('api/topic', {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify({
+        title: this.state.topic.title,
+        content: this.state.topic.content,
+        user_id: this.state.currentUser,
+      }),
+    })
+    .then(r => r.json())
+    .then(this.getAllTopics())
+    .then(this.getUserInfo(this.state.currentUser))
+    .then(this.setState({
+      topic: {
+        title: '',
+        content: '',
+      },
+    }))
+    .catch(err => console.log(err));
+  }
+// END SUBMIT TOPIC/COMMENT FETCH FUNCTIONS
+
+// START DELETE COMMENT FETCH FUNCTIONS
+  deleteComment(commentId) {
+    fetch(`api/comment/${commentId}`, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'DELETE',
+    })
+    .then(r => r.json())
+    .then(this.getAllComments(this.state.currentTopic))
+    .catch(err => console.log(err));
+  }
+// END DELETE COMMENT FETCH FUNCTIONS
 
 // BEGIN USER ACCOUNT FETCH FUNCTIONS
   getUserInfo(id) {
@@ -260,38 +298,18 @@ class App extends Component {
       },
     });
   }
-
 // END FORM DISPLAY FUNCTIONS
-
-// FETCH CREATE TOPIC
-  handleCreateTopic() {
-    fetch('api/topic', {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
-      body: JSON.stringify({
-        title: this.state.topic.title,
-        content: this.state.topic.content,
-        user_id: this.state.currentUser,
-      }),
-    })
-    .then(r => r.json())
-    .then(this.getAllTopics())
-    .then(this.getUserInfo(this.state.currentUser))
-    .then(this.setState({
-      topic: {
-        title: '',
-        content: '',
-      },
-    }))
-    .catch(err => console.log(err));
-  }
-// FETCH CREATE TOPIC
-
 
 // ALL TOGGLES
 // TOGGLE COMPONENT FUNCTIONS *HELP TAKEN FROM LINK #2 IN README*
+
+  checkUserPrivileges(userId) {
+    if (this.state.currentUser === userId) {
+      return 'showTrash';
+    }
+    return 'hideTrash';
+  }
+
   changeComponent(x, y) {
       this.getAllComments(y);
       this.setState({
@@ -309,12 +327,14 @@ class App extends Component {
       );
     } else if (component === 1) {
       return (<CommentContainer
+        checkUserPrivileges={event => this.checkUserPrivileges(event)}
         disabled={this.state.disabled}
         comments={this.state.comments}
         changeComponent={(x, y) => this.changeComponent(x, y)}
         updateComment={event => this.updateComment(event)}
         commentBody={this.state.comment}
         submitComment={() => this.submitComment()}
+        deleteComment={event => this.deleteComment(event)}
       />
       );
     }
@@ -354,9 +374,6 @@ class App extends Component {
     }
   }
 
-// END TOGGLE FUNCTIONS
-
-// BEGIN ASIDE FUNCTIONS
   changeSidebar() {
     if (this.state.sidebar === 'hidden') {
       this.setState({
@@ -368,8 +385,11 @@ class App extends Component {
       });
     }
   }
-// END ASIDE FUNCTIONS
 
+// END TOGGLE FUNCTIONS
+
+
+// MAIN RENDER
   render() {
     return (
       <div id="app-container">

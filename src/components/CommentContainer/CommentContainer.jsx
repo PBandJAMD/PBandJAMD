@@ -9,11 +9,11 @@ const CommentContainer = props => {
       <CommentTemplate
         key={comment.id.toString()}
         id={comment.id}
-        title={comment.title}
-        topic_id={comment.topic_id}
         body={comment.body}
         date_created={comment.date_created}
-        user_id={comment.user_id}
+        username={comment.username}
+        deleteButton={() => props.checkUserPrivileges(comment.user_id)}
+        deleteComment={props.deleteComment}
       />
     );
   });

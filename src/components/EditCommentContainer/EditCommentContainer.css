@@ -10,5 +10,15 @@
 }
 
 #editCommentInput {
-  width: 80%;
+  width: 80vw;
+}
+
+#returnToTopicButton {
+  background-color: green;
+  width: 20vw;
+}
+
+#submitEditedCommentButton {
+  background-color: green;
+  width: 20vw;
 }

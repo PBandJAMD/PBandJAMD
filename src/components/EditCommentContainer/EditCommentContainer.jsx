@@ -13,12 +13,17 @@ const EditCommentContainer = props => (
       onChange={props.updateComment}
     />
 
-    <button id="submitEditedCommentButton"
+    <button
+      id="submitEditedCommentButton"
       onClick={() => props.submitEditedComment(props.currentCommentId)}
     >Submit</button>
 
 
-    <button onClick={() => props.changeComponent(1, props.currentTopic, '', 0)}>Return to topic.</button>
+    <button
+      id="returnToTopicButton"
+      onClick={() => props.changeComponent(1, props.currentTopic, '', 0)}
+    >Return to topic.</button>
+
   </div>
 );
 

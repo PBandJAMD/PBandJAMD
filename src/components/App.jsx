@@ -217,6 +217,7 @@ class App extends Component {
       }),
     })
     .then(r => r.json())
+    .then(this.alertInfo('Comment edited!'))
     .catch(err => console.log(err));
   }
 // END SUBMIT TOPIC/COMMENT FETCH FUNCTIONS

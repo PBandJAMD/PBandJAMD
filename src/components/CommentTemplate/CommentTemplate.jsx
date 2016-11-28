@@ -5,7 +5,7 @@ import trash from './delete.png';
 
 const CommentTemplate = props => (
   <div className="comment-template">
-    <p>Comment: {props.body}</p>
+    <p>{props.body}</p>
     <p>Date created: {props.date_created}</p>
     <p>User: {props.username}</p>
     <img

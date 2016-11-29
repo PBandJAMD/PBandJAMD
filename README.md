@@ -4,7 +4,7 @@
 We want to make a forum application that allows users to post topics that they are interested in, for example, a certain coding topic that they need help with or a specific assignment. However, the forum is intended for any topics that are of interest to our users. We want to create mini "chatrooms" in each topic, similar to a forum, but live so that the page constantly updates when new posts are submitted encouraging a more active chatroom. Once users sign up, they have the ability to view, create, update, and delete any topics/comments. If you or a user answers someone’s question, the information can be referenced and accessed by other users. This forum will encourage all users to share their ideas/information
 
 ## User Flow
-![User Flow](.media/final-slide.png)
+![User Flow](./media/final-slide.png)
 
 ## Wireframes
 ![landing](./media/landing.png)
